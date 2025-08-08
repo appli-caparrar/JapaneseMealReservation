@@ -1,0 +1,68 @@
+﻿@model string
+
+@{
+    ViewData["Title"] = "Login Error";
+    // ViewData["ShowFooter"] = false;
+}
+
+<div class="bg-light d-flex justify-content-center align-items-center vh-100">
+
+    <div class="card shadow w-100" style="max-width: 600px;">
+        <div class="card-header text-warning fw-bold fs-5" style="background-color: rgb(20, 61, 132); color: rgb(232, 200, 44);">
+            Can't Proceed to Login!
+        </div>
+        <div class="card-body">
+            <p class="mb-2">Sorry, we couldn’t find any active login request in i-Portal. It’s possible that your previous session has expired.</p>
+            <p class="mb-2">Kindly log in again to i-Portal.</p>
+            <p class="mb-2">If you haven’t installed the i-Portal application on your computer yet, please copy and paste the link below into your Windows search bar to begin the installation:</p>
+            <div class="card shadow-sm rounded-4 border-0">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h6 class="mb-0 fw-semibold text-secondary"></h6>
+                        <button type="button" class="btn btn-light border rounded-circle"
+                                data-bs-toggle="tooltip" data-bs-placement="left" title="Copy to clipboard"
+                                onclick="copyToClipboard('codeBlock')">
+                            <i class="fa-solid fa-copy text-primary"></i>
+                        </button>
+                    </div>
+            <pre class="bg-body-tertiary p-3 rounded-3 mb-0 text-dark-emphasis"
+                id="codeBlock" style="font-family: 'Courier New', monospace; font-size: 0.9rem;">
+\\apbiphsh07\D0_ShareBrotherGroup\19_BPS\Installer\BPS Centralized Login\setup.exe
+            </pre>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer d-flex justify-content-between small fst-italic text-muted">
+            <span>IP: @Model</span>
+            <span>Call BPS-App Group Local 3407</span>
+        </div>
+    </div>
+
+</div>
+
+<!-- Toast Notification -->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <div id="copyToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body">Copied to clipboard!</div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        tooltipTriggerList.forEach(el => new bootstrap.Tooltip(el));
+
+        function copyToClipboard(elementId) {
+          const text = document.getElementById(elementId).innerText;
+          navigator.clipboard.writeText(text).then(() => {
+            const toast = new bootstrap.Toast(document.getElementById('copyToast'));
+            toast.show();
+          }).catch(err => {
+            alert("Failed to copy: " + err);
+          });
+        }
+    </script>
+} 

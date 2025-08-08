@@ -1,0 +1,517 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\obj\\Release\\net8.0\\scopedcss\\projectbundle\\JapaneseMealReservation.bundle.scp.css",
+      "PackagePath": "staticwebassets\\JapaneseMealReservation.dozsu4r96d.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\images\\JMRS-logo.png",
+      "PackagePath": "staticwebassets\\images\\JMRS-logo.png"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\images\\bento.jpg",
+      "PackagePath": "staticwebassets\\images\\bento.jpg"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\images\\curry.png",
+      "PackagePath": "staticwebassets\\images\\curry.png"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\images\\jap-flag.jpg",
+      "PackagePath": "staticwebassets\\images\\jap-flag.jpg"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\images\\maki.jpg",
+      "PackagePath": "staticwebassets\\images\\maki.jpg"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\images\\meal-bg.jpg",
+      "PackagePath": "staticwebassets\\images\\meal-bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\images\\noodles.png",
+      "PackagePath": "staticwebassets\\images\\noodles.png"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\images\\usa-flag.jpg",
+      "PackagePath": "staticwebassets\\images\\usa-flag.jpg"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\js\\AdvanceOrdering.js",
+      "PackagePath": "staticwebassets\\js\\AdvanceOrdering.js"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\js\\custom.js",
+      "PackagePath": "staticwebassets\\js\\custom.js"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\js\\datatables-demo.js",
+      "PackagePath": "staticwebassets\\js\\datatables-demo.js"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\js\\full-calendar.js",
+      "PackagePath": "staticwebassets\\js\\full-calendar.js"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\js\\jquery-3.4.1.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery-3.4.1.min.js"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\js\\orderCalendar.js",
+      "PackagePath": "staticwebassets\\js\\orderCalendar.js"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\js\\orderValidation.js",
+      "PackagePath": "staticwebassets\\js\\orderValidation.js"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\js\\printTable.js",
+      "PackagePath": "staticwebassets\\js\\printTable.js"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\js\\registration.js",
+      "PackagePath": "staticwebassets\\js\\registration.js"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\js\\reservation.js",
+      "PackagePath": "staticwebassets\\js\\reservation.js"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\js\\updateDashboardModal.js",
+      "PackagePath": "staticwebassets\\js\\updateDashboardModal.js"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\js\\updateMenuModalHandler.js",
+      "PackagePath": "staticwebassets\\js\\updateMenuModalHandler.js"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\run-iportal\\launch-I-portal-app.bat",
+      "PackagePath": "staticwebassets\\run-iportal\\launch-I-portal-app.bat"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\BUTA NO SHOGAYAKI_1_27b36557-3e39-461d-b32e-68def1d39d83.png",
+      "PackagePath": "staticwebassets\\uploads\\BUTA NO SHOGAYAKI_1_27b36557-3e39-461d-b32e-68def1d39d83.png"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\BUTA NO SHOGAYAKI_1_35f2c8db-7b08-47cc-bfef-59753c50d745.png",
+      "PackagePath": "staticwebassets\\uploads\\BUTA NO SHOGAYAKI_1_35f2c8db-7b08-47cc-bfef-59753c50d745.png"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\BUTA NO SHOGAYAKI_2_09f9425e-f81c-40a5-a07d-ce71095f67d5.png",
+      "PackagePath": "staticwebassets\\uploads\\BUTA NO SHOGAYAKI_2_09f9425e-f81c-40a5-a07d-ce71095f67d5.png"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\BUTA NO SHOGAYAKI_2_0a16701e-c35e-41bc-bc74-789e01025fd7.png",
+      "PackagePath": "staticwebassets\\uploads\\BUTA NO SHOGAYAKI_2_0a16701e-c35e-41bc-bc74-789e01025fd7.png"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\BUTA NO SHOGAYAKI_2_485e8556-a0e6-4778-b8d3-608d41144e0c.png",
+      "PackagePath": "staticwebassets\\uploads\\BUTA NO SHOGAYAKI_2_485e8556-a0e6-4778-b8d3-608d41144e0c.png"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\BUTA NO SHOGAYAKI_2_ba860785-c48e-4173-b852-cfd6b949b051.png",
+      "PackagePath": "staticwebassets\\uploads\\BUTA NO SHOGAYAKI_2_ba860785-c48e-4173-b852-cfd6b949b051.png"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\BUTA NO SHOGAYAKI_2_c83ac280-1bd1-4407-9702-86ff69eaa75c.png",
+      "PackagePath": "staticwebassets\\uploads\\BUTA NO SHOGAYAKI_2_c83ac280-1bd1-4407-9702-86ff69eaa75c.png"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\BUTA NO SHOGAYAKI_34_4d078890-e0ed-48bf-99a4-b055ab199125.jpg",
+      "PackagePath": "staticwebassets\\uploads\\BUTA NO SHOGAYAKI_34_4d078890-e0ed-48bf-99a4-b055ab199125.jpg"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\BUTA NO SHOGAYAKI_3_dfa2a03d-20b1-449f-a0a5-9b215d83a327.png",
+      "PackagePath": "staticwebassets\\uploads\\BUTA NO SHOGAYAKI_3_dfa2a03d-20b1-449f-a0a5-9b215d83a327.png"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\BUTA NO SHOGAYAKI_7_67bb1d35-e4d7-4c0a-b741-14489810d797.png",
+      "PackagePath": "staticwebassets\\uploads\\BUTA NO SHOGAYAKI_7_67bb1d35-e4d7-4c0a-b741-14489810d797.png"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\BUTA NO SHOGAYAKI_8_08dc8c0c-6c60-41eb-810d-4a1b4fd0e7e5.png",
+      "PackagePath": "staticwebassets\\uploads\\BUTA NO SHOGAYAKI_8_08dc8c0c-6c60-41eb-810d-4a1b4fd0e7e5.png"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\CHEESY EBI ROLL_49_719c734d-6eb9-4553-8b8f-908505a03cb9.jpg",
+      "PackagePath": "staticwebassets\\uploads\\CHEESY EBI ROLL_49_719c734d-6eb9-4553-8b8f-908505a03cb9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\EBI FURAI CURRY_38_ad6819d6-4f85-47ab-a960-76f68481912b.jpg",
+      "PackagePath": "staticwebassets\\uploads\\EBI FURAI CURRY_38_ad6819d6-4f85-47ab-a960-76f68481912b.jpg"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\FUTO MAKI ROLL_37_c6c58bf8-f576-4c78-8f56-f66b017809c4.jpg",
+      "PackagePath": "staticwebassets\\uploads\\FUTO MAKI ROLL_37_c6c58bf8-f576-4c78-8f56-f66b017809c4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\IKA SHOGAYAKI_33_899f51fe-b71d-4dfb-a195-572f82fca4e4.jpg",
+      "PackagePath": "staticwebassets\\uploads\\IKA SHOGAYAKI_33_899f51fe-b71d-4dfb-a195-572f82fca4e4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\KANI CREAM KOROKKE (CRABMEAT)_45_d5d664a3-f9f2-4217-852e-22a52e6ce3c7.jpg",
+      "PackagePath": "staticwebassets\\uploads\\KANI CREAM KOROKKE (CRABMEAT)_45_d5d664a3-f9f2-4217-852e-22a52e6ce3c7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\KATSU CURRY_51_d9109a57-ee9c-4908-b545-25ec048e211d.jpg",
+      "PackagePath": "staticwebassets\\uploads\\KATSU CURRY_51_d9109a57-ee9c-4908-b545-25ec048e211d.jpg"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\OROSHI PONZU CHICKEN_48_70880dd7-7d7a-452c-9265-a08c6da7bcb5.jpg",
+      "PackagePath": "staticwebassets\\uploads\\OROSHI PONZU CHICKEN_48_70880dd7-7d7a-452c-9265-a08c6da7bcb5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\PORK YAKINIKU_46_ab0d8698-bace-4fe0-81a9-3122897a60df.jpg",
+      "PackagePath": "staticwebassets\\uploads\\PORK YAKINIKU_46_ab0d8698-bace-4fe0-81a9-3122897a60df.jpg"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\ROLLED TORI KATSU_32_f19d5909-32aa-4a48-a991-44a632549ed6.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ROLLED TORI KATSU_32_f19d5909-32aa-4a48-a991-44a632549ed6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\SANSHOKU SOBORO_30_3be4d865-7d20-47b8-81f3-cd8fc0b605db.jpg",
+      "PackagePath": "staticwebassets\\uploads\\SANSHOKU SOBORO_30_3be4d865-7d20-47b8-81f3-cd8fc0b605db.jpg"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\SHOYU RAMEN_52_b132b311-669a-4293-bc9e-49b75c3be39c.jpg",
+      "PackagePath": "staticwebassets\\uploads\\SHOYU RAMEN_52_b132b311-669a-4293-bc9e-49b75c3be39c.jpg"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\SPICY NEGI RAMEN_39_b4116df5-0f97-4927-9fa0-18bf6e8163b5.jpg",
+      "PackagePath": "staticwebassets\\uploads\\SPICY NEGI RAMEN_39_b4116df5-0f97-4927-9fa0-18bf6e8163b5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\SUBUTA_47_e4e6baf0-2dba-46cc-8785-be83bfbf162e.jpg",
+      "PackagePath": "staticwebassets\\uploads\\SUBUTA_47_e4e6baf0-2dba-46cc-8785-be83bfbf162e.jpg"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\TONPEIYAKI_31_1a713dd7-41a9-40f6-8555-41484df26bac.jpg",
+      "PackagePath": "staticwebassets\\uploads\\TONPEIYAKI_31_1a713dd7-41a9-40f6-8555-41484df26bac.jpg"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\TUNA MAKI ROLL_20_65304b79-b4a6-4f80-b2c3-f6252f458e1c.jpg",
+      "PackagePath": "staticwebassets\\uploads\\TUNA MAKI ROLL_20_65304b79-b4a6-4f80-b2c3-f6252f458e1c.jpg"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\TUNA MAKI ROLL_35_cd35236d-1e78-4734-a8a3-ea8d47e9a320.jpg",
+      "PackagePath": "staticwebassets\\uploads\\TUNA MAKI ROLL_35_cd35236d-1e78-4734-a8a3-ea8d47e9a320.jpg"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\YAKI SOBA_36_8d970d88-027c-4ed9-8392-ee49f22f562b.jpg",
+      "PackagePath": "staticwebassets\\uploads\\YAKI SOBA_36_8d970d88-027c-4ed9-8392-ee49f22f562b.jpg"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\bangsilog_12_288cadda-fd26-4feb-bf01-0b5072998303.jpg",
+      "PackagePath": "staticwebassets\\uploads\\bangsilog_12_288cadda-fd26-4feb-bf01-0b5072998303.jpg"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\bento_4_61b0d113-0556-4260-b8a7-44b02aff8e0b.png",
+      "PackagePath": "staticwebassets\\uploads\\bento_4_61b0d113-0556-4260-b8a7-44b02aff8e0b.png"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\bento_5_8ceb75c7-2d63-48a9-b6bb-099628486965.jpg",
+      "PackagePath": "staticwebassets\\uploads\\bento_5_8ceb75c7-2d63-48a9-b6bb-099628486965.jpg"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\curry_7_27f00a6a-1e76-4f25-92a0-82a8ff9109cf.png",
+      "PackagePath": "staticwebassets\\uploads\\curry_7_27f00a6a-1e76-4f25-92a0-82a8ff9109cf.png"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\curry_7_33e6010d-c5e0-43f7-b375-ee6f549c7011.png",
+      "PackagePath": "staticwebassets\\uploads\\curry_7_33e6010d-c5e0-43f7-b375-ee6f549c7011.png"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\maki_4_126a2b5d-1f3c-4c65-b2c3-580d7264eddc.jpg",
+      "PackagePath": "staticwebassets\\uploads\\maki_4_126a2b5d-1f3c-4c65-b2c3-580d7264eddc.jpg"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\maki_8_6b929622-9c11-4988-9a1a-386c5aced39c.jpg",
+      "PackagePath": "staticwebassets\\uploads\\maki_8_6b929622-9c11-4988-9a1a-386c5aced39c.jpg"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\maki_9_f1c6af26-c3e1-4143-a992-371c51c7d86d.jpg",
+      "PackagePath": "staticwebassets\\uploads\\maki_9_f1c6af26-c3e1-4143-a992-371c51c7d86d.jpg"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\noodles_5_70cb1c29-d771-4da9-9c28-8a6187197b4a.png",
+      "PackagePath": "staticwebassets\\uploads\\noodles_5_70cb1c29-d771-4da9-9c28-8a6187197b4a.png"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\noodles_6_2ce400c2-9a50-4b0c-9490-ec9e89bd435a.png",
+      "PackagePath": "staticwebassets\\uploads\\noodles_6_2ce400c2-9a50-4b0c-9490-ec9e89bd435a.png"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\noodles_6_acafe4c2-2fc9-4a2d-b1d4-7ac88f457950.png",
+      "PackagePath": "staticwebassets\\uploads\\noodles_6_acafe4c2-2fc9-4a2d-b1d4-7ac88f457950.png"
+    },
+    {
+      "Id": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\silog_10_4522ce6f-9965-47ed-a331-cb44ed7e950d.jpg",
+      "PackagePath": "staticwebassets\\uploads\\silog_10_4522ce6f-9965-47ed-a331-cb44ed7e950d.jpg"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.JapaneseMealReservation.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.JapaneseMealReservation.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.build.JapaneseMealReservation.props",
+      "PackagePath": "build\\JapaneseMealReservation.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.JapaneseMealReservation.props",
+      "PackagePath": "buildMultiTargeting\\JapaneseMealReservation.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildTransitive.JapaneseMealReservation.props",
+      "PackagePath": "buildTransitive\\JapaneseMealReservation.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

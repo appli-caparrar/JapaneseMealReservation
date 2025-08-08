@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - JapaneseMealReservation</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.17/main.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/JapaneseMealReservation.styles.css" asp-append-version="true" />
+    <link href="~/css/style.css" rel="stylesheet" asp-append-version="true" />
+
+</head>
+
+<body>
+
+    @if (ViewData["ShowDashboardHeader"] as bool? == true)
+    {
+        <header class="fixed-top">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid px-3">
+                    <!-- Logo -->
+                    <a class="navbar-brand d-flex align-items-center" asp-controller="Home" asp-action="Index">
+                        <img src="~/images/JMRS-logo.png" class="jrms-logo me-2" alt="Japanese Meal Reservation System" style="height: 40px;" />
+                    </a>
+
+                    <!-- Mobile Toggle Button -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <!-- Navbar Links -->
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <!-- Greeting -->
+                        @if (User?.Identity?.IsAuthenticated == true)
+                        {
+                            var firstName = User.FindFirst(System.Security.Claims.ClaimTypes.GivenName)?.Value;
+                            var lastName = User.FindFirst(System.Security.Claims.ClaimTypes.Surname)?.Value;
+
+                            <span class="navbar-text text-white small text-nowrap">
+                                👋 Welcome, <strong>@firstName @lastName</strong>
+                            </span>
+                        }
+
+                        <div class="d-lg-flex align-items-center gap-3 ms-auto">
+                            <!-- Translate (optional) -->
+                            <div id="google_translate_element" class="text-light me-3 small d-none d-lg-block">
+                                Translate:
+                            </div>
+
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link link-warning text-light" asp-controller="Home" asp-action="Index">
+                                        <i class="fa-solid fa-house"></i> Home
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link link-warning text-light" asp-controller="Reservation" asp-action="MealReservation">
+                                        <i class="fa-solid fa-calendar-week"></i> Menu
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link  link-warning text-light" asp-controller="Order" asp-action="OrderSummary">
+                                        <i class="fa-solid fa-cart-shopping"></i> My Orders
+                                    </a>
+                                </li>
+
+                                @if (User.HasClaim("EmployeeType", "Expat"))
+                                {
+                                    <li class="nav-item">
+                                        <a class="nav-link link-warning text-light" asp-controller="Reservation" asp-action="ExpatAdvanceReservation">
+                                            <i class="fa-solid fa-border-all"></i> Expat Reservation
+                                        </a>
+                                    </li>
+                                }
+
+                            </ul>
+
+                            <!-- Book Now Button -->
+                            <a class="btn btn-warning btn-sm text-dark" asp-controller="Reservation" asp-action="AdvanceOrdering" style="border-radius: 20px;">
+                                Book Now
+                            </a>
+
+                            <!-- Admin Dashboard -->
+                            @if (User.Identity.IsAuthenticated && User.IsInRole("ADMIN"))
+                            {
+                                <a class="btn btn-primary btn-sm text-white" asp-controller="Admin" asp-action="Dashboard" style="border-radius: 20px;">
+                                    Admin Dashboard
+                                </a>
+                            }
+
+                            <!-- Logout Button -->
+                            @if (User.Identity?.IsAuthenticated == true)
+                            {
+                                <form method="post" asp-controller="Home" asp-action="Logout" class="d-inline">
+                                    <button type="submit" class="btn btn-danger btn-sm" style="border-radius: 20px;">Logout</button>
+                                </form>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    }
+
+
+
+    <div class="">
+        <main role="main" class="">
+            @RenderBody()
+        </main>
+    </div>
+
+
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }
+
+
+    @if (ViewData["ShowFooter"] as bool? == true)
+    {
+        <footer class="footer-fix d-flex justify-content-between align-items-center">
+            <span class="text-muted"> &copy; 2025 - BIPH - Japanese Meal Reservation | Developed by: BPS Application Developer</span>
+            <a href="#"
+            class="manual-btn rounded-pill px-3 py-1 shadow-sm d-inline-flex align-items-center gap-2 border border-warning text-warning text-decoration-none">
+                <i class="fa-solid fa-book"></i> Manual
+            </a>
+        </footer>
+    }
+
+    <!-- ⚙️ Google Translate Setup Script -->
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+              pageLanguage: 'en',
+              includedLanguages: 'en,ja',
+              layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL // or SIMPLE, VERTICAL
+            }, 'google_translate_element');
+        }
+    </script>
+
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <!-- ⚙️ Google Translate Setup Script End -->
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.17/index.global.min.js'></script>
+    @* Fontawesome *@
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
+    <!-- isotope js -->
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
+    <!-- Sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- PrintThis -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/printThis/1.15.0/printThis.min.js"></script>
+    <script src="~/js/printTable.js"></script>
+
+    <!-- xlsx.full -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+    <script src="~/js/custom.js"></script>
+   
+    @if (ViewData["Title"] as string == "Reservation")  
+    {
+        <script src="~/js/updateMenuModalHandler.js"></script>
+        <script src="~/js/orderValidation.js"></script>
+    }
+
+    @if (ViewData["Title"] as string == "Dashboard")
+    {
+        <script src="~/js/updateDashboardModal.js"></script>
+    }
+
+    @if (ViewData["Title"] as string == "Registration")
+    {
+        <script>
+                  window.appBaseUrl = '@Url.Content("~/")';
+        </script>
+      
+        <script src="~/js/registration.js"></script>
+    }
+
+    @if (ViewData["Title"] as string == "Advance Reservation")
+    {
+        <script src="~/js/reservation.js"></script>
+        <script src="~/js/full-calendar.js"></script>
+    }
+
+    @if (ViewData["Title"] as string == "Order Details")
+    {
+        <script src="~/js/orderCalendar.js"></script>
+    }
+    
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

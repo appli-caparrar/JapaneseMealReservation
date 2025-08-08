@@ -1,0 +1,166 @@
+﻿@using System.Globalization
+@model JapaneseMealReservation.ViewModels.ExpatReservationViewModel
+
+@{
+    ViewData["ShowDashboardHeader"] = true;
+    ViewData["Title"] = "Expat Batch Reservation";
+}
+
+<div class="container-fluid px-4" style="max-height: 100vh; padding-top: 70px;
+        overflow-y: auto;">
+    <div class="d-flex justify-content-between align-items-center mt-4 mb-3">
+        <h3 class="fw-bold text-dark">🍱 Advance Reservation for Expat</h3>
+        @* <span class="text-muted fst-italic">Month: @DateTime.Now.ToString("MMMM yyyy")</span> *@
+    </div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <form id="filterForm" class="row row-cols-lg-auto g-3 align-items-center">
+
+                @{
+                    int currentMonth = DateTime.Now.Month;
+                    int currentYear = DateTime.Now.Year;
+                }
+
+                <div class="col-12">
+                    <label for="monthSelect" class="form-label mb-0">Select Month</label>
+                    <select name="month" id="monthSelect" class="form-select">
+                        @for (int m = 1; m <= 12; m++)
+                        {
+                            if (m == currentMonth)
+                            {
+                                <option value="@m" selected>
+                                    @CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(m)
+                                </option>
+                            }
+                            else
+                            {
+                                <option value="@m">
+                                    @CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(m)
+                                </option>
+                            }
+                        }
+                    </select>
+                </div>
+
+                <div class="col-12">
+                    <label for="yearSelect" class="form-label mb-0">Select Year</label>
+                    <select id="yearSelect" name="year" class="form-select">
+                        @for (int y = DateTime.Now.Year - 1; y <= DateTime.Now.Year + 1; y++)
+                        {
+                            if (y == currentYear)
+                            {
+                                <option value="@y" selected>@y</option>
+                            }
+                            else
+                            {
+                                <option value="@y">@y</option>
+                            }
+                        }
+                    </select>
+                </div>
+
+                <div class="col-12">
+                    <button type="submit" id="viewScheduleBtn" class="btn btn-primary mt-3 mt-lg-4">
+                        🔄 View Schedule
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="reservationTableContainer" class="position-relative">
+        <div id="loadingSpinner" class="spinner-border text-primary d-none" style="position: absolute; top: 50%; left: 50%;" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        @await Html.PartialAsync("_ExpatReservationTable", Model)
+    </div>
+</div>
+
+@section Scripts {
+
+    <script>
+        
+        function bindBatchFormValidation() {
+            $('#batchReservationForm').on('submit', function (e) {
+                const checkedItems = document.querySelectorAll('input[name="SelectedOrders"]:checked');
+
+                if (checkedItems.length === 0) {
+                    e.preventDefault(); // Stop form submission
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'No Orders Selected',
+                        text: 'Please select at least one order before submitting.',
+                        confirmButtonColor: '#ffc107'
+                    });
+                }
+            });
+        }
+
+   
+        $(document).ready(function () {
+            function loadReservationTable() {
+                var month = parseInt($('#monthSelect').val());
+                var year = parseInt($('#yearSelect').val());
+
+                if (isNaN(month) || month < 1 || month > 12) {
+                    alert("Please select a valid month and year.");
+                    return;
+                }
+
+                $('#loadingSpinner').removeClass('d-none');
+
+                $.ajax({
+                    url: '/Reservation/ExpatAdvanceReservation',
+                    type: 'GET',
+                    data: { month: month, year: year },
+                    success: function (result) {
+                        $('#reservationTableContainer').html(result);
+                        bindBatchFormValidation();
+                    },
+                    error: function () {
+                        alert('Failed to load reservation table.');
+                    },
+                    complete: function () {
+                        $('#loadingSpinner').addClass('d-none');
+                    }
+                });
+            }
+
+            // $('#monthSelect, #yearSelect').on('change', loadReservationTable);
+
+            $('#viewScheduleBtn').on('click', function (e) {
+                e.preventDefault();
+                loadReservationTable();
+            });
+
+            bindBatchFormValidation();
+        });
+
+
+        @if (ViewBag.ShowSuccessAlert != null && (bool)ViewBag.ShowSuccessAlert)
+        {
+            <text>
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success!',
+                        text: 'Orders submitted successfully!',
+                        confirmButtonColor: '#198754'
+                    });
+            </text>
+        }
+
+        @if (ViewBag.ShowErrorAlert != null && (bool)ViewBag.ShowErrorAlert)
+        {
+            <text>
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops!',
+                        text: 'There was a problem submitting the orders.',
+                        confirmButtonColor: '#d33'
+                    });
+            </text>
+        }
+    </script>
+
+}

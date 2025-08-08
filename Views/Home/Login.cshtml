@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+ @model JapaneseMealReservation.Models.Login;
+
+<div class="login-page">
+    <div class="container min-vh-100 d-flex justify-content-center align-items-center">
+
+        <div class="login-card">
+            <h4>
+                <i class="fa-solid fa-user-tie"></i>
+            </h4>
+
+            @if (ViewBag.ErrorMessage != null)
+            {
+                <div class="alert alert-danger text-center">@ViewBag.ErrorMessage</div>
+            }
+
+            <form asp-controller="Home" asp-action="Login" method="Post">
+                <div class="form-floating mb-3">
+                    <input asp-for="EmployeeId" oninput="this.value = this.value.toUpperCase();" class="form-control rounded-3" placeholder="Employee ID" required />
+                    <label asp-for="EmployeeId">Employee ID</label>
+                    <span asp-validation-for="EmployeeId" class="text-danger"></span>
+                </div>
+       
+                <div class="form-floating mb-3">
+                    <input asp-for="Password" class="form-control rounded-3" placeholder="Password" type="password" required />
+                    <label asp-for="Password" class="form-label">Password</label>
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+                <a asp-controller="Home" asp-action="ForgotPassword" class="small text-decoration-none d-flex justify-content-end mb-2">Forgot?</a>
+
+                <button type="submit" class="btn btn-dark w-100">Login</button>
+
+            </form>
+            <div class="form-footer mt-3">
+                Don't have an account? <a asp-controller="Home" asp-action="Register" style="background-color: royalblue; color: white; padding: 4px 8px; border-radius: 20px;">Register</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+

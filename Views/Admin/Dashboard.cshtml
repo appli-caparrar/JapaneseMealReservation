@@ -1,0 +1,253 @@
+﻿
+
+@{
+    ViewData["ShowDashboardHeader"] = true;
+    ViewData["Title"] = "Dashboard";
+}
+
+
+
+@model JapaneseMealReservation.ViewModels.DashboardPageModel
+
+
+<div class="container shadow dashboardContainer" style="background-color: #FFFEF5; min-height: 100vh; margin-top: 35px; padding-bottom: 60px; margin-top: 130px;">
+ @*    <div class="d-flex justify-content-between align-items-center mb-4 bg-dark text-warning p-4"
+        <h1>Admin Dashboard</h1>
+         <form method="post" asp-controller="Home" asp-action="Logout">
+            <button type="submit" class="btn btn-danger" style="cursor:pointer;">Logout</button>
+        </form>
+    </div>
+ *@
+
+    @if (TempData["UploadMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show mx-4 mt-3" role="alert">
+            @TempData["UploadMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <!-- Stats Cards -->
+    <div class="row g-3 mb-4 px-4">
+
+        <div class="d-flex justify-content-between mt-5">
+            <h1 class="" style="font-size: 32px;">Summary of Orders Today</h1>
+            <div>
+            @*     <a asp-controller="Admin" asp-action="ExpatMonthlyDeduction" class="btn btn-primary" style="padding: 5px;">
+                    Expat Monthly Deduction
+                </a> *@
+                <button class="btn btn-warning" style="padding: 5px;" data-bs-toggle="modal" data-bs-target="#uploadModal">
+                    Upload Menu
+                </button>
+            </div>
+          
+        </div>
+
+        <div class="col-md-2">
+            <div class="p-4 bg-white dashboard-card">
+                <h5>Breakfast</h5>
+                <small>Total Orders Today</small>
+                <h2 class="text-primary">@Model.TotalBreakfastToday</h2>
+                <div class="d-flex justify-content-end">
+                    <a class="btn btn-dark" asp-controller="Order" asp-action="BreakfastOrderList"><i class="fa-solid fa-eye"></i> &nbsp; View List</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="p-4 bg-white dashboard-card">
+                <h5>Bento</h5>
+                <small>Total Orders Today</small>
+                <h2 class="text-primary">@Model.TotalBentoToday</h2>
+                <div class="d-flex justify-content-end">
+                    <a class="btn btn-dark" asp-controller="Order" asp-action="BentoOrderList"><i class="fa-solid fa-eye"></i> &nbsp; View List</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="p-4 bg-white dashboard-card">
+                <h5>Maki</h5>
+                <small>Total Orders Today</small>
+                <h2 class="text-primary">@Model.TotalMakiToday</h2>
+                <div class="d-flex justify-content-end">
+                    <a class="btn btn-dark" asp-controller="Order" asp-action="MakiOrderList"><i class="fa-solid fa-eye"></i> &nbsp; View List</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="p-4 bg-white dashboard-card">
+                <h5>Curry</h5>
+                <small>Total Orders Today</small>
+                <h2 class="text-primary">@Model.TotalCurryToday</h2>
+                <div class="d-flex justify-content-end">
+                    <a class="btn btn-dark" asp-controller="Order" asp-action="CurryOrderList"><i class="fa-solid fa-eye"></i> &nbsp; View List</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="p-4 bg-white dashboard-card">
+                <h5>Noodles</h5>
+                <small>Total Orders Today</small>
+                <h2 class="text-primary">@Model.TotalNoodlesToday</h2>
+                <div class="d-flex justify-content-end">
+                    <a class="btn btn-dark" asp-controller="Order" asp-action="NoodlesOrderList"><i class="fa-solid fa-eye"></i> &nbsp; View List</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="p-4 bg-primary text-white dashboard-card">
+                <small>Total Duductions</small>
+                <h5>Expat Orders</h5>
+                <h2 class="text-light">Summary</h2>
+                <div class="d-flex justify-content-end">
+                    <a class="btn btn-light" asp-controller="Admin" asp-action="ExpatMonthlyDeduction"><i class="fa-solid fa-eye"></i> &nbsp; View List</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    @* Table *@
+    <div class="row g-3 mb-4 px-4" >
+        <div>
+            <h1 class="mt-5" style="font-size: 32px;">List of Menu</h1>
+        </div>
+       
+
+        @if (Model != null)
+        {
+
+            <table class="table table-bordered text-center">
+                <thead>
+                    <tr>
+                        <th class="hide-col">Id</th>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Menu</th>
+                        <th>Price</th>
+                        <th style="width: 20%;">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Menus)
+                    {
+                        <tr>
+                            <td class="hide-col">@item.Id</td>
+                                    <td class="text-center align-middle" >
+                                @if (!string.IsNullOrWhiteSpace(item.ImagePath))
+                                {
+                                    <img src="..@item.ImagePath" alt="@item.Name" width="100" />
+                                }
+                                else
+                                {
+                                    <i class="fa-solid fa-image"></i>
+                                    <span>No Image</span>
+                                }
+                            </td>
+
+                            <td class="text-center align-middle" >@item?.Name</td>
+                            <td class="align-middle">@item?.Description</td>
+                            <td class="align-middle">@item?.MenuType</td>
+                            <td class="text-center align-middle" >@item?.Price.ToString()</td>
+                            <td class="d-flex justify-content-between align-items-center text-center align-middle" style="min-height: 50px;">
+                                <a
+                                    class="btn btn-warning" 
+                                    data-bs-toggle="modal" 
+                                    data-bs-target="#itemModal"
+                                    data-id="@item.Id"
+                                    data-image="..@item.ImagePath"
+                                    data-name="@item.Name"
+                                    data-price="@item.Price"
+                                   data-description="@item.Description"><i class="fa-solid fa-pen-to-square"></i> &nbsp; Update</a>
+
+                                <form asp-controller="Menu" asp-action="DeleteMenu" method="post" onsubmit="return confirm('Are you sure you want to delete this menu?');">
+                                    <input type="hidden" name="id" value="@item.Id" />
+                                    <button type="submit" class="btn btn-danger mx-2">
+                                        <i class="fa-solid fa-trash"></i> &nbsp; Delete
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p>No menu items found.</p>
+        }
+    </div>
+</div>
+
+@* serve as margin don't remove*@
+ <div style="height: 20px; width: 100%;"></div>
+
+<!-- Upload Modal -->
+<div class="modal fade" id="uploadModal" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <form class="modal-content" enctype="multipart/form-data" asp-controller="Menu" asp-action="UploadExcel" method="post">
+            <div class="modal-header">
+                <h5 class="modal-title" id="uploadModalLabel">Upload Menu List</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="menuFile" class="form-label">Select CSV or Excel file</label>
+                    <input type="file" name="file" class="form-control" id="menuFile" accept=".csv,.xlsx,.xls" required>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-primary">Upload</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Update Modal -->
+<div class="modal fade" id="itemModal" tabindex="-1" aria-labelledby="itemModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content shadow-lg rounded-4">
+            <div class="modal-header bg-dark text-white rounded-top-4">
+                <h5 class="modal-title" id="itemModalLabel">Update Menu</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <form id="itemForm" enctype="multipart/form-data" asp-controller="Menu" asp-action="UpdateMenu" method="post">
+                <div class="modal-body p-4">
+                    <input type="hidden" id="id" name="id" />
+
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Image <span class="text-danger">*</span></label>
+                        <input class="form-control" type="file" id="image" name="image" accept="image/*">
+                        <img id="imagePreview" src="" alt="Image Preview" class="mt-3 rounded" style="max-width: 100%; height: auto; display: none;">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name (Optional)</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter item name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="price" class="form-label">Price (Optional)</label>
+                        <input type="number" class="form-control" id="price" name="price" placeholder="Enter price">
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description (Optional)</label>
+                        <textarea class="form-control" id="description" name="description" rows="3" placeholder="Enter description"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer border-0 pt-0 pb-4 px-4">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-warning">Save Item</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,96 @@
+﻿@{
+    ViewData["Title"] = "Registration";
+}
+
+
+ @model JapaneseMealReservation.Models.User;
+
+
+<div class="login-page">
+    <div class="container min-vh-100 d-flex justify-content-center align-items-center">
+
+        <div class="login-card">
+            <h4><i class="fa-solid fa-user-plus"></i></h4>
+            <p class="text-center"><small>Create an account.</small></p>
+           <form  id="registerForm" method="post">
+                <div class="form-floating mb-3">
+                    <input asp-for="EmployeeId" class="form-control" required oninput="this.value = this.value.toUpperCase();" />
+                    <label asp-for="EmployeeId"></label>
+                    <span asp-validation-for="EmployeeId" class="text-danger"></span>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input asp-for="FirstName" class="form-control" readonly />
+                    <label asp-for="FirstName"></label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input asp-for="LastName" class="form-control" readonly />
+                    <label asp-for="LastName"></label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input asp-for="Email" class="form-control" readonly />
+                    <label asp-for="Email"></label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input asp-for="Section" class="form-control" readonly />
+                    <label asp-for="Section"></label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input asp-for="Password" type="password" id="password" class="form-control" required />
+                    <label asp-for="Password"></label>
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="confirmPassword" name="ConfirmPassword" required />
+                    <label for="confirmPassword">Confirm Password</label>
+                    <span class="text-danger" id="confirmPasswordError"></span>
+                </div>
+
+                <input asp-for="Position" id="position" type="hidden" />
+                <input asp-for="ADID" id="adid" type="hidden" />
+
+                <button type="submit" class="btn btn-dark w-100">Register</button>
+            </form>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- Success Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center">
+            <div class="modal-header bg-success text-light">
+                <h5 class="modal-title" id="successModalLabel">Registration Successful</h5>
+            </div>
+            <div class="modal-body">
+                You have successfully registered! Redirecting to login...
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+
+    @if (TempData["ShowRegisterAlert"] != null)
+    {
+        <script>
+            Swal.fire({
+                icon: 'info',
+                title: 'Account not found',
+                text: 'You don\'t have an account yet. Please create one.',
+                confirmButtonText: 'Register Now'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = '@Url.Action("Register", "Home")';
+                }
+            });
+        </script>
+    }
+}

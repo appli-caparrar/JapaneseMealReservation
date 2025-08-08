@@ -1,0 +1,122 @@
+wwwroot\css\site.css
+wwwroot\css\style.css
+wwwroot\favicon.ico
+wwwroot\images\bento.jpg
+wwwroot\images\curry.png
+wwwroot\images\jap-flag.jpg
+wwwroot\images\JMRS-logo.png
+wwwroot\images\maki.jpg
+wwwroot\images\meal-bg.jpg
+wwwroot\images\noodles.png
+wwwroot\images\usa-flag.jpg
+wwwroot\js\AdvanceOrdering.js
+wwwroot\js\custom.js
+wwwroot\js\datatables-demo.js
+wwwroot\js\full-calendar.js
+wwwroot\js\jquery-3.4.1.min.js
+wwwroot\js\orderCalendar.js
+wwwroot\js\orderValidation.js
+wwwroot\js\printTable.js
+wwwroot\js\registration.js
+wwwroot\js\reservation.js
+wwwroot\js\site.js
+wwwroot\js\updateDashboardModal.js
+wwwroot\js\updateMenuModalHandler.js
+wwwroot\lib\bootstrap\dist\css\bootstrap.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
+wwwroot\lib\bootstrap\LICENSE
+wwwroot\lib\jquery\dist\jquery.js
+wwwroot\lib\jquery\dist\jquery.min.js
+wwwroot\lib\jquery\dist\jquery.min.map
+wwwroot\lib\jquery\LICENSE.txt
+wwwroot\lib\jquery-validation\dist\additional-methods.js
+wwwroot\lib\jquery-validation\dist\additional-methods.min.js
+wwwroot\lib\jquery-validation\dist\jquery.validate.js
+wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
+wwwroot\lib\jquery-validation\LICENSE.md
+wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js
+wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js
+wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
+wwwroot\run-iportal\launch-I-portal-app.bat
+wwwroot\uploads\bangsilog_12_288cadda-fd26-4feb-bf01-0b5072998303.jpg
+wwwroot\uploads\bento_4_61b0d113-0556-4260-b8a7-44b02aff8e0b.png
+wwwroot\uploads\bento_5_8ceb75c7-2d63-48a9-b6bb-099628486965.jpg
+wwwroot\uploads\BUTA NO SHOGAYAKI_1_27b36557-3e39-461d-b32e-68def1d39d83.png
+wwwroot\uploads\BUTA NO SHOGAYAKI_1_35f2c8db-7b08-47cc-bfef-59753c50d745.png
+wwwroot\uploads\BUTA NO SHOGAYAKI_2_09f9425e-f81c-40a5-a07d-ce71095f67d5.png
+wwwroot\uploads\BUTA NO SHOGAYAKI_2_0a16701e-c35e-41bc-bc74-789e01025fd7.png
+wwwroot\uploads\BUTA NO SHOGAYAKI_2_485e8556-a0e6-4778-b8d3-608d41144e0c.png
+wwwroot\uploads\BUTA NO SHOGAYAKI_2_ba860785-c48e-4173-b852-cfd6b949b051.png
+wwwroot\uploads\BUTA NO SHOGAYAKI_2_c83ac280-1bd1-4407-9702-86ff69eaa75c.png
+wwwroot\uploads\BUTA NO SHOGAYAKI_3_dfa2a03d-20b1-449f-a0a5-9b215d83a327.png
+wwwroot\uploads\BUTA NO SHOGAYAKI_34_4d078890-e0ed-48bf-99a4-b055ab199125.jpg
+wwwroot\uploads\BUTA NO SHOGAYAKI_7_67bb1d35-e4d7-4c0a-b741-14489810d797.png
+wwwroot\uploads\BUTA NO SHOGAYAKI_8_08dc8c0c-6c60-41eb-810d-4a1b4fd0e7e5.png
+wwwroot\uploads\CHEESY EBI ROLL_49_719c734d-6eb9-4553-8b8f-908505a03cb9.jpg
+wwwroot\uploads\curry_7_27f00a6a-1e76-4f25-92a0-82a8ff9109cf.png
+wwwroot\uploads\curry_7_33e6010d-c5e0-43f7-b375-ee6f549c7011.png
+wwwroot\uploads\EBI FURAI CURRY_38_ad6819d6-4f85-47ab-a960-76f68481912b.jpg
+wwwroot\uploads\FUTO MAKI ROLL_37_c6c58bf8-f576-4c78-8f56-f66b017809c4.jpg
+wwwroot\uploads\IKA SHOGAYAKI_33_899f51fe-b71d-4dfb-a195-572f82fca4e4.jpg
+wwwroot\uploads\KANI CREAM KOROKKE (CRABMEAT)_45_d5d664a3-f9f2-4217-852e-22a52e6ce3c7.jpg
+wwwroot\uploads\KATSU CURRY_51_d9109a57-ee9c-4908-b545-25ec048e211d.jpg
+wwwroot\uploads\maki_4_126a2b5d-1f3c-4c65-b2c3-580d7264eddc.jpg
+wwwroot\uploads\maki_8_6b929622-9c11-4988-9a1a-386c5aced39c.jpg
+wwwroot\uploads\maki_9_f1c6af26-c3e1-4143-a992-371c51c7d86d.jpg
+wwwroot\uploads\noodles_5_70cb1c29-d771-4da9-9c28-8a6187197b4a.png
+wwwroot\uploads\noodles_6_2ce400c2-9a50-4b0c-9490-ec9e89bd435a.png
+wwwroot\uploads\noodles_6_acafe4c2-2fc9-4a2d-b1d4-7ac88f457950.png
+wwwroot\uploads\OROSHI PONZU CHICKEN_48_70880dd7-7d7a-452c-9265-a08c6da7bcb5.jpg
+wwwroot\uploads\PORK YAKINIKU_46_ab0d8698-bace-4fe0-81a9-3122897a60df.jpg
+wwwroot\uploads\ROLLED TORI KATSU_32_f19d5909-32aa-4a48-a991-44a632549ed6.jpg
+wwwroot\uploads\SANSHOKU SOBORO_30_3be4d865-7d20-47b8-81f3-cd8fc0b605db.jpg
+wwwroot\uploads\SHOYU RAMEN_52_b132b311-669a-4293-bc9e-49b75c3be39c.jpg
+wwwroot\uploads\silog_10_4522ce6f-9965-47ed-a331-cb44ed7e950d.jpg
+wwwroot\uploads\SPICY NEGI RAMEN_39_b4116df5-0f97-4927-9fa0-18bf6e8163b5.jpg
+wwwroot\uploads\SUBUTA_47_e4e6baf0-2dba-46cc-8785-be83bfbf162e.jpg
+wwwroot\uploads\TONPEIYAKI_31_1a713dd7-41a9-40f6-8555-41484df26bac.jpg
+wwwroot\uploads\TUNA MAKI ROLL_20_65304b79-b4a6-4f80-b2c3-f6252f458e1c.jpg
+wwwroot\uploads\TUNA MAKI ROLL_35_cd35236d-1e78-4734-a8a3-ea8d47e9a320.jpg
+wwwroot\uploads\YAKI SOBA_36_8d970d88-027c-4ed9-8392-ee49f22f562b.jpg

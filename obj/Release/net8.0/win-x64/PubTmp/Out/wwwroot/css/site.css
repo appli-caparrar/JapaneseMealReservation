@@ -1,0 +1,268 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+ 
+}
+
+.admin {
+    /*    position: fixed;
+    top: 10px;
+    right: 10px;*/
+    background-color: none;
+    border: 1px solid #fff;
+    padding: 3px 8px;
+    /*  z-index: 100;*/
+    color: #fff;
+    cursor: pointer;
+}
+
+
+.admin:hover {
+    border: 1px solid gold;
+    transition: 0.4s;
+    color: gold;
+}
+
+
+
+.reservationBtn {
+    border-radius: 35px;
+    width: 300px;
+    font-size: 18px;
+    color: white
+}
+
+
+
+.reservationBtnWrapper {
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+.reservationBtn:first-of-type, .reservationBtn:nth-of-type(2) {
+    margin-right: 10px;
+}
+
+.carousel-inner,
+.carousel-item,
+.carousel-item img {
+    height: 350px;
+    width: 600px;
+}
+
+.carousel-item img {
+    object-fit: cover; /* keeps image inside while filling space */
+}
+
+#landingPage {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/meal-bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    position: absolute;
+    width: 100vw;
+    padding-top: 75px;
+}
+
+@media (max-width: 1200px) {
+
+    .reservationBtnWrapper {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .reservationBtn {
+        border-radius: 35px;
+        width: 200px;
+        font-size: 15px;
+        color: white;
+    }
+}
+
+.footer-fix {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    right: 0;
+    padding-right: 20px;
+    background-color: black;
+    z-index: 10;
+    height: 60px;
+}
+
+.footer-fix span {
+    margin-left: 15px;
+}
+
+.dashboardContainer {
+    margin-bottom: 90px;
+}
+
+.dashboard-card {
+    border-radius: 1rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
+}
+
+.hide-col {
+    display:none;
+}
+
+.jrms-logo {
+    width: 180px;
+}
+
+
+.nav-pills .nav-link.active {
+    background-color: #ffc107 !important; /* Bootstrap warning color */
+    color: #000 !important; /* Dark text for contrast */
+}
+
+
+.login-page {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/meal-bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 90vh;
+    position: absolute;
+    width: 100vw;
+}
+
+.login-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    padding: 40px 30px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-card h4 {
+    font-weight: 600;
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 45px
+
+}
+
+.form-control {
+    height: 45px;
+    border-radius: 8px;
+}
+
+.btn-login {
+    height: 45px;
+    border-radius: 8px;
+    background-color: #0d6efd;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.btn-login:hover {
+    background-color: #0b5ed7;
+}
+
+.form-footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.form-footer a {
+    text-decoration: none;
+    color: #0d6efd;
+}
+
+.link-warning:hover {
+    color: #E7B34B !important;
+}
+manual-btn {
+    font-size: 10px;
+}
+.manual-btn:hover {
+    background-color: #ffc107; /* Bootstrap warning */
+    color: #000 !important; /* Black text on hover */
+}
+
+.manual-btn:hover i {
+    color: #000 !important;
+}
+
+.google-translate-box {
+    display: inline-block;
+    padding: 2px 5px;
+    background-color: #454545;
+    border: 1px solid #ced4da;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Hide Google branding */
+.goog-logo-link,
+.goog-te-gadget span,
+.goog-te-banner-frame {
+    display: none !important;
+    height: 0 !important;
+}
+
+.goog-te-combo {
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+    background-color: white;
+    color: #212529;
+    font-size: 14px;
+}
+
+
+
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+    .header-menu {
+        font-size: 12px;
+        min-width: 50px;
+        text-align: center;
+    }
+
+    .jrms-logo {
+        width: 140px;
+    }
+
+    #google_translate_element {
+        font-size: 10px;
+    }
+
+    .google-translate-box span {
+        font-size: 12px;
+    }
+
+    .logged-in-user {
+        font-size: 14px;
+    }
+
+    .book-now, .admin-dashboard {
+        font-size: 12px;
+        min-width: 100px;
+    }
+
+    .logout {
+        font-size: 12px;
+    }
+}

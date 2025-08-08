@@ -1,0 +1,324 @@
+﻿
+@{
+    ViewData["ShowDashboardHeader"] = true;
+    ViewData["ShowBookNow"] = true;
+    ViewData["Title"] = "Reservation";
+}
+
+@model List<JapaneseMealReservation.Models.Menu>
+
+
+<div class="row" style="padding-top: 90px;">
+    <section class="food_section layout_padding">
+        <div class="container">
+            <div class="heading_container heading_center">
+                <h2>
+                    Japanese Meal Schedule for this Week
+                </h2>
+            </div>
+
+            <!-- Navigation Tabs -->
+            <ul class="nav nav-pills justify-content-center gap-3 mb-4 mt-5" id="mealTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active border border-secondary rounded-pill px-4 py-2"
+                            id="lunch-tab"
+                            data-bs-toggle="pill"
+                            data-bs-target="#lunch"
+                            type="button"
+                            role="tab"
+                            aria-controls="lunch"
+                            aria-selected="true">
+                        🍱 LUNCH
+                    </button>
+                </li>
+
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link border border-secondary rounded-pill px-4 py-2"
+                            id="breakfast-tab"
+                            data-bs-toggle="pill"
+                            data-bs-target="#breakfast"
+                            type="button"
+                            role="tab"
+                            aria-controls="breakfast"
+                            aria-selected="false">
+                        🍳 BREAKFAST
+                    </button>
+                </li>
+            </ul>
+
+       
+
+            @* <div class="filters-content mt-5"> *@
+                <!-- Tab content -->
+                <div class="tab-content p-3" id="mealTabsContent">
+                    <div class="tab-pane fade show active" id="lunch" role="tabpanel" aria-labelledby="lunch-tab">
+                        <div class="text-center">
+                            <h3 style="font-weight: 600;">
+                                Lunch
+                            </h3>
+                            <hr />
+                        </div>
+
+                        <ul class="filters_menu">
+                            <li class="active" data-filter="*">All</li>
+                            @foreach (var menuType in Model.Where(m => m.MenuType?.ToLower() != "breakfast").Select(m => m.MenuType).Distinct())
+                            {
+                                <li data-filter=".@menuType">@menuType</li>
+                            }
+                        </ul>
+
+                        <div class="row filter-grid py-3shadow rounded-3">
+                            @{
+                                var phTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Asia/Manila");
+                                var nowPH = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, phTimeZone);
+                            }
+                            @foreach (var item in Model.Where(m => m.MenuType?.Trim().ToLower() != "breakfast"))
+                            {
+                                bool isUnavailable = item.AvailabilityDate.HasValue &&
+                                (
+                                item.AvailabilityDate.Value.Date < nowPH.Date ||
+                                (item.AvailabilityDate.Value.Date == nowPH.Date && nowPH.TimeOfDay >= new TimeSpan(9, 0, 0))
+                                );
+
+                                <div class="col-sm-6 col-lg-4 all @item.MenuType mt-4 mb-4">
+
+                                    <div class="box shadow">
+                                        <div>
+                                            <div class="img-box">
+
+                                                @if (!string.IsNullOrWhiteSpace(item.ImagePath))
+                                                {
+                                                    <img src="..@item.ImagePath" alt="@item.Name" />
+                                                }
+                                                else
+                                                {
+                                                    <p class="text-secondary">
+                                                        <i class="fa-solid fa-image"></i>
+                                                        <span>No Image</span>
+                                                    </p>
+                                                }
+                                            </div>
+
+                                            <div class="detail-box">
+                                                <h5 style="font-weight: 500; font-size: 11px;">
+                                                    Available on <span>@item.AvailabilityDate?.ToString("MMMM dd, yyyy (dddd)")</span>
+                                                </h5>
+
+                                                <h5>
+                                                    <small style="font-size: 11px;">@item.MenuType</small><br />
+                                                    @item.Name
+                                                </h5>
+
+                                                <p>@item.Description</p>
+
+                                                <div class="options">
+                                                    <h6>
+                                                        <i class="fa-solid fa-peso-sign"></i> @item.Price
+                                                    </h6>
+
+                                                    @if (isUnavailable)
+                                                    {
+                                                        <a class="btn btn-secondary disabled" style="cursor: not-allowed;" title="Date expired or past cutoff">
+                                                            <i class="fa-solid fa-cart-xmark"></i> &nbsp; Unavailable
+                                                        </a>
+                                                    }
+                                                    else
+                                                    {
+                                                        <a class="order-now-btn"
+                                                           data-bs-toggle="modal"
+                                                           data-bs-target="#OrderModal"
+                                                           data-order-type="@item.MenuType"
+                                                           data-menu-name="@item.Name"
+                                                           data-menu-image="..@item.ImagePath"
+                                                           data-availability-date="@item.AvailabilityDate?.ToString("yyyy-MM-dd")"
+                                                           data-menu-id="@item.Id"
+                                                           style="cursor: pointer;">
+                                                            <i class="fa-solid fa-cart-plus"></i> &nbsp; Order Now
+                                                        </a>
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="breakfast" role="tabpanel" aria-labelledby="breakfast-tab">
+                        <div class="row py-3 rounded-3">
+                            <div class="text-center ">
+                                <h3 style="font-weight: 600;">
+                                    Breakfast
+                                </h3>
+                                <hr />
+                            </div>
+
+                        @foreach (var item in Model.Where(m => m.MenuType?.Trim().ToLower() == "breakfast"))
+                        {
+                            bool isDisabled = false;
+
+                            if (item.AvailabilityDate.HasValue)
+                            {
+                                var availabilityDate = item.AvailabilityDate.Value.Date;
+                                var cutoffDateTime = availabilityDate.AddDays(-1).AddHours(15).AddMinutes(30); // 3:30 PM previous day
+
+
+                                isDisabled = nowPH >= cutoffDateTime;
+                            }
+
+                            <div class="col-sm-6 col-lg-4 all mt-4 mb-4">
+                                <div class="box shadow">
+                                    <div>
+                                        <div class="img-box">
+                                            @if (!string.IsNullOrWhiteSpace(item.ImagePath))
+                                            {
+                                                <img src="..@item.ImagePath" alt="@item.Name" />
+                                            }
+                                            else
+                                            {
+                                                <p class="text-secondary">
+                                                    <i class="fa-solid fa-image"></i>
+                                                    <span>No Image</span>
+                                                </p>
+                                            }
+                                        </div>
+                                        <div class="detail-box">
+                                            <h5 style="font-weight: 500; font-size: 11px;">
+                                                Available on <span>@item.AvailabilityDate?.ToString("MMMM dd, yyyy (dddd)")</span>
+                                            </h5>
+                                            <h5>
+                                                <small style="font-size: 11px;">@item.MenuType</small><br />
+                                                @item.Name
+                                            </h5>
+                                            <p>@item.Description</p>
+                                            <div class="options">
+                                                <h6>
+                                                    <i class="fa-solid fa-peso-sign"></i> @item.Price
+                                                </h6>
+
+                                                @if (isDisabled)
+                                                {
+                                                    <a class="btn btn-secondary disabled" style="cursor: not-allowed;" title="Cutoff passed">
+                                                        <i class="fa-solid fa-cart-xmark"></i> &nbsp; Unavailable
+                                                    </a>
+                                                }
+                                                else
+                                                {
+                                                    <a class="order-now-btn"
+                                                       data-bs-toggle="modal"
+                                                       data-bs-target="#OrderModal"
+                                                       data-order-type="@item.MenuType"
+                                                       data-menu-name="@item.Name"
+                                                       data-menu-image="..@item.ImagePath"
+                                                       data-availability-date="@item.AvailabilityDate?.ToString("yyyy-MM-dd")"
+                                                       data-menu-id="@item.Id"
+                                                       style="cursor: pointer;">
+                                                        <i class="fa-solid fa-cart-plus"></i> &nbsp; Order Now
+                                                    </a>
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                        </div>
+                    </div>
+                </div>
+            @* </div> *@
+        </div>
+    </section>
+</div>
+
+
+<!-- Modal Form -->
+<div class="modal fade" id="OrderModal" tabindex="-1" aria-labelledby="OrderModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <form class="modal-content" id="reservationForm" method="post">
+            <div class="modal-header bg-dark text-light">
+                <h5 class="modal-title" id="reservationModalLabel">Make an Order</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <input type="hidden" name="Menu_Id" id="menuId" class="form-control" />
+
+            <div class="modal-body">
+                <!-- Order Name -->
+                <div class="mb-2">
+                    <label class="form-label">Menu Name</label>
+                    <input type="text" name="OrderName" id="menuName" class="form-control" readonly />
+                </div>
+
+                <!-- Menu Type -->
+                <div class="mb-2">
+                    <label class="form-label">Menu Type</label>
+                    <input type="text" name="MenuType" id="orderTypeHidden" class="form-control" readonly />
+                </div>
+
+                <!-- Menu Image -->
+                <div class="mb-2">
+                    <img id="menuImage" src="" alt="Menu Image" class="img-fluid rounded" style="max-height: 150px; width: 100%;" />
+                    <input type="hidden" name="MenuImagePath" id="menuImagePath" />
+                </div>
+
+                @if (User?.Identity?.IsAuthenticated == true)
+                {
+                    var EmployeeId = User.FindFirst(CustomClaimTypes.EmployeeId)?.Value;
+                    var firstName = User.FindFirst(System.Security.Claims.ClaimTypes.GivenName)?.Value;
+                    var lastName = User.FindFirst(System.Security.Claims.ClaimTypes.Surname)?.Value;
+                    var Section = User.FindFirst(CustomClaimTypes.Section)?.Value;
+                    var EmployeeType = User.FindFirst(CustomClaimTypes.EmployeeType)?.Value;
+
+                    <div class="mb-2">
+                        <label class="form-label">Employee ID</label>
+                        <input type="text" name="EmployeeId" id="employeeId" class="form-control" value="@EmployeeId" readonly />
+                    </div>
+
+                    <div class="mb-2">
+                        <label class="form-label">First Name</label>
+                        <input type="text" name="FirstName" id="firstName" class="form-control" value="@firstName" readonly />
+                    </div>
+
+                    <div class="mb-2">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" name="LastName" id="lastName" class="form-control" value="@lastName" readonly />
+                    </div>
+
+                    <div class="mb-2">
+                        <label class="form-label">Section</label>
+                        <input type="text" name="Section" id="section" class="form-control" value="@Section" readonly />
+                    </div>
+
+                    <div class="mb-2">
+                        <label class="form-label">Customer Type</label>
+                        <input type="text" name="CustomerType" id="costumerType" class="form-control" value="@EmployeeType" readonly />
+                    </div>
+                }
+
+                <!-- Quantity -->
+                <div class="mb-2">
+                    <label class="form-label">Quantity*</label>
+                    <input type="number" name="Quantity" id="quantity" class="form-control" min="1" onfocus="" required />
+                </div>
+
+                <!-- Display Date (just for user UI, not posted) -->
+                <div class="mb-2">
+                    <label class="form-label">Selected Date</label>
+                    <input type="text" class="form-control" name="ReservationDate" id="displayDate" readonly />
+                </div>
+
+                <!-- Meal Time -->
+                <div class="mb-2">
+                    <label class="form-label">Lunch / Breakfast Time*</label>
+                    <input type="time" name="MealTime" id="time" class="form-control" required />
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-warning">Place Order</button>
+            </div>
+        </form>
+
+    </div>
+</div>

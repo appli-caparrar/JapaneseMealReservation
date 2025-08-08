@@ -1,0 +1,224 @@
+﻿
+@{
+    ViewData["ShowDashboardHeader"] = true;
+    ViewData["Title"] = "Advance Reservation";
+}
+
+<div class="container-fluid" style="min-height: 100vh; display: flex; justify-content: center; margin-bottom:150px; padding-top: 120px; gap: 20px;">
+
+    <!-- Calendar Section -->
+    <div class="flex-grow-1 pe-3" style="max-width: 55%; margin-left: 40px;">
+        <h3 class="pb-4"><strong>Menu Schedule</strong></h3>
+        <div id="calendar" style="margin-bottom: 80px;"></div>
+    </div>
+
+    <!-- Reservation Form -->
+    <div class="flex-grow-1 d-flex justify-content-center align-items-start" style="overflow-y: auto; margin-top: 57px;">
+        <form id="reservationForm" class="border p-4 rounded shadow mt-2" 
+              style="width: 100%; max-width: 700px; max-height: 90vh; overflow-y: auto;"
+              asp-controller="Reservation" asp-action="SaveAdvanceOrder">
+       @*      @Html.AntiForgeryToken() *@
+
+            <h4 class="mb-4 text-center">Reservation Form</h4>
+            <p class="pt-2 pb-4 text-center">Please fill in all required fields.</p>
+
+            <div class="row">
+                <!-- Basic Info -->
+                <div class="col-md-6 pe-md-3 border-end">
+                    <div class="mb-3">
+                        <label class="form-label">Type Employee ID and Press Enter</label>
+                        <input type="text" class="form-control" name="EmployeeId" id="employeeId" required oninput="this.value = this.value.toUpperCase();" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">First Name</label>
+                        <input type="text" class="form-control" name="FirstName" id="firstName" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" class="form-control" name="LastName" id="lastName" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Section</label>
+                        <input type="text" class="form-control" name="Section" id="section" required />
+                    </div>
+
+                    <div class="mb-2">
+                        <label class="form-label">Customer Type</label>
+                        <input type="text" class="form-control" name="CustomerType" id="customerType" required />
+                    </div>
+                </div>
+
+                <!-- Reservation Details -->
+                <div class="col-md-6 ps-md-3">
+                    <div class="mb-3">
+                        <label class="form-label">Selected Date (Required)</label>
+                        <input type="date" class="form-control" id="selectedDate" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Time (Required)</label>
+                        <input type="time" class="form-control" id="time" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Menu (Required)</label>
+                        <select class="form-select" id="menu" required>
+                            <option value="">-- Select Menu --</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Quantity (Required)</label>
+                        <input type="number" min="1" class="form-control" id="quantity" required />
+                    </div>
+
+                    <button type="submit" class="btn btn-dark w-100">Reserve</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Set base URL once globally -->
+<script>
+    window.appBaseUrl = '@Url.Content("~/")'.replace(/\/+$/, '');
+</script>
+
+@section Scripts {
+        <script>
+            //Script to get employee details
+            document.addEventListener("DOMContentLoaded", function () {
+                const empInput = document.querySelector('input[name="EmployeeId"]');
+                const firstNameInput = document.querySelector('input[name="FirstName"]');
+                const lastNameInput = document.querySelector('input[name="LastName"]');
+                const sectionInput = document.querySelector('input[name="Section"]');
+                const customerTypeInput = document.querySelector('input[name="CustomerType"]');
+
+                if (!empInput) {
+                    console.error("EmployeeId input not found.");
+                    return;
+                }
+
+                empInput.addEventListener("change", function () {
+                    const empId = this.value.trim().toUpperCase();
+                    this.value = empId;
+
+                    if (!empId) return;
+
+                    const baseUrl = '@Url.Content("~/")'.replace(/\/+$/, '');
+                    const fetchUrl = `${baseUrl}/Reservation/GetEmployeeById?id=${encodeURIComponent(empId)}`;
+
+                    fetch(fetchUrl)
+                        .then(async response => {
+                            const contentType = response.headers.get("content-type") || "";
+                            if (!response.ok || !contentType.includes("application/json")) {
+                                const errorHtml = await response.text();
+                                console.error("Expected JSON, got:", errorHtml);
+                                throw new Error("Server returned invalid response.");
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+                            console.log("Fetched data:", data);
+
+                            if (!data || data.success !== true) {
+                                throw new Error(data.message || "Employee record not found. This employee may not be registered in the system.");
+                            }
+
+                            //Set values
+                            firstNameInput.value = data.firstName || "";
+                            lastNameInput.value = data.lastName || "";
+                            sectionInput.value = data.section || "";
+                            customerTypeInput.value = data.customerType || "";
+                        })
+                        .catch(error => {
+                            console.error("Fetch error:", error.message);
+
+                            // Show SweetAlert2 error modal
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Employee Not Found',
+                                text: error.message || 'This employee may not be registered in the system.',
+                                confirmButtonColor: '#d33'
+                            });
+
+                            // Clear the fields
+                            firstNameInput.value = "";
+                            lastNameInput.value = "";
+                            sectionInput.value = "";
+                            customerTypeInput.value = "";
+                        });
+                });
+            });
+        </script>
+}
+
+
+
+@* <!-- Modal Form --> 
+<div class="" id="reservationModal" tabindex="-1" aria-labelledby="reservationModalLabel" aria-hidden="true"> 
+    <div class="modal-dialog modal-dialog-centered"> 
+        <form id="ReservationForm" class="modal-content"> 
+            <div class="modal-header bg-dark text-light"> 
+                <h5 class="modal-title" id="reservationModalLabel">Make a Reservation</h5> 
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button> 
+            </div> 
+            <div class="modal-body"> 
+                <input type="hidden" id="selectedDate"> 
+
+                <div class="mb-2"> 
+                    <label class="form-label">Employee ID</label> 
+                    <input type="text" class="form-control" id="employeeId" required /> 
+                </div> 
+
+                <div class="mb-2"> 
+                    <label class="form-label">First Name</label> 
+                    <input type="text" class="form-control" id="firstName" readonly /> 
+                </div> 
+
+                <div class="mb-2"> 
+                    <label class="form-label">Last Name</label> 
+                    <input type="text" class="form-control" id="lastName" readonly /> 
+                </div> 
+
+                <div class="mb-2"> 
+                    <label class="form-label">Section</label> 
+                    <input type="text" class="form-control" id="section" readonly /> 
+                </div> 
+
+                <div class="mb-2">
+                    <label class="form-label">Menu</label> 
+                    <select class="form-select" id="menu" required> 
+                        <option value="">-- Select Menu --</option> 
+                    </select> 
+                </div> 
+
+                <div class="mb-2"> 
+                    <label class="form-label">Quantity</label> 
+                    <input type="number" min="1" class="form-control" id="quantity" required />
+                </div> 
+
+                <div class="mb-2"> 
+                    <label class="form-label">Selected Date</label> 
+                    <input type="text" class="form-control" id="displayDate" readonly /> 
+                    <input type="hidden" id="displayDate" /> 
+                </div> 
+             
+                <div class="mb-2"> 
+                    <label class="form-label">Time</label> 
+                    <input type="time" class="form-control" id="time" required /> 
+                </div> 
+            </div> 
+
+            <div class="modal-footer"> 
+                <button type="submit" class="btn btn-warning">Reserve</button> 
+            </div> 
+        </form> 
+    </div> 
+</div> *@
+
+
+

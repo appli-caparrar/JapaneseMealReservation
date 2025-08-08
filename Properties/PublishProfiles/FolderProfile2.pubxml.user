@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>\\apbiphsh07\D0_ShareBrotherGroup\19_BPS\17_Installer\ASP.NET Published\JapaneseMeal</_PublishTargetUrl>
+    <History>False|2025-06-13T00:41:57.3770945Z||;True|2025-06-11T16:02:07.4410995+08:00||;True|2025-06-11T15:53:56.7557262+08:00||;True|2025-06-10T12:09:41.4988256+08:00||;True|2025-06-10T08:22:48.7762587+08:00||;True|2025-06-10T07:55:05.1337629+08:00||;True|2025-06-09T11:45:35.7718624+08:00||;True|2025-06-09T11:25:17.9164063+08:00||;True|2025-06-09T11:10:59.5956865+08:00||;True|2025-06-09T11:08:55.9523636+08:00||;True|2025-06-09T10:12:14.0307074+08:00||;True|2025-06-09T09:57:51.3412857+08:00||;True|2025-06-09T07:58:54.9872721+08:00||;True|2025-06-09T07:48:03.2526362+08:00||;True|2025-06-05T18:50:34.4025142+08:00||;True|2025-06-05T18:39:34.9705871+08:00||;True|2025-06-05T17:35:43.5670530+08:00||;True|2025-06-05T17:18:07.6921873+08:00||;True|2025-06-02T17:24:19.4513640+08:00||;True|2025-06-02T17:10:42.9530539+08:00||;True|2025-06-02T16:55:00.3896056+08:00||;True|2025-06-02T16:19:17.1381447+08:00||;True|2025-06-02T16:15:48.5026946+08:00||;</History>
+    <LastFailureDetails />
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DatabaseConnection">
+      <Value>Host=10.248.1.152%3bDatabase=Japanese_Meal_Reservation_Db%3bUsername=postgres%3bPassword=1234</Value>
+    </DestinationConnectionStrings>
+    <DestinationConnectionStrings Include="SqlServerConnection">
+      <Value>Host=10.248.1.152%3bDatabase=Japanese_Meal_Reservation_Db%3bUsername=postgres%3bPassword=1234</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

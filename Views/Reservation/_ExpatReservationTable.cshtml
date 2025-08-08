@@ -1,0 +1,85 @@
+﻿@using JapaneseMealReservation.ViewModels
+@model ExpatReservationViewModel
+
+@{
+    var i = 0;
+}
+
+<form id="batchReservationForm" asp-action="ExpatAdvanceReservation" method="post">
+    <div class="table-responsive shadow-sm border rounded overflow-auto">
+        <table class="table table-bordered table-hover text-center align-middle">
+            <thead class="table-dark sticky-top">
+                <tr>
+                    <th class="text-start">Expat Name</th>
+                    @foreach (var date in Model.CurrentMonthDates)
+                    {
+                        <th class="text-nowrap">@date.ToString("MMM d (ddd)")</th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model.Users)
+                {
+                    <tr>
+                        <td class="text-start fw-semibold">@user.FirstName @user.LastName</td>
+
+                        @foreach (var date in Model.CurrentMonthDates)
+                        {
+                            var dayOfWeek = (int)date.DayOfWeek;
+                            if (dayOfWeek == 0) dayOfWeek = 7;
+
+                            var menus = Model.WeekdayMenus.ContainsKey(dayOfWeek)
+                            ? Model.WeekdayMenus[dayOfWeek]
+                            : new List<string>();
+
+                            var isReserved = Model.ReservedDates.Contains($"{user.EmployeeId}|{date:yyyy-MM-dd}");
+
+                            <td class="p-2">
+                                @if (isReserved)
+                                {
+                                    <div class="text-light fw-semibold small bg-success rounded px-1">Order Reserved</div>
+                                }
+                                else if (menus.Any())
+                                {
+                                    foreach (var menu in menus)
+                                    {
+                                        var checkboxId = $"chk_{i}_{date.Day}_{menu.Replace(" ", "")}";
+                                        var orderKey = $"{user.EmployeeId}|{date:yyyy-MM-dd}|{menu}";
+
+                                        <div class="form-check form-check-sm text-start">
+                                            <input class="form-check-input"
+                                                   type="checkbox"
+                                                   name="SelectedOrders"
+                                                   value="@orderKey"
+                                                   id="@checkboxId"
+                                            @(user.EmployeeId != Model.CurrentUserId ? "disabled" : "") />
+                                            <label class="form-check-label small" for="@checkboxId">@menu</label>
+                                        </div>
+                                    }
+                                }
+                                else
+                                {
+                                    <span class="text-muted">—</span>
+                                }
+                            </td>
+                        }
+                    </tr>
+                    i++;
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="row mt-4 justify-content-end align-items-end">
+        <div class="col-auto">
+            <label for="MealTime" class="form-label fw-semibold">Meal Time (HH:mm)</label>
+            <input type="time" class="form-control" name="MealTime" required />
+        </div>
+        <div class="col-auto mb-1">
+            <button id="submitBtn" type="submit" class="btn btn-success px-4 py-2 mt-4">
+                <i class="bi bi-send-check-fill me-2"></i>Submit Orders
+            </button>
+        </div>
+    </div>
+</form>
+

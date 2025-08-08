@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Link Expired";
+}
+
+<div class="d-flex align-items-center justify-content-center vh-100 bg-light">
+    <div class="card shadow-lg p-4" style="max-width: 500px; width: 100%;">
+        <div class="card-body text-center">
+            <h2 class="text-danger mb-3">🔒 Link Expired</h2>
+            <p class="text-muted mb-4">
+                Your access link has expired or is invalid.<br />
+                Please request a new one or sign in below.
+            </p>
+            <a asp-controller="Home" asp-action="Login" class="btn btn-primary">Sign In</a>
+        </div>
+    </div>
+</div>

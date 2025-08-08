@@ -1,0 +1,127 @@
+﻿@{
+    ViewData["ShowDashboardHeader"] = true;
+    ViewData["ShowLoginAdmin"] = true;
+    ViewData["ShowBookNow"] = true;
+    ViewData["Title"] = "Welcome Page";
+}
+
+ @model JapaneseMealReservation.Models.User
+
+<div id="landingPage" class="">
+
+    <div class="text-center text-light mb-4 mt-5">
+        <h1>Welcome to Japanese Meal Reservation System</h1>
+        <p class="text-light">日本の食事予約システムへようこそ</p>
+    </div>
+
+    <div class="row justify-content-center g-4 pt-4 pb-4 reservationBtnWrapper">
+        <div class="text-center">
+            <a class="btn btn-warning reservationBtn" asp-controller="Reservation" asp-action="MealReservation">
+                <span class="fw-bold"><i class="fa-solid fa-utensils"></i> &nbsp; View Menu</span>
+                <br>
+                <small>メニューを見る</small>  
+            </a>
+         @*      <a class="btn btn-warning reservationBtn" asp-controller="Reservation" asp-action="ExpatReservation">
+                <span class="fw-bold">Reserve as Local</span>
+                <br>
+                <small>ローカルとして予約</small>
+            </a> *@
+            <a class="btn btn-warning reservationBtn" asp-controller="Order" asp-action="OrderSummary">
+                <span class="fw-bold"><i class="fa-solid fa-cart-shopping"></i> &nbsp; My Orders</span>
+                <br>
+                <small>注文を見る</small>
+            </a>
+        </div>
+    </div>
+
+
+    <!-- Carousel Wrapper -->
+    <div class="d-flex justify-content-center pt-4">
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="3000">
+                    <img src="~/images/bento.jpg" class="d-block w-100" alt="...">
+                </div>
+
+                <div class="carousel-item" data-bs-interval="3000">
+                    <img src="~/images/curry.png" class="d-block w-100" alt="...">
+                </div>
+
+                <div class="carousel-item" data-bs-interval="3000">
+                    <img src="~/images/maki.jpg" class="d-block w-100" alt="...">
+                </div>
+
+                <div class="carousel-item" data-bs-interval="3000">
+                    <img src="~/images/noodles.png" class="d-block w-100" alt="...">
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modern Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-4 shadow-lg">
+
+            <div class="modal-header border-0 pb-0">
+                <h4 class="modal-title fw-bold mb-3" id="loginModalLabel"><i class="fa-solid fa-right-to-bracket"></i> Sign In</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body pt-0">
+                
+                <form id="loginForm" class="p-2" asp-controller="Account" asp-action="Dashboard" method="post">
+                    <div class="form-floating mb-3">
+                        <input asp-for="EmployeeId" class="form-control rounded-3" placeholder="Employee ID" required />
+                        <label asp-for="EmployeeId">Employee ID</label>
+                        <span asp-validation-for="EmployeeId" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input asp-for="Password" class="form-control rounded-3" placeholder="Password" type="password" required/>
+                        <label asp-for="Password">Password</label>
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-dark text-light" style="border-radius: 25px; padding: 8px 0; outline: none;">Login</button>
+                    </div>
+
+                    @if (ViewBag.ErrorMessage != null)
+                    {
+                        <div class="text-danger text-center mt-3">@ViewBag.ErrorMessage</div>
+                    }
+                </form>
+
+            </div>
+
+            <div class="modal-footer border-0 pt-0 justify-content-center">
+                <small class="text-muted">If you don't have an account, request to system developer.</small>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+@if (ViewBag.ErrorMessage != null)
+{
+    <script>
+        const loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+        loginModal.show();
+    </script>
+}

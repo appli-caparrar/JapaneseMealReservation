@@ -1,0 +1,110 @@
+﻿@{
+    ViewData["ShowDashboardHeader"] = true;
+    ViewData["Title"] = "Expat Monthly Deduction";
+}
+
+@model IEnumerable<JapaneseMealReservation.ViewModels.ExpatMonthlyDeduction>
+
+<div class="px-4" style="padding-top: 115px;">
+
+   
+    <div class="d-flex justify-content-between align-items-center">
+        <div>
+            <h3 style="font-size: 22px; font-weight: 600;" class="text-center">
+                Summary of Expat's Bento, Curry Rice, Noodles and Maki Roll Deduction (@DateTime.Now.ToString("MMMM yyyy"))
+            </h3>
+        </div>
+
+        <div class="py-4">
+            <button id="exportExcelBtn" class="btn btn-success">
+                <i class="fa-solid fa-file-excel"></i> &nbsp; Export to Excel
+            </button>
+
+            <button class="btn btn-success printBtn">
+                <i class="fa-solid fa-print"></i> &nbsp; Print Expat Deductions
+            </button>
+        </div>
+        
+    </div>
+    
+    <div id="printArea">
+        <table class="table table-bordered text-center align-middle">
+            <thead style="background-color: #d9ead3;">
+                <tr>
+                    <th style="vertical-align: middle;">Name</th>
+                    <th>Expat Bento<br />(PHP)</th>
+                    <th>Expat Curry Rice<br />(PHP)</th>
+                    <th>Expat Noodles<br />(PHP)</th>
+                    <th>Maki Roll<br />(PHP)</th>
+                    <th>Breakfast<br />(PHP)</th>
+                    <th style="background-color: #999999; color: white;">Total amount<br />(PHP)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Any())
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Name</td>
+                            <td>₱@item.ExpatBento.ToString("N2")</td>
+                            <td>₱@item.ExpatCurryRice.ToString("N2")</td>
+                            <td>₱@item.ExpatNoodles.ToString("N2")</td>
+                            <td>₱@item.MakiRoll.ToString("N2")</td>
+                            <td>₱@item.Breakfast.ToString("N2")</td>
+                            <td style="background-color: #eeeeee; font-weight: bold;">
+                                ₱@item.TotalAmount.ToString("N2")
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="7" class="text-center text-muted">No expat deductions found.</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    
+</div>
+
+@* serve as margin don't remove*@
+<div style="height: 15px; width: 100%;"></div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            //PRINT BUTTON FUNCTIONALITY
+            const printButtons = document.querySelectorAll(".printBtn");
+
+            printButtons.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    const today = new Date().toLocaleDateString();
+
+                    $('#printArea').printThis({
+                        importCSS: true,
+                        loadCSS: "/css/site.css",
+                        header: `<h2>Expats Monthly Deductions</h2><p>Date: ${today}</p><hr />`
+                    });
+                });
+            });
+
+            //EXCEL EXPORT FUNCTIONALITY
+            const exportBtn = document.getElementById("exportExcelBtn");
+            if (exportBtn) {
+                exportBtn.addEventListener("click", function () {
+                    const dataTable = document.querySelector("table");
+                    const workbook = XLSX.utils.table_to_book(dataTable, { sheet: "Expats Deduction" });
+                    XLSX.writeFile(workbook, `Expats_Deductions_${new Date().toISOString().slice(0, 10)}.xlsx`);
+                });
+            }
+        });
+
+
+    </script>
+
+        
+}

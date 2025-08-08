@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>\\apbiphsh07\D0_ShareBrotherGroup\19_BPS\17_Installer\ASP.NET Published</_PublishTargetUrl>
+    <History>True|2025-06-02T00:05:35.2828572Z||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DatabaseConnection">
+      <Value>Host=10.248.1.152%3bDatabase=Japanese_Meal_Reservation_Db%3bUsername=postgres%3bPassword=1234</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="JapaneseMealReservation.AppData.AppDbContext">
+      <Value>Host=10.248.1.152%3bDatabase=Japanese_Meal_Reservation_Db%3bUsername=postgres%3bPassword=1234</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

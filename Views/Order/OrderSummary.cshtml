@@ -1,0 +1,319 @@
+﻿
+@{
+	ViewData["ShowDashboardHeader"] = true;
+	ViewData["Title"] = "Order Details";
+}
+
+@model List<JapaneseMealReservation.ViewModels.OrderSummaryViewModel>
+
+<div class="container-fluid mt-5" style="padding-top: 75px;">
+    <div class="row g-4">
+        <!-- Order Panel -->
+        <div class="col-lg-8 mx-auto">
+            <div class="card shadow-lg rounded-4 border-0">
+                <!-- Tabs -->
+                <ul class="nav nav-pills nav-justified p-3" id="orderTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active rounded-pill fw-semibold" id="current-tab" data-bs-toggle="pill" data-bs-target="#current" type="button" role="tab">
+                            <i class="fa-solid fa-list-ul me-2"></i> My Current Order
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link rounded-pill fw-semibold" id="history-tab" data-bs-toggle="pill" data-bs-target="#history" type="button" role="tab">
+                            <i class="fa-solid fa-clock-rotate-left me-2"></i> Order History
+                        </button>
+                    </li>
+                </ul>
+
+                <!-- Tab Content -->
+                <div class="tab-content p-4" id="orderTabsContent">
+
+                    <!-- Current Orders -->
+                    <div class="tab-pane fade show active" id="current" role="tabpanel">
+                        <h5 class="fw-bold mb-3">Current Orders</h5>
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle text-center">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Reference #</th>
+                                        <th>Date</th>
+                                        <th>Item</th>
+                                        <th>Qty</th>
+                                        <th>Price (₱)</th>
+                                        <th>Total (₱)</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @{
+                                        int count = 1;
+                                        decimal grandTotal = 0;
+
+                                        var phTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Asia/Manila");
+                                        var nowPH = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, phTimeZone);
+                                        var todayPH = nowPH.Date;
+
+                                        var startDate = new DateTime(nowPH.Year, nowPH.Month, 1).AddMonths(-1); // First day of LAST month
+                                        var endDate = new DateTime(nowPH.Year, nowPH.Month, DateTime.DaysInMonth(nowPH.Year, nowPH.Month)); // Last day of current month
+                                    }
+
+                                    @foreach (var item in Model.Where(o => o.Status == "Pending"))
+                                    {
+                                        var total = item.Quantity * item.Price;
+                                        grandTotal += total;
+
+                                        var reservationDatePH = item.ReservationDate;
+                                        var reservationDateOnly = reservationDatePH.Date;
+
+
+                                        bool disableButtons = false;
+
+                                        if (reservationDateOnly < todayPH)
+                                        {
+                                            // Past reservation date → always disable
+                                            disableButtons = true;
+                                        }
+                                        else if (reservationDateOnly == todayPH && nowPH.TimeOfDay >= new TimeSpan(9, 0, 0))
+                                        {
+                                            // Today and already 9 AM or later → disable
+                                            disableButtons = true;
+                                        }
+
+                                        // Extra rule for breakfast cutoff: disable if after 3:30 PM on the day before
+                                        if (item.MenuType == "Breakfast")
+                                        {
+                                            var breakfastCutoff = reservationDateOnly.AddDays(-1).AddHours(15).AddMinutes(30);
+                                            if (nowPH >= breakfastCutoff)
+                                            {
+                                                disableButtons = true;
+                                            }
+                                        }
+
+                                        <tr>
+                                            <td>@item.ReferenceNumber</td>
+                                            <td>@reservationDateOnly.ToString("yyyy-MM-dd")</td>
+                                            <td>@item.MenuType</td>
+                                            <td>@item.Quantity</td>
+                                            <td>₱@item.Price.ToString("N2")</td>
+                                            <td>₱@total.ToString("N2")</td>
+                                            <td>
+                                                <button type="button"
+                                                        class="btn btn-sm btn-outline-primary me-1"
+                                                        title="Edit Order"
+                                                        data-bs-toggle="modal"
+                                                        data-bs-target="#editQuantityModal"
+                                                        data-qty="@item.Quantity"
+                                                        data-ref="@item.ReferenceNumber"
+                                                @(disableButtons ? "disabled style='pointer-events: none; opacity: 0.5;'" : "")>
+                                                    <i class="fa-solid fa-pen-to-square"></i> Edit
+                                                </button>
+
+                                                <button type="button"
+                                                        class="btn btn-sm btn-outline-danger cancel-order-btn"
+                                                        data-ref="@item.ReferenceNumber"
+                                                        title="Cancel Order"
+                                                @(disableButtons ? "disabled style='pointer-events: none; opacity: 0.5;'" : "")>
+                                                    <i class="fa-solid fa-circle-xmark"></i> Cancel
+                                                </button>
+                                            </td>
+                                        </tr>
+
+                                        count++;
+                                    }
+
+
+                                </tbody>
+                                <tfoot>
+                                    <tr class="fw-bold text-end">
+                                        <td colspan="5">Grand Total</td>
+                                        <td>₱@grandTotal.ToString("N2")</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Order History -->
+                    <div class="tab-pane fade" id="history" role="tabpanel">
+                        <h5 class="fw-bold mb-3">Order History</h5>
+                        <div class="table-responsive">
+                            <table class="table table-striped align-middle text-center">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Items</th>
+                                        <th>Total (₱)</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model
+                                    .Where(o => o.Status != "Pending" &&
+                                        o.ReservationDate.Date >= startDate &&
+                                        o.ReservationDate.Date <= endDate))
+                                    {
+                                        var total = item.Quantity * item.Price;
+                                        <tr>
+                                            <td>@TimeZoneInfo.ConvertTimeFromUtc(item.ReservationDate, TimeZoneInfo.FindSystemTimeZoneById("Asia/Manila")).ToString("yyyy-MM-dd")</td>
+                                            <td>@item.MenuType</td>
+                                            <td>₱@total.ToString("N2")</td>
+                                            <td>
+                                                @if (item.Status == "Completed")
+                                                {
+                                                    <span class="badge bg-success rounded-pill px-3">Completed</span>
+                                                }
+                                                else if (item.Status == "Cancelled")
+                                                {
+                                                    <span class="badge bg-secondary rounded-pill px-3">Cancelled</span>
+                                                }
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4 mt-5" >
+        <div class="col-lg-8 mx-auto">
+            <div class="card shadow-lg rounded-4 border-0" style="margin-bottom: 100px;">
+                <div class="flex-grow-1 p-4">
+
+                    <h3 class="py-4 text-center" style="font-size: 35px;"><strong>Your Reserved Meal</strong></h3>
+
+                    <div id="calendar" style="width: 100%; height: 600px; overflow-y: hidden;"></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@* Edit Modal *@
+<div class="modal fade" id="editQuantityModal" tabindex="-1" aria-labelledby="editQuantityLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-4 shadow-lg border-0">
+            <form method="post" asp-controller="Order" asp-action="UpdateQuantity">
+                <div class="modal-header bg-dark text-white rounded-top-4">
+                    <h5 class="modal-title fw-semibold" id="editQuantityLabel">
+                        <i class="fa-solid fa-pen-to-square me-2"></i> Edit Quantity
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body p-4">
+                    <input type="hidden" name="ReferenceNumber" id="referenceNumber" />
+
+                    <div class="mb-3">
+                        <label for="orderQuantity" class="form-label fw-semibold">Quantity</label>
+                        <input type="number"
+                               class="form-control form-control-lg shadow-sm rounded-3"
+                               name="Quantity"
+                               id="orderQuantity"
+                               min="1"
+                               required
+                               placeholder="Enter new quantity" />
+                    </div>
+                </div>
+
+                <div class="modal-footer bg-light border-top-0 rounded-bottom-4 px-4 py-3">
+                    <button type="submit" class="btn btn-success px-4 rounded-pill">
+                        <i class="fa-solid fa-check me-1"></i> Save
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary px-4 rounded-pill" data-bs-dismiss="modal">
+                        <i class="fa-solid fa-xmark me-1"></i> Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            //Edit order quantity
+            const status = '@TempData["UpdateStatus"]';
+            const message = '@TempData["UpdateMessage"]';
+
+            if (status === 'success') {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success',
+                    text: message || 'Quantity updated successfully!'
+                });
+            } else if (status === 'error') {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: message || 'Failed to update quantity.'
+                });
+            }
+
+            
+            document.querySelectorAll('[data-bs-target="#editQuantityModal"]').forEach(button => {
+                button.addEventListener('click', () => {
+                    const qty = button.getAttribute('data-qty');
+                    const ref = button.getAttribute('data-ref'); // Make sure button includes data-ref
+
+                    document.getElementById('orderQuantity').value = qty;
+                    document.getElementById('referenceNumber').value = ref; // Ensure hidden input exists
+                });
+            });
+
+
+            //Cancel order
+             // const appBasePath = appBasePath || '/'; // fallback if not set
+
+            document.querySelectorAll(".cancel-order-btn").forEach(btn => {
+                btn.addEventListener("click", function () {
+                    const referenceNumber = this.getAttribute("data-ref");
+
+                    Swal.fire({
+                        title: 'Cancel this order?',
+                        text: "This action cannot be undone.",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#d33',
+                        cancelButtonColor: '#6c757d',
+                        confirmButtonText: 'Yes, cancel it'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            const form = document.createElement("form");
+                            form.method = "POST";
+                            form.action = "../Order/CancelOrder";
+
+                            const input = document.createElement("input");
+                            input.type = "hidden";
+                            input.name = "ReferenceNumber";
+                            input.value = referenceNumber;
+                            form.appendChild(input);
+
+                            const token = document.querySelector('input[name="__RequestVerificationToken"]');
+                            if (token) {
+                                const tokenInput = document.createElement("input");
+                                tokenInput.type = "hidden";
+                                tokenInput.name = "__RequestVerificationToken";
+                                tokenInput.value = token.value;
+                                form.appendChild(tokenInput);
+                            }
+
+                            document.body.appendChild(form);
+                            form.submit();
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+}
+
+
