@@ -1,15 +1,18 @@
-﻿<!DOCTYPE html>
+﻿@using System.Security.Claims
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - JapaneseMealReservation</title>
+    <link rel="icon" type="image/png" href="~/images/icon.ico" />
+    <title>@ViewData["Title"] - Japanese Meal Reservation</title>
 
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.17/main.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/JapaneseMealReservation.styles.css" asp-append-version="true" />
     <link href="~/css/style.css" rel="stylesheet" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
 
 </head>
 
@@ -68,15 +71,32 @@
                                         <i class="fa-solid fa-cart-shopping"></i> My Orders
                                     </a>
                                 </li>
-
-                                @if (User.HasClaim("EmployeeType", "Expat"))
+                                @if (
+                               User.HasClaim(c => c.Type == "EmployeeType" && c.Value == "Expat") ||
+                               User.HasClaim(c => c.Type == "Position" && c.Value.Contains("Manager")) ||
+                               User.HasClaim(c => c.Type == ClaimTypes.Role && c.Value.Equals("Admin", StringComparison.OrdinalIgnoreCase))
+                               )
                                 {
-                                    <li class="nav-item">
-                                        <a class="nav-link link-warning text-light" asp-controller="Reservation" asp-action="ExpatAdvanceReservation">
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle link-warning text-light" href="#" id="expatDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                             <i class="fa-solid fa-border-all"></i> Expat Reservation
                                         </a>
+                                        <ul class="dropdown-menu bg-dark" aria-labelledby="expatDropdown">
+                                            <li>
+                                                <a class="dropdown-item text-light" asp-controller="Reservation" asp-action="ExpatBreakfastAdvanceReservation" asp-route-type="Breakfast">
+                                                    🍳 Breakfast
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item text-light" asp-controller="Reservation" asp-action="ExpatLunchAdvanceReservation" asp-route-type="Lunch">
+                                                    🍱 Lunch
+                                                </a>
+                                            </li>
+                                        </ul>
                                     </li>
                                 }
+
+
 
                             </ul>
 
@@ -96,9 +116,42 @@
                             <!-- Logout Button -->
                             @if (User.Identity?.IsAuthenticated == true)
                             {
-                                <form method="post" asp-controller="Home" asp-action="Logout" class="d-inline">
+                                @* <form method="post" asp-controller="Home" asp-action="Logout" class="d-inline">
                                     <button type="submit" class="btn btn-danger btn-sm" style="border-radius: 20px;">Logout</button>
-                                </form>
+                                </form> *@
+
+                                <!-- User Admin Dropdown -->
+                                <div class="dropdown d-inline-block">
+                                    <button class="btn btn-light dropdown-toggle d-flex align-items-center"
+                                            type="button" id="userAdminDropdown"
+                                            data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 50px;">
+                                        <i class="fa-solid fa-user-gear me-2"></i>
+                                    </button>
+
+                                    <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="userAdminDropdown">
+                                        <!-- Add User -->
+                                        @if (User.Identity.IsAuthenticated && User.IsInRole("ADMIN"))
+                                        {
+                                            <li class="px-3">
+                                                <button type="button" class="btn btn-primary btn-sm w-100" data-bs-toggle="modal" data-bs-target="#userAdminModal">
+                                                    <i class="fa-solid fa-user-plus me-2"></i> Add Admin
+                                                </button>
+                                            </li>
+
+                                            <!-- Divider -->
+                                            <li><hr class="dropdown-divider" /></li>
+                                        }
+                                       
+                                        <!-- Logout -->
+                                        <li>
+                                            <form method="post" asp-controller="Home" asp-action="Logout" class="px-3">
+                                                <button type="submit" class="btn btn-danger btn-sm w-100" style="">
+                                                    <i class="fa-solid fa-right-from-bracket me-1"></i> Logout
+                                                </button>
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </div>
                             }
                         </div>
                     </div>
@@ -108,13 +161,116 @@
     }
 
 
-
     <div class="">
         <main role="main" class="">
             @RenderBody()
         </main>
+
+      @*   <!-- Message Developer Button -->
+        <div class="fixed-bottom text-end p-2" style="z-index: 1050;">
+            <div class="d-inline-flex align-items-center bg-dark text-light rounded px-2 py-1 shadow" style="font-size: 0.8rem;">
+                <span class="me-2">Having trouble?</span>
+                <button type="button" class="btn btn-sm btn-warning" style="font-size: 0.8rem;" data-bs-toggle="modal" data-bs-target="#messageDeveloperModal">
+                    <i class="fa-solid fa-envelope me-1"></i> Contact Us
+                </button>
+            </div>
+        </div> *@
     </div>
 
+    @* <!-- Developer Message Modal -->
+    <div class="modal fade" id="messageDeveloperModal" tabindex="-1" aria-labelledby="messageDeveloperModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-md">
+            <div class="modal-content shadow-sm rounded-3">
+                <form id="developerMessageForm" method="post" enctype="multipart/form-data" asp-controller="PML" asp-action="SendDeveloperMessage">
+                    <div class="modal-header bg-primary text-white rounded-top">
+                        <h5 class="modal-title" id="messageDeveloperModalLabel">
+                            <i class="fa-solid fa-envelope me-2"></i> Contact Admin & Developer
+                        </h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body p-4">
+                        <div class="mb-3">
+                            <label for="subject" class="form-label fw-semibold">Subject</label>
+                            <input type="text" class="form-control rounded-2" id="subject" name="subject" placeholder="Enter concern subject" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="description" class="form-label fw-semibold">Error Description</label>
+                            <textarea class="form-control rounded-2" id="description" name="description" rows="4" placeholder="Describe the error or issue" required></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="screenshot" class="form-label fw-semibold">Upload Screenshot (optional)</label>
+                            <input type="file" class="form-control" id="screenshot" name="screenshot" accept="image/*">
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-secondary rounded-2" data-bs-dismiss="modal">
+                            <i class="fa-solid fa-xmark me-1"></i> Close
+                        </button>
+                        <button type="submit" class="btn btn-primary rounded-2">
+                            <i class="fa-solid fa-paper-plane me-1"></i> Send
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div> *@
+
+
+    
+    <!-- User Admin Modal -->
+    <div class="modal fade" id="userAdminModal" tabindex="-1" aria-labelledby="userAdminModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="userAdminModalLabel">Update User to Admin</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <!-- Search Bar -->
+                    <div class="input-group mb-3">
+                        <input type="text" id="searchUser" class="form-control" placeholder="Search user by name">
+                        <button class="btn btn-outline-secondary" type="button" id="btnSearch">Search</button>
+                    </div>
+
+                    <!-- Table -->
+                    <table class="table table-hover table-bordered">
+                        <thead class="table-light">
+                            <tr>
+                                <th>ADID</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="userTableBody">
+                            <!-- Rows will be inserted here dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* Make hover color dark gray with white text */
+        .dropdown-menu .dropdown-item:hover {
+            background-color: #5E5E5E !important; /* dark gray */
+            color: #fff !important;
+        }
+
+        /* Optional: subtle transition for smoother hover effect */
+        .dropdown-menu .dropdown-item {
+            transition: background-color 0.2s ease-in-out;
+        }
+    </style>
+   
 
     @section Scripts {
         <partial name="_ValidationScriptsPartial" />
@@ -143,6 +299,56 @@
         }
     </script>
 
+  @*   <!-- Optional JS to handle form submit for user error encountered -->
+    <script>
+
+        // Set default options for toastr
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": true,
+            "positionClass": "toast-bottom-right", // bottom-right
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        };
+
+        document.getElementById('developerMessageForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+
+            try {
+                const response = await fetch('/PML/SendDeveloperMessage', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    toastr.success('Message sent successfully!');
+                    var modal = bootstrap.Modal.getInstance(document.getElementById('messageDeveloperModal'));
+                    modal.hide();
+                    this.reset();
+                } else {
+                    toastr.error(result.message || 'Failed to send message.');
+                }
+            } catch (err) {
+                console.error(err);
+                toastr.error('Server error. Please try again later.');
+            }
+        });
+    </script> *@
+
     <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <!-- ⚙️ Google Translate Setup Script End -->
 
@@ -167,6 +373,8 @@
     <!-- xlsx.full -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
     <script src="~/js/custom.js"></script>
    
     @if (ViewData["Title"] as string == "Reservation")  
@@ -183,7 +391,7 @@
     @if (ViewData["Title"] as string == "Registration")
     {
         <script>
-                  window.appBaseUrl = '@Url.Content("~/")';
+            window.appBaseUrl = '@Url.Content("~/")';
         </script>
       
         <script src="~/js/registration.js"></script>
@@ -199,6 +407,122 @@
     {
         <script src="~/js/orderCalendar.js"></script>
     }
+
+    @* For Upadating of User Role -> Admin *@
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        document.getElementById("btnSearch").addEventListener("click", function () {
+            const query = document.getElementById("searchUser").value.trim();
+
+            // Validation for empty search
+            if (!query) {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Empty Search',
+                    text: 'Please enter a name or email to search.',
+                    confirmButtonColor: '#3085d6'
+                });
+                return;
+            }
+
+            fetch('@Url.Action("Search", "Admin")?query=' + encodeURIComponent(query))
+                .then(res => res.json())
+                .then(data => {
+                    const tbody = document.getElementById("userTableBody");
+                    tbody.innerHTML = "";
+
+                    if (data.length === 0) {
+                        Swal.fire({
+                            icon: 'info',
+                            title: 'No Results',
+                            text: 'No users found matching your search.',
+                            confirmButtonColor: '#3085d6'
+                        });
+                        return;
+                    }
+
+                    data.forEach(user => {
+                        tbody.innerHTML += `
+                            <tr>
+                                <td>${user.adid}</td>
+                                <td>${user.firstName}</td>
+                                <td>${user.lastName}</td>
+                                <td>${user.email}</td>
+                                <td>
+                                    <select id="roleSelect_${user.id}" class="form-select form-select-sm">
+                                        <option value="EMPLOYEE" ${user.role === "EMPLOYEE" ? "selected" : ""}>EMPLOYEE</option>
+                                        <option value="ADMIN" ${user.role === "ADMIN" ? "selected" : ""}>ADMIN</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-success" onclick="updateRole(${user.id})">Update</button>
+                                </td>
+                            </tr>`;
+                    });
+                })
+                .catch(() => {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Server Error',
+                        text: 'Something went wrong while fetching users.',
+                        confirmButtonColor: '#d33'
+                    });
+                });
+        });
+
+         function updateRole(userId) {
+            const selectedRole = document.getElementById(`roleSelect_${userId}`).value;
+
+            Swal.fire({
+                title: 'Are you sure?',
+                text: `This user will be updated to ${selectedRole}.`,
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#28a745',
+                cancelButtonColor: '#d33',
+                confirmButtonText: `Yes, make ${selectedRole}`
+            }).then((result) => {
+                if (!result.isConfirmed) return;
+
+                fetch('@Url.Action("UpdateRole", "Admin")/' + userId, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ role: selectedRole })
+                })
+                .then(res => {
+                    if (!res.ok) throw new Error("Failed to update");
+                    return res.json();
+                })
+                .then(() => {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success',
+                        text: `User updated to ${selectedRole} successfully!`,
+                        confirmButtonColor: '#28a745'
+                    }).then(() => {
+                        // Clear search box and results
+                        document.getElementById("searchUser").value = "";
+                        document.getElementById("userTableBody").innerHTML = "";
+                    });
+                })
+                .catch(() => {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'Something went wrong while updating user.',
+                        confirmButtonColor: '#d33'
+                    });
+                });
+            });
+        }
+
+
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     
     @await RenderSectionAsync("Scripts", required: false)
 

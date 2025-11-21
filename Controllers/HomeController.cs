@@ -3,6 +3,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Security.Claims;
 using DocumentFormat.OpenXml.InkML;
+using DocumentFormat.OpenXml.Spreadsheet;
 using JapaneseMealReservation.AppData;
 using JapaneseMealReservation.Models;
 using JapaneseMealReservation.ViewModels;
@@ -13,6 +14,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using OfficeOpenXml;
 
 namespace JapaneseMealReservation.Controllers
 {
@@ -32,72 +34,92 @@ namespace JapaneseMealReservation.Controllers
 
         public IActionResult Index()
         {
-            return View();
-        }
+            var today = DateTime.UtcNow.Date;
+            var startOfWeek = today.AddDays(-(int)today.DayOfWeek + (int)DayOfWeek.Monday);
+            var endOfWeek = startOfWeek.AddDays(6);
 
-       
+            var user = dbContext.Users.FirstOrDefault(); // adjust to your current login/session logic
 
-        [AllowAnonymous]
-        public IActionResult Login()
-        {
-            return View();
-        }
+            var weeklyMenus = dbContext.Menus
+                .Where(m => m.AvailabilityDate >= startOfWeek && m.AvailabilityDate <= endOfWeek && m.IsAvailable)
+                .OrderBy(m => m.AvailabilityDate)
+                .ToList();
 
-        [HttpPost]
-        [AllowAnonymous]
-        public async Task<IActionResult> Login(Login model)
-        {
-            // Check if the submitted form model is valid
-            if (!ModelState.IsValid)
+            var vm = new HomeViewModel
             {
-                return View(model); // Return the same view with validation messages
-            }
-
-            // Attempt to find a user in the database that matches the username and password
-            var user = dbContext.Users
-                .FirstOrDefault(user => user.EmployeeId == model.EmployeeId && user.Password == model.Password);
-
-            // If no user found, display an error message and return to the login view
-            if (user == null)
-            {
-                ViewBag.ErrorMessage = "Invalid username or password.";
-                return View(model);
-            }
-
-            // Create a list of claims (user identity data), here storing the user's first name
-            var claims = new List<Claim>
-            {
-                new Claim("EmployeeId", user.EmployeeId ?? string.Empty),  // custom claim type string
-                new Claim(ClaimTypes.GivenName, user.FirstName ?? ""),
-                new Claim(ClaimTypes.Surname, user.LastName ?? ""),
-                new Claim(ClaimTypes.Email, user.Email ?? ""),
-                new Claim("Section", user.Section ?? ""),  // custom claim type string
-                new Claim(ClaimTypes.Role, user.UserRole ?? ""),
-                new Claim("EmployeeType", user.EmployeeType ?? "")
+                User = user,
+                WeeklyMenus = weeklyMenus
             };
 
-            // Create a ClaimsIdentity using the claims and specify the authentication scheme
-            var identity = new ClaimsIdentity(claims, "MyCookieAuth");
-
-            // Create a ClaimsPrincipal that holds the identity
-            var principal = new ClaimsPrincipal(identity);
-
-            // Sign in the user by issuing the authentication cookie
-            await HttpContext.SignInAsync("MyCookieAuth", principal);
-
-            // Redirect the authenticated user to the welcome page
-            return RedirectToAction("Index", "Home");
+            return View(vm);
         }
 
-        //[HttpGet]
-        //[AllowAnonymous]
-        //public IActionResult IportalConfirmationForm(string? ip = null)
-        //{
-        //    // Use the passed IP or fallback to server-side IP
-        //    string userIP = GetClientIp(HttpContext);
+        //UNCOMMNET THE LOGIN ACTION IF YOU WANT TO TEST IN DEVELOPMENT MODE
 
-        //    return View(model: userIP);
+        //[AllowAnonymous]
+        //public IActionResult Login()
+        //{
+        //    return View();
         //}
+
+        //[HttpPost]
+        //[AllowAnonymous]
+        //public async Task<IActionResult> Login(Login model)
+        //{
+        //    // Check if the submitted form model is valid
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return View(model); // Return the same view with validation messages
+        //    }
+
+        //    // Attempt to find a user in the database that matches the username and password
+        //    var user = dbContext.Users
+        //        .FirstOrDefault(user => user.EmployeeId == model.EmployeeId && user.Password == model.Password);
+
+        //    // If no user found, display an error message and return to the login view
+        //    if (user == null)
+        //    {
+        //        ViewBag.ErrorMessage = "Invalid username or password.";
+        //        return View(model);
+        //    }
+
+        //    // Create a list of claims (user identity data), here storing the user's first name
+        //    var claims = new List<Claim>
+        //    {
+        //        new Claim("EmployeeId", user.EmployeeId ?? string.Empty),  // custom claim type string
+        //        new Claim(ClaimTypes.GivenName, user.FirstName ?? ""),
+        //        new Claim(ClaimTypes.Surname, user.LastName ?? ""),
+        //        new Claim(ClaimTypes.Email, user.Email ?? ""),
+        //        new Claim("Section", user.Section ?? ""),  // custom claim type string
+        //        new Claim(ClaimTypes.Role, user.UserRole ?? ""),
+        //        new Claim("EmployeeType", user.EmployeeType ?? ""),
+        //        new Claim("Position", user.Position?? "")
+        //    };
+
+        //    // Create a ClaimsIdentity using the claims and specify the authentication scheme
+        //    var identity = new ClaimsIdentity(claims, "MyCookieAuth");
+
+        //    // Create a ClaimsPrincipal that holds the identity
+        //    var principal = new ClaimsPrincipal(identity);
+
+        //    // Sign in the user by issuing the authentication cookie
+        //    await HttpContext.SignInAsync("MyCookieAuth", principal);
+
+        //    // Redirect the authenticated user to the welcome page
+        //    return RedirectToAction("Index", "Home");
+        //}
+
+
+
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult IportalConfirmationForm(string? ip = null)
+        {
+            // Use the passed IP or fallback to server-side IP
+            string userIP = GetClientIp(HttpContext);
+
+            return View(model: userIP);
+        }
 
         //public string GetClientIp(HttpContext context)
         //{
@@ -119,7 +141,7 @@ namespace JapaneseMealReservation.Controllers
         //        // Convert ::1 to 127.0.0.1 manually
         //        if (remoteIp.ToString() == "::1")
         //        {
-        //            return remoteIp.ToString();
+        //            return "127.0.0.1"; // Convert IPv6 loopback to IPv4
         //        }
 
         //        return remoteIp.ToString();
@@ -129,74 +151,132 @@ namespace JapaneseMealReservation.Controllers
         //}
 
 
-        //[HttpGet]
-        //[AllowAnonymous]
-        //public async Task<IActionResult> Login()
-        //{
-        //    string localIP = GetClientIp(HttpContext); // use helper method
-        //    if (IPAddress.TryParse(localIP, out var ip))
-        //    {
-        //        if (ip.IsIPv4MappedToIPv6)
-        //            localIP = ip.MapToIPv4().ToString(); // Force to IPv4 format
-        //    }
+        public string GetClientIp(HttpContext context)
+        {
+            // 1️⃣ Check for X-Forwarded-For header (for proxies/load balancers)
+            var forwardedHeader = context.Request.Headers["X-Forwarded-For"].FirstOrDefault();
+            if (!string.IsNullOrWhiteSpace(forwardedHeader))
+            {
+                return forwardedHeader.Split(',')[0].Trim();
+            }
 
-        //    //Console.WriteLine($"Raw Remote IP: {HttpContext.Connection.RemoteIpAddress}");
-        //    //Console.WriteLine($"Client IP: {GetClientIp(HttpContext)}");
+            // 2️⃣ Get the remote IP from the connection
+            var remoteIp = context.Connection.RemoteIpAddress;
 
-        //    long systemId = 70; // Change if needed
+            if (remoteIp != null)
+            {
+                // Convert IPv6 loopback (::1) to LAN IP for local debugging
+                if (remoteIp.IsIPv6LinkLocal || remoteIp.ToString() == "::1" || remoteIp.ToString() == "127.0.0.1")
+                {
+                    // Try to get actual LAN IP of this machine
+                    string lanIp = GetLocalLanIp();
+                    return lanIp ?? "127.0.0.1"; // fallback to localhost
+                }
 
-        //    //Console.WriteLine($"Local IP: {localIP}");
+                if (remoteIp.IsIPv4MappedToIPv6)
+                {
+                    return remoteIp.MapToIPv4().ToString();
+                }
 
-        //    // ✅ Get the latest login request for the IP
-        //    var loginEntry = await sqlDbContext.Tbl_LOGIN_Request
-        //        .Where(x => x.IpAddress == localIP && x.SystemId == systemId)
-        //        .OrderByDescending(x => x.Id)
-        //        .FirstOrDefaultAsync();
+                return remoteIp.ToString();
+            }
 
-        //    // Condition 1: No login request OR
-        //    // Condition 2: Request found but not active or missing EmployeeId
-        //    if (loginEntry == null ||
-        //        string.IsNullOrWhiteSpace(loginEntry.EmployeeId) ||
-        //        !loginEntry.Status.Equals("ACTIVE", StringComparison.OrdinalIgnoreCase))
-        //    {
-        //        // Show the IportalConfirmationForm if not using WinForms app
-        //        //return RedirectToAction("IportalConfirmationForm", "Home");
-        //        return View();
-        //    }
+            return "IP Not Found";
+        }
 
-        //    // Lookup the Employee in your main Users table
-        //    var user = await dbContext.Users
-        //        .FirstOrDefaultAsync(x => x.EmployeeId == loginEntry.EmployeeId);
+        // Helper to get LAN IP of current machine
+        private string? GetLocalLanIp()
+        {
+            foreach (var ni in System.Net.NetworkInformation.NetworkInterface.GetAllNetworkInterfaces())
+            {
+                if (ni.OperationalStatus != System.Net.NetworkInformation.OperationalStatus.Up)
+                    continue;
 
-        //    if (user == null)
-        //    {
-        //        TempData["ShowRegisterAlert"] = true;
-        //        return RedirectToAction("Register", "Home");
-        //    }
+                var ipProps = ni.GetIPProperties();
+                foreach (var ip in ipProps.UnicastAddresses)
+                {
+                    if (ip.Address.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork &&
+                        !System.Net.IPAddress.IsLoopback(ip.Address))
+                    {
+                        return ip.Address.ToString();
+                    }
+                }
+            }
+            return null;
+        }
 
-        //    // Sign in logic
-        //    var claims = new List<Claim>
-        //    {
-        //        new Claim("EmployeeId", user.EmployeeId ?? ""),
-        //        new Claim(ClaimTypes.GivenName, user.FirstName ?? ""),
-        //        new Claim(ClaimTypes.Surname, user.LastName ?? ""),
-        //        new Claim(ClaimTypes.Email, user.Email ?? ""),
-        //        new Claim("Section", user.Section ?? ""),
-        //        new Claim(ClaimTypes.Role, user.UserRole ?? ""),
-        //        new Claim("EmployeeType", user.EmployeeType ?? "")
-        //    };
 
-        //    Console.WriteLine("Redirecting to IportalConfirmationForm due to: " +
-        //    (loginEntry == null ? "No login entry" :
-        //    string.IsNullOrWhiteSpace(loginEntry.EmployeeId) ? "Missing EmployeeId" :
-        //    "Inactive status"));
+        [HttpGet]
+        [AllowAnonymous]
+        public async Task<IActionResult> Login()
+        {
+            string localIP = GetClientIp(HttpContext); // use helper method
+            if (IPAddress.TryParse(localIP, out var ip))
+            {
+                if (ip.IsIPv4MappedToIPv6)
+                    localIP = ip.MapToIPv4().ToString(); // Force to IPv4 format
+            }
 
-        //    var identity = new ClaimsIdentity(claims, "MyCookieAuth");
-        //    var principal = new ClaimsPrincipal(identity);
-        //    await HttpContext.SignInAsync("MyCookieAuth", principal);
+            Console.WriteLine($"Raw Remote IP: {HttpContext.Connection.RemoteIpAddress}");
+            Console.WriteLine($"Client IP: {GetClientIp(HttpContext)}");
 
-        //    return RedirectToAction("Index", "Home");
-        //}
+            long systemId = 70; // Change if needed
+
+            Console.WriteLine($"Local IP: {localIP}");
+
+            //✅ Get the latest login request for the IP
+            var loginEntry = await sqlDbContext.Tbl_LOGIN_Request
+                .Where(x => x.IpAddress == localIP && x.SystemId == systemId)
+                .OrderByDescending(x => x.Id)
+                .FirstOrDefaultAsync();
+
+            //Condition 1: No login request OR
+            //Condition 2: Request found but not active or missing EmployeeId
+            if (loginEntry == null ||
+                string.IsNullOrWhiteSpace(loginEntry.EmployeeId) ||
+                !loginEntry.Status.Equals("ACTIVE", StringComparison.OrdinalIgnoreCase))
+            {
+                // Show the IportalConfirmationForm if not using WinForms app
+                return RedirectToAction("IportalConfirmationForm", "Home");
+                return View();
+            }
+
+            //Lookup the Employee in your main Users table
+            var user = await dbContext.Users
+                .FirstOrDefaultAsync(x => x.EmployeeId == loginEntry.EmployeeId);
+
+            if (user == null)
+            {
+                TempData["ShowRegisterAlert"] = true;
+                return RedirectToAction("Register", "Home");
+            }
+
+            //Sign in logic
+            var claims = new List<Claim>
+           {
+                new Claim("EmployeeId", user.EmployeeId ?? ""),
+                new Claim(ClaimTypes.GivenName, user.FirstName ?? ""),
+                new Claim(ClaimTypes.Surname, user.LastName ?? ""),
+                new Claim(ClaimTypes.Email, user.Email ?? ""),
+                new Claim("Section", user.Section ?? ""),
+                new Claim(ClaimTypes.Role, user.UserRole ?? ""),
+                new Claim("EmployeeType", user.EmployeeType ?? ""),
+                    new Claim("Position", user.Position?? "")
+           };
+
+            Console.WriteLine("Redirecting to IportalConfirmationForm due to: " +
+            (loginEntry == null ? "No login entry" :
+            string.IsNullOrWhiteSpace(loginEntry.EmployeeId) ? "Missing EmployeeId" :
+            "Inactive status"));
+
+            var identity = new ClaimsIdentity(claims, "MyCookieAuth");
+            var principal = new ClaimsPrincipal(identity);
+            await HttpContext.SignInAsync("MyCookieAuth", principal);
+
+            return RedirectToAction("Index", "Home");
+        }
+
+
 
         [HttpPost]
         public async Task<IActionResult> Logout()
@@ -205,11 +285,15 @@ namespace JapaneseMealReservation.Controllers
             return RedirectToAction("Login", "Home");
         }
 
+
+
         [AllowAnonymous]
         public IActionResult Register()
         {
             return View();
         }
+
+
 
         //[AllowAnonymous]
         //[HttpPost]
@@ -250,13 +334,23 @@ namespace JapaneseMealReservation.Controllers
                 return View(model);
             }
 
-            // Determine role and employee type (used in PostgreSQL save)
+            // Check if EmployeeId already exists
+            var existingUser = dbContext.Users
+                .FirstOrDefault(u => u.EmployeeId.Trim().ToUpper() == model.EmployeeId.Trim().ToUpper());
+
+            if (existingUser != null)
+            {
+                // Pass message to view using TempData
+                TempData["RegisterError"] = "Employee ID already exists!";
+                return RedirectToAction("Register");
+            }
+
+            // Continue with normal registration
             model.UserRole = model.Section?.ToUpper() == "GA" ? "ADMIN" : "EMPLOYEE";
             model.EmployeeType = model.EmployeeId?.Contains("BIPH-JP", StringComparison.OrdinalIgnoreCase) == true
                 ? "Expat"
                 : "Local";
 
-            // Exclude Position and ADID from PostgreSQL insert by creating a stripped model
             var pgUser = new User
             {
                 EmployeeId = model.EmployeeId,
@@ -267,15 +361,13 @@ namespace JapaneseMealReservation.Controllers
                 Password = model.Password,
                 CreatedDate = DateTime.UtcNow,
                 UserRole = model.UserRole,
-                EmployeeType = model.EmployeeType
-                // Do not assign Position and ADID here – they are not in the PostgreSQL 'users' table
+                EmployeeType = model.EmployeeType,
+                Position = model.Position
             };
 
-            // Save to PostgreSQL
             dbContext.Users.Add(pgUser);
             dbContext.SaveChanges();
 
-            // Save approver data to SQL Server (these fields may exist in SQL Server only)
             var newApprover = new CasSystemApproverList
             {
                 SystemID = "70",
@@ -292,10 +384,9 @@ namespace JapaneseMealReservation.Controllers
             sqlDbContext.Tbl_System_Approver_list.Add(newApprover);
             sqlDbContext.SaveChanges();
 
-            TempData["RegisterSuccess"] = true;
+            TempData["RegisterSuccess"] = "User registered successfully!";
             return RedirectToAction("Register");
         }
-
 
 
         //[AllowAnonymous]
@@ -322,6 +413,7 @@ namespace JapaneseMealReservation.Controllers
         {
             return View();
         }
+
 
         [AllowAnonymous]
         [HttpPost]
@@ -367,5 +459,6 @@ namespace JapaneseMealReservation.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
+      
     }
 }

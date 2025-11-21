@@ -1,0 +1,60 @@
+﻿
+@{
+	ViewData["Title"] = "Add New Admin";
+}
+
+@model JapaneseMealReservation.Models.User
+
+<div class="container min-vh-100 d-flex justify-content-center align-items-center">
+
+    <div class="login-card">
+        <h4><i class="fa-solid fa-user-plus"></i></h4>
+        <p class="text-center"><small>Create an account.</small></p>
+        <form id="registerForm" method="post">
+            <div class="form-floating mb-3">
+                <input asp-for="EmployeeId" class="form-control" required oninput="this.value = this.value.toUpperCase();" />
+                <label asp-for="EmployeeId"></label>
+                <span asp-validation-for="EmployeeId" class="text-danger"></span>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input asp-for="FirstName" class="form-control" readonly />
+                <label asp-for="FirstName"></label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input asp-for="LastName" class="form-control" readonly />
+                <label asp-for="LastName"></label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input asp-for="Email" class="form-control" readonly />
+                <label asp-for="Email"></label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input asp-for="Section" class="form-control" readonly />
+                <label asp-for="Section"></label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input asp-for="Password" type="password" id="password" class="form-control" required />
+                <label asp-for="Password"></label>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="confirmPassword" name="ConfirmPassword" required />
+                <label for="confirmPassword">Confirm Password</label>
+                <span class="text-danger" id="confirmPasswordError"></span>
+            </div>
+
+            <input asp-for="Position" id="position" type="hidden" />
+            <input asp-for="ADID" id="adid" type="hidden" />
+
+            <button type="submit" class="btn btn-dark w-100">Register</button>
+        </form>
+
+    </div>
+
+</div>

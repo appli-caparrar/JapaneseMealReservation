@@ -54,11 +54,11 @@ namespace JapaneseMealReservation.Models
         [Display(Name = "User Role")]
         public string? UserRole { get; set; } //Newly added
         public string? EmployeeType { get; set; } //Newly added Expat or Local
-        [NotMapped]
+        
         public string? Position { get; set; }
+
         [NotMapped]
         public string? ADID { get; set; }
 
-   
     }
 }

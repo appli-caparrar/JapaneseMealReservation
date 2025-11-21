@@ -5,6 +5,15 @@ using Microsoft.EntityFrameworkCore;
 using JapaneseMealReservation.Services;
 using DocumentFormat.OpenXml.InkML;
 using Microsoft.AspNetCore.Authorization;
+using DocumentFormat.OpenXml.Drawing.Charts;
+using JapaneseMealReservation.Migrations;
+using Order = JapaneseMealReservation.Models.Order;
+using JapaneseMealReservation.ViewModels;
+using System.Text;
+using DinkToPdf;
+using Orientation = DinkToPdf.Orientation;
+using DinkToPdf.Contracts;
+using Rotativa.AspNetCore;
 
 namespace JapaneseMealReservation.Controllers
 {
@@ -14,11 +23,13 @@ namespace JapaneseMealReservation.Controllers
         private readonly MailService mailService;
         private readonly ILogger<OrderController> logger;
 
+
         public OrderController(AppDbContext dbContext, MailService mailService, ILogger<OrderController> logger)
         {
             this.dbContext = dbContext;
             this.mailService = mailService;
             this.logger = logger;
+      
         }
 
         public IActionResult Orders()
@@ -151,7 +162,7 @@ namespace JapaneseMealReservation.Controllers
                                                 </tr>
                                                 <tr style='background-color: #f5f5f5;'>
                                                     <td style='padding: 8px 0;'><strong>Menu:</strong></td>
-                                                    <td style='padding: 8px 0;'>{order.OrderName ?? "N/A"}</td>
+                                                    <td style='padding: 8px 0;'>{order.MenuType}: {order.OrderName ?? "N/A"}</td>
                                                 </tr>
                                                 <tr>
                                                     <td style='padding: 8px 0;'><strong>Quantity:</strong></td>
@@ -296,6 +307,28 @@ namespace JapaneseMealReservation.Controllers
             return View(orders);
         }
 
+        public async Task<IActionResult> DailyOrderSummary()
+        {
+            var today = DateTime.Today;
+            var tomorrow = today.AddDays(1);
+
+            var orders = await dbContext.OrderSummaryView
+                .Where(o => o.ReservationDate >= today && o.ReservationDate < tomorrow)
+                .OrderByDescending(o => o.ReservationDate)
+                .ToListAsync();
+
+            var model = new DailyOrderSummaryViewModel
+            {
+                BentoOrders = orders.Where(o => o.MenuType == "Bento").ToList(),
+                BreakfastOrders = orders.Where(o => o.MenuType == "Breakfast").ToList(),
+                CurryOrders = orders.Where(o => o.MenuType == "Curry").ToList(),
+                MakiOrders = orders.Where(o => o.MenuType == "Maki").ToList(),
+                NoodlesOrders = orders.Where(o => o.MenuType == "Noodles").ToList()
+            };
+
+            return View(model);
+        }
+
 
 
         //public IActionResult OrderSummary()
@@ -325,76 +358,104 @@ namespace JapaneseMealReservation.Controllers
         [HttpGet]
         public async Task<IActionResult> OrderSummary(Guid? token)
         {
-            // If token is present, validate and skip login
+            string? employeeId;
+
             if (token.HasValue)
             {
                 var access = await dbContext.AccessTokens
                     .FirstOrDefaultAsync(a => a.Token == token && a.ExpiresAt > DateTime.UtcNow);
 
-                if (access != null)
-                {
-                    var employeeId = access.EmployeeId;
-
-                    var phTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Asia/Manila");
-                    var nowPH = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, phTimeZone);
-                    var todayPHStartUtc = TimeZoneInfo.ConvertTimeToUtc(
-                        new DateTime(nowPH.Year, nowPH.Month, nowPH.Day, 0, 0, 0), phTimeZone);
-
-                    var orderSummaries = dbContext.OrderSummaryView
-                        .Where(x => x.EmployeeId == employeeId &&
-                                    x.ReservationDate >= todayPHStartUtc)
-                        .ToList();
-
-                    return View(orderSummaries);
-                }
-
-                // Show token expired/invalid message
-                return View("OrderSummaryTokenExpired"); 
+                if (access == null) return View("OrderSummaryTokenExpired");
+                employeeId = access.EmployeeId;
+            }
+            else
+            {
+                employeeId = User.FindFirst("EmployeeId")?.Value;
+                if (string.IsNullOrEmpty(employeeId)) return Unauthorized();
             }
 
-            // Otherwise, use authenticated session
-            var employeeIdFromLogin = User.FindFirst("EmployeeId")?.Value;
-
-            if (string.IsNullOrEmpty(employeeIdFromLogin))
-                return Unauthorized();
+            var phTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Asia/Manila");
+            var nowPH = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, phTimeZone);
+            var todayPHStartUtc = TimeZoneInfo.ConvertTimeToUtc(new DateTime(nowPH.Year, nowPH.Month, nowPH.Day), phTimeZone);
 
             var orders = await dbContext.OrderSummaryView
-                .Where(x => x.EmployeeId == employeeIdFromLogin)
+                .Where(x => x.EmployeeId == employeeId && x.ReservationDate >= todayPHStartUtc)
+                .OrderBy(x => x.ReservationDate)
+                .Select(x => new OrderSummaryViewModel
+                {
+                    ReferenceNumber = x.ReferenceNumber,
+                    EmployeeId = x.EmployeeId,
+                    FirstName = x.FirstName,
+                    LastName = x.LastName,
+                    Section = x.Section,
+                    email = x.email,
+                    CustomerType = x.CustomerType,
+                    ReservationDate = x.ReservationDate,
+                    MealTime = x.MealTime,
+                    MenuType = x.MenuType,
+                    MenuName = string.IsNullOrWhiteSpace(x.MenuName) ? "No specific menu uploaded yet" : x.MenuName,
+                    Status = x.Status,
+                    Quantity = x.Quantity,
+                    Price = x.Price ?? 0
+                })
                 .ToListAsync();
 
             return View(orders);
         }
 
 
-
-
         [HttpGet]
         public JsonResult GetOrdersForCalendar()
         {
             var employeeId = User.FindFirst("EmployeeId")?.Value;
-
             if (string.IsNullOrEmpty(employeeId))
-            {
                 return Json(new { success = false, message = "Unauthorized access." });
-            }
 
             var phTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Asia/Manila");
 
-            var events = dbContext.OrderSummaryView
+            // 1Get from DB first (simple projection only)
+            var orders = dbContext.OrderSummaryView
                 .Where(o => o.EmployeeId == employeeId)
-                .ToList() // Fetch first, then convert to local time
                 .Select(o => new
                 {
-                    title = o.MenuType + " x" + o.Quantity,
-                    start = TimeZoneInfo.ConvertTimeFromUtc(o.ReservationDate, phTimeZone).ToString("yyyy-MM-dd")
+                    o.MenuType,
+                    o.Status,
+                    o.Quantity,
+                    o.ReservationDate
                 })
-                .ToList();
+                .ToList(); // materialize results here before using switch
+
+            // Now process in memory (safe for switch / logic)
+            var events = orders.Select(o => new
+            {
+                title = $"{o.MenuType} ×{o.Quantity} " +
+                (o.Status == "Completed" ? "(Completed)" :
+                 o.Status == "Pending" ? "(Pending)" :
+                 o.Status == "Cancelled" ? "(Cancelled)" : ""),
+
+                start = TimeZoneInfo.ConvertTimeFromUtc(o.ReservationDate, phTimeZone)
+                .ToString("yyyy-MM-dd"),
+
+                color = o.Status switch
+                {
+                    "Cancelled" => "gray",
+                    "Completed" => "green",
+                    "Pending" => "#facc15", // yellow
+                    _ => "#6b7280"
+                }
+            }).ToList();
+
+
 
             return Json(events);
         }
 
+
+
+
+
         [HttpPost]
-        public IActionResult UpdateQuantity(string ReferenceNumber, int Quantity)
+        public IActionResult UpdateQuantity(string ReferenceNumber, int Quantity, string OrderName, string MenuType)
         {
             var source = dbContext.CombineOrders
                 .Where(x => x.ReferenceNumber == ReferenceNumber)
@@ -414,6 +475,8 @@ namespace JapaneseMealReservation.Controllers
                 if (order != null)
                 {
                     order.Quantity = Quantity;
+                    order.OrderName = OrderName;
+                    order.MenuType = MenuType;
                 }
             }
             else if (source == "AdvanceOrder")
@@ -422,14 +485,18 @@ namespace JapaneseMealReservation.Controllers
                 if (advOrder != null)
                 {
                     advOrder.Quantity = Quantity;
+                    advOrder.MenuName = OrderName;
+                    advOrder.MenuType = MenuType;
                 }
             }
 
             dbContext.SaveChanges();
+
             TempData["UpdateStatus"] = "success";
-            TempData["UpdateMessage"] = "Quantity updated successfully.";
+            TempData["UpdateMessage"] = "Order updated successfully.";
             return RedirectToAction("OrderSummary");
         }
+
 
         //[HttpPost]
         //public IActionResult CancelOrder(string ReferenceNumber)
@@ -487,6 +554,7 @@ namespace JapaneseMealReservation.Controllers
 
             string email = null;
             string name = null;
+            string orderDetails = null;
             DateTime? date = null;
             TimeSpan? time = null;
 
@@ -504,6 +572,7 @@ namespace JapaneseMealReservation.Controllers
                         name = order.FirstName;
                         date = order.ReservationDate;
                         time = order.MealTime;
+                        orderDetails = $"{order.MenuType}: {order.OrderName}";
                     }
                 }
             }
@@ -521,6 +590,7 @@ namespace JapaneseMealReservation.Controllers
                         email = user.Email;
                         name = advOrder.FirstName;
                         date = advOrder.ReservationDate;
+                        orderDetails = $"{advOrder.MenuType}: {advOrder.MenuName}";
                         if (!string.IsNullOrWhiteSpace(advOrder.MealTime))
                         {
                             if (TimeSpan.TryParse(advOrder.MealTime, out var parsedTime))
@@ -547,7 +617,7 @@ namespace JapaneseMealReservation.Controllers
                                     <td style='background-color: #c0392b; padding: 20px; color: #ffffff; text-align: center;'>
                                         <h2 style='margin: 0;'>Order Cancelled</h2>
                                     </td>
-                                </tr>
+                                </tr> 
                                 <tr>
                                     <td style='padding: 30px;'>
                                         <h3 style='color: #333;'>Hi {name},</h3>
@@ -556,6 +626,10 @@ namespace JapaneseMealReservation.Controllers
                                             <tr>
                                                 <td><strong>Reference #:</strong></td>
                                                 <td style='padding: 8px 0;'>{ReferenceNumber}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Order:</strong></td>
+                                                <td style='padding: 8px 0;'>{orderDetails}</td>
                                             </tr>
                                             <tr style='background-color: #f5f5f5;'>
                                                 <td style='padding: 8px 0;'><strong>Reservation Date:</strong></td>
@@ -596,7 +670,7 @@ namespace JapaneseMealReservation.Controllers
 
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public IActionResult CompleteTodayBentoOrders(string MenuType)
         {
             var phTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Asia/Manila");
@@ -641,7 +715,7 @@ namespace JapaneseMealReservation.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public IActionResult CompleteTodayCurryOrders(string MenuType)
         {
             var phTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Asia/Manila");
@@ -686,7 +760,7 @@ namespace JapaneseMealReservation.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public IActionResult CompleteTodayMakiOrders(string MenuType)
         {
             var phTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Asia/Manila");
@@ -731,7 +805,7 @@ namespace JapaneseMealReservation.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+  
         public IActionResult CompleteTodayNoodlesOrders(string MenuType)
         {
             var phTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Asia/Manila");
@@ -776,7 +850,7 @@ namespace JapaneseMealReservation.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public IActionResult CompleteTodayBreakfastOrders(string MenuType)
         {
             var phTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Asia/Manila");
@@ -820,6 +894,334 @@ namespace JapaneseMealReservation.Controllers
             return Json(new { success = true, message = $"All {MenuType} orders marked as Completed." });
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetMenus(DateTime reservationDate, string menuType)
+        {
+            var menus = await dbContext.Menus
+                .Where(m => m.MenuType == menuType && m.AvailabilityDate.HasValue)
+                .ToListAsync();  // bring them into memory
+
+            var result = menus
+                .Where(m => m.AvailabilityDate.Value.Date == reservationDate.Date)
+                .Select(m => new {
+                    m.Id,
+                    m.MenuType,
+                    m.Name
+                })
+                .ToList();
+
+            return Json(result);
+        }
+
+        // Download Local Orders
+        [HttpGet]
+        public IActionResult DownloadTodayLocalOrders()
+        {
+            var phTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Asia/Manila");
+            var today = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, phTimeZone).Date;
+
+            var orders = dbContext.OrderSummaryView
+                .Where(o => o.ReservationDate.Date == today &&   // no .HasValue, no .Value
+                            o.CustomerType.ToLower() == "local")
+                .Select(o => new
+                {
+                    o.MenuType,
+                    o.ReferenceNumber,
+                    o.EmployeeId,
+                    o.FirstName,
+                    o.LastName,
+                    o.Section,
+                    o.Quantity,
+                    o.Status
+                })
+                .ToList();
+
+            var sb = new StringBuilder();
+            sb.AppendLine("MenuType,ReferenceNumber,EmployeeId,FirstName,LastName,Section,Quantity,Status");
+
+            foreach (var o in orders)
+            {
+                sb.AppendLine($"{o.MenuType},{o.ReferenceNumber},{o.EmployeeId},{o.FirstName},{o.LastName},{o.Section},{o.Quantity},{o.Status}");
+            }
+
+            var fileName = $"LocalOrders_{today:yyyyMMdd}.csv";
+            return File(Encoding.UTF8.GetBytes(sb.ToString()), "text/csv", fileName);
+        }
+
+
+        // Download Expat Orders
+        [HttpGet]
+        public IActionResult DownloadTodayExpatOrders()
+        {
+            var phTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Asia/Manila");
+            var today = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, phTimeZone).Date;
+
+            var orders = dbContext.OrderSummaryView
+                .Where(o => o.ReservationDate.Date == today &&
+                            o.CustomerType.ToLower() == "expat")
+                .Select(o => new
+                {
+                    o.MenuType,
+                    o.ReferenceNumber,
+                    o.EmployeeId,
+                    o.FirstName,
+                    o.LastName,
+                    o.Section,
+                    o.Quantity,
+                    o.Status
+                })
+                .ToList();
+
+            var sb = new StringBuilder();
+            sb.AppendLine("MenuType,ReferenceNumber,EmployeeId,FirstName,LastName,Section,Quantity,Status");
+
+            foreach (var o in orders)
+            {
+                sb.AppendLine($"{o.MenuType},{o.ReferenceNumber},{o.EmployeeId},{o.FirstName},{o.LastName},{o.Section},{o.Quantity},{o.Status}");
+            }
+
+            var fileName = $"ExpatOrders_{today:yyyyMMdd}.csv";
+            return File(Encoding.UTF8.GetBytes(sb.ToString()), "text/csv", fileName);
+        }
+
+
+        public async Task<IActionResult> MakiOrdersPdf()
+        {
+            var today = DateTime.Today;
+            var tomorrow = today.AddDays(1);
+
+            var orders = await dbContext.OrderSummaryView
+                .Where(o => o.MenuType.Trim().ToLower() == "maki"
+                            && o.ReservationDate >= today
+                            && o.ReservationDate < tomorrow)
+                .OrderBy(o => o.CustomerType) // Local first, then Expat
+                .ThenBy(o => o.ReservationDate)
+                .ToListAsync();
+
+            return new ViewAsPdf("MakiOrdersPdf", orders)
+            {
+                FileName = $"Maki_Orders_{DateTime.Now:yyyyMMdd}.pdf",
+                PageSize = Rotativa.AspNetCore.Options.Size.A4,
+                PageOrientation = Rotativa.AspNetCore.Options.Orientation.Portrait,
+                PageMargins = new Rotativa.AspNetCore.Options.Margins(10, 10, 10, 10)
+            };
+        }
+
+        //public async Task<IActionResult> BentoOrdersPdf()
+        //{
+        //    var today = DateTime.Today;
+        //    var tomorrow = today.AddDays(1);
+
+        //    var orders = await dbContext.OrderSummaryView
+        //        .Where(o => o.MenuType.Trim().ToLower() == "bento"
+        //                    && o.ReservationDate >= today
+        //                    && o.ReservationDate < tomorrow)
+        //        .OrderBy(o => o.CustomerType) // Local first, then Expat
+        //        .ThenBy(o => o.ReservationDate)
+        //        .ToListAsync();
+
+        //    return new ViewAsPdf("BentoOrdersPdf", orders)
+        //    {
+        //        FileName = $"Bento_Orders_{DateTime.Now:yyyyMMdd}.pdf",
+        //        PageSize = Rotativa.AspNetCore.Options.Size.A4,
+        //        PageOrientation = Rotativa.AspNetCore.Options.Orientation.Portrait,
+        //        PageMargins = new Rotativa.AspNetCore.Options.Margins(10, 10, 10, 10)
+        //    };
+        //}
+
+        public async Task<IActionResult> BentoOrdersPdf()
+        {
+            var phTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Asia/Manila");
+            var todayPH = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, phTimeZone).Date;
+            var tomorrowPH = todayPH.AddDays(1);
+
+            // Get orders for the PDF
+            var orders = await dbContext.OrderSummaryView
+                .Where(o => o.MenuType.Trim().ToLower() == "bento"
+                            && o.ReservationDate >= todayPH
+                            && o.ReservationDate < tomorrowPH)
+                .OrderBy(o => o.CustomerType)
+                .ThenBy(o => o.ReservationDate)
+                .ToListAsync();
+
+            // Mark orders as Completed (reuse your existing logic)
+            var references = dbContext.CombineOrders
+                .Where(x => x.ReservationDate >= todayPH && x.MenuType.ToLower() == "bento")
+                .Select(x => new { x.ReferenceNumber, x.Source })
+                .ToList();
+
+            foreach (var item in references)
+            {
+                if (item.Source == "Order")
+                {
+                    var order = dbContext.Orders.FirstOrDefault(o => o.ReferenceNumber == item.ReferenceNumber);
+                    if (order != null && order.Status == "Pending")
+                        order.Status = "Completed";
+                }
+                else if (item.Source == "AdvanceOrder")
+                {
+                    var advOrder = dbContext.AdvanceOrders.FirstOrDefault(o => o.ReferenceNumber == item.ReferenceNumber);
+                    if (advOrder != null && advOrder.Status == "Pending")
+                        advOrder.Status = "Completed";
+                }
+            }
+
+            dbContext.SaveChanges();
+
+            // 3️⃣ Return the PDF
+            return new ViewAsPdf("BentoOrdersPdf", orders)
+            {
+                FileName = $"Bento_Orders_{DateTime.Now:yyyyMMdd}.pdf",
+                PageSize = Rotativa.AspNetCore.Options.Size.A4,
+                PageOrientation = Rotativa.AspNetCore.Options.Orientation.Portrait,
+                PageMargins = new Rotativa.AspNetCore.Options.Margins(10, 10, 10, 10)
+            };
+        }
+
+
+        public async Task<IActionResult> NoodlesOrdersPdf()
+        {
+            var phTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Asia/Manila");
+            var todayPH = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, phTimeZone).Date;
+            var tomorrowPH = todayPH.AddDays(1);
+
+            // Get orders for the PDF
+            var orders = await dbContext.OrderSummaryView
+                .Where(o => o.MenuType.Trim().ToLower() == "noodles"
+                            && o.ReservationDate >= todayPH
+                            && o.ReservationDate < tomorrowPH)
+                .OrderBy(o => o.CustomerType)
+                .ThenBy(o => o.ReservationDate)
+                .ToListAsync();
+
+            // Mark orders as Completed (reuse your existing logic)
+            var references = dbContext.CombineOrders
+                .Where(x => x.ReservationDate >= todayPH && x.MenuType.ToLower() == "noodles")
+                .Select(x => new { x.ReferenceNumber, x.Source })
+                .ToList();
+
+            foreach (var item in references)
+            {
+                if (item.Source == "Order")
+                {
+                    var order = dbContext.Orders.FirstOrDefault(o => o.ReferenceNumber == item.ReferenceNumber);
+                    if (order != null && order.Status == "Pending")
+                        order.Status = "Completed";
+                }
+                else if (item.Source == "AdvanceOrder")
+                {
+                    var advOrder = dbContext.AdvanceOrders.FirstOrDefault(o => o.ReferenceNumber == item.ReferenceNumber);
+                    if (advOrder != null && advOrder.Status == "Pending")
+                        advOrder.Status = "Completed";
+                }
+            }
+
+            dbContext.SaveChanges();
+
+            return new ViewAsPdf("NoodlesOrdersPdf", orders)
+            {
+                FileName = $"Noodles_Orders_{DateTime.Now:yyyyMMdd}.pdf",
+                PageSize = Rotativa.AspNetCore.Options.Size.A4,
+                PageOrientation = Rotativa.AspNetCore.Options.Orientation.Portrait,
+                PageMargins = new Rotativa.AspNetCore.Options.Margins(10, 10, 10, 10)
+            };
+        }
+
+        public async Task<IActionResult> CurryOrdersPdf()
+        {
+            var phTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Asia/Manila");
+            var todayPH = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, phTimeZone).Date;
+            var tomorrowPH = todayPH.AddDays(1);
+
+            // Get orders for the PDF
+            var orders = await dbContext.OrderSummaryView
+                .Where(o => o.MenuType.Trim().ToLower() == "curry"
+                            && o.ReservationDate >= todayPH
+                            && o.ReservationDate < tomorrowPH)
+                .OrderBy(o => o.CustomerType)
+                .ThenBy(o => o.ReservationDate)
+                .ToListAsync();
+
+            // Mark orders as Completed (reuse your existing logic)
+            var references = dbContext.CombineOrders
+                .Where(x => x.ReservationDate >= todayPH && x.MenuType.ToLower() == "curry")
+                .Select(x => new { x.ReferenceNumber, x.Source })
+                .ToList();
+
+            foreach (var item in references)
+            {
+                if (item.Source == "Order")
+                {
+                    var order = dbContext.Orders.FirstOrDefault(o => o.ReferenceNumber == item.ReferenceNumber);
+                    if (order != null && order.Status == "Pending")
+                        order.Status = "Completed";
+                }
+                else if (item.Source == "AdvanceOrder")
+                {
+                    var advOrder = dbContext.AdvanceOrders.FirstOrDefault(o => o.ReferenceNumber == item.ReferenceNumber);
+                    if (advOrder != null && advOrder.Status == "Pending")
+                        advOrder.Status = "Completed";
+                }
+            }
+
+            dbContext.SaveChanges();
+
+            return new ViewAsPdf("CurryOrdersPdf", orders)
+            {
+                FileName = $"Curry_Orders_{DateTime.Now:yyyyMMdd}.pdf",
+                PageSize = Rotativa.AspNetCore.Options.Size.A4,
+                PageOrientation = Rotativa.AspNetCore.Options.Orientation.Portrait,
+                PageMargins = new Rotativa.AspNetCore.Options.Margins(10, 10, 10, 10)
+            };
+        }
+
+        public async Task<IActionResult> BreakfastOrdersPdf()
+        {
+            var phTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Asia/Manila");
+            var todayPH = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, phTimeZone).Date;
+            var tomorrowPH = todayPH.AddDays(1);
+
+            // Get orders for the PDF
+            var orders = await dbContext.OrderSummaryView
+                .Where(o => o.MenuType.Trim().ToLower() == "breakfast"
+                            && o.ReservationDate >= todayPH
+                            && o.ReservationDate < tomorrowPH)
+                .OrderBy(o => o.CustomerType)
+                .ThenBy(o => o.ReservationDate)
+                .ToListAsync();
+
+            // Mark orders as Completed (reuse your existing logic)
+            var references = dbContext.CombineOrders
+                .Where(x => x.ReservationDate >= todayPH && x.MenuType.ToLower() == "breakfast")
+                .Select(x => new { x.ReferenceNumber, x.Source })
+                .ToList();
+
+            foreach (var item in references)
+            {
+                if (item.Source == "Order")
+                {
+                    var order = dbContext.Orders.FirstOrDefault(o => o.ReferenceNumber == item.ReferenceNumber);
+                    if (order != null && order.Status == "Pending")
+                        order.Status = "Completed";
+                }
+                else if (item.Source == "AdvanceOrder")
+                {
+                    var advOrder = dbContext.AdvanceOrders.FirstOrDefault(o => o.ReferenceNumber == item.ReferenceNumber);
+                    if (advOrder != null && advOrder.Status == "Pending")
+                        advOrder.Status = "Completed";
+                }
+            }
+
+            dbContext.SaveChanges();
+
+            return new ViewAsPdf("BreakfastOrdersPdf", orders)
+            {
+                FileName = $"Breakfast_Orders_{DateTime.Now:yyyyMMdd}.pdf",
+                PageSize = Rotativa.AspNetCore.Options.Size.A4,
+                PageOrientation = Rotativa.AspNetCore.Options.Orientation.Portrait,
+                PageMargins = new Rotativa.AspNetCore.Options.Margins(10, 10, 10, 10)
+            };
+        }
 
     }
 }

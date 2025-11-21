@@ -54,9 +54,13 @@
               "target": "Package",
               "version": "[0.105.0, )"
             },
+            "DinkToPdf": {
+              "target": "Package",
+              "version": "[1.0.8, )"
+            },
             "EPPlus": {
               "target": "Package",
-              "version": "[8.0.5, )"
+              "version": "[7.2.0, )"
             },
             "ExcelDataReader": {
               "target": "Package",
@@ -97,6 +101,10 @@
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[9.0.4, )"
+            },
+            "Rotativa.AspNetCore": {
+              "target": "Package",
+              "version": "[1.4.0, )"
             },
             "TimeZoneConverter": {
               "target": "Package",

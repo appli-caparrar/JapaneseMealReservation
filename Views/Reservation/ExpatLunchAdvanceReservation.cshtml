@@ -1,0 +1,270 @@
+﻿@using System.Globalization
+@model JapaneseMealReservation.ViewModels.ExpatReservationViewModel
+
+@{
+    ViewData["ShowDashboardHeader"] = true;
+    ViewData["Title"] = "Expats and Managers Batch Reservation";
+}
+
+<div class="container-fluid px-4" style="max-height: 100vh; padding-top: 70px; overflow-y: auto;">
+    <div class="d-flex justify-content-between align-items-center mt-4 mb-3">
+        <h3 class="fw-bold text-dark">🍱 Advance Lunch Reservation for Expats and Managers</h3>
+        @* <span class="text-muted fst-italic">Month: @DateTime.Now.ToString("MMMM yyyy")</s  pan> *@
+    </div>
+
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <form id="filterForm" class="row row-cols-lg-auto g-3 align-items-center">
+
+                @{
+                    int currentMonth = DateTime.Now.Month;
+                    int currentYear = DateTime.Now.Year;
+                }
+
+
+                <div class="col-12">
+                    <label for="monthSelect" class="form-label mb-0">Select Month</label>
+                    <select name="month" id="monthSelect" class="form-select">
+                        @for (int m = 1; m <= 12; m++)
+                        {
+                            if (m == currentMonth)
+                            {
+                                <option value="@m" selected>
+                                    @CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(m)
+                                </option>
+                            }
+                            else
+                            {
+                                <option value="@m">
+                                    @CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(m)
+                                </option>
+                            }
+                        }
+                    </select>
+                </div>
+
+                <div class="col-12">
+                    <label for="yearSelect" class="form-label mb-0">Select Year</label>
+                    <select id="yearSelect" name="year" class="form-select">
+                        @for (int y = DateTime.Now.Year - 1; y <= DateTime.Now.Year + 1; y++)
+                        {
+                            if (y == currentYear)
+                            {
+                                <option value="@y" selected>@y</option>
+                            }
+                            else
+                            {
+                                <option value="@y">@y</option>
+                            }
+                        }
+                    </select>
+                </div>
+
+                <div class="col-12">
+                    <button type="submit" id="viewScheduleBtn" class="btn btn-primary mt-3 mt-lg-4">
+                        🔄 View Schedule
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="reservationTableContainer" class="position-relative" data-month="@Model.SelectedMonth"
+         data-year="@Model.SelectedYear">
+        <div id="loadingSpinner" class="spinner-border text-primary d-none" style="position: absolute; top: 50%; left: 50%;" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+
+        <div id="reservationTableContent">
+            @await Html.PartialAsync("_ExpatLunchReservationTable", Model)
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+
+            // ✅ Load reservation table dynamically
+            function loadReservationTable(employeeId = null) {
+                const month = parseInt($('#monthSelect').val());
+                const year = parseInt($('#yearSelect').val());
+
+                $('#loadingSpinner').removeClass('d-none');
+
+                $.ajax({
+                    url: '@Url.Action("ExpatLunchAdvanceReservation", "Reservation")',
+                    type: 'GET',
+                    data: { month, year, employeeId },
+                    success: function (result) {
+                        $('#reservationTableContent').html(result);
+                    },
+                    error: function () {
+                        Swal.fire('Error', 'Failed to load lunch reservation table.', 'error');
+                    },
+                    complete: function () {
+                        $('#loadingSpinner').addClass('d-none');
+                    }
+                });
+            }
+
+            // ✅ Submit reservations
+            $(document).on('submit', '#batchReservationForm', function (e) {
+                e.preventDefault();
+
+                const checkedItems = $('input[name="SelectedOrders"]:checked');
+                if (checkedItems.length === 0) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'No Orders Selected',
+                        text: 'Please select at least one lunch reservation.',
+                        confirmButtonColor: '#ffc107'
+                    });
+                    return;
+                }
+
+                const selectedEmployeeId = $('#expatFilter').val();
+                const selectedType = $('#menuType').val();
+                const formData = $(this).serialize() + '&SelectedEmployeeId=' + selectedEmployeeId;
+                const submitBtn = $('#submitBtn');
+
+                submitBtn.prop('disabled', true).html('<i class="bi bi-hourglass-split me-2"></i>Submitting...');
+
+                $.ajax({
+                    url: `/Reservation/ExpatLunchAdvanceReservation?type=${selectedType}`,
+                    type: 'POST',
+                    data: formData,
+                    success: function (result) {
+                        $('#reservationTableContent').html(result);
+
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Success!',
+                            text: 'Lunch reservations submitted successfully!',
+                            confirmButtonColor: '#198754'
+                        });
+                    },
+                    error: function () {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops!',
+                            text: 'Submission failed!',
+                            confirmButtonColor: '#d33'
+                        });
+                    },
+                    complete: function () {
+                        submitBtn.prop('disabled', false).html('<i class="bi bi-send-check-fill me-2"></i>Submit Orders');
+                    }
+                });
+            });
+
+            // ✅ Filter dropdown change
+            $(document).on('change', '#expatFilter', function () {
+                loadReservationTable($(this).val());
+            });
+
+            // ✅ Month/Year filter form
+            $(document).on('submit', '#filterForm', function (e) {
+                e.preventDefault();
+                loadReservationTable($('#expatFilter').val());
+            });
+
+            // ✅ Initial load
+            loadReservationTable('@Model.SelectedEmployeeId');
+        });
+    </script>
+
+
+  @*   <script>
+        $(document).ready(function () {
+
+            // ✅ Filter: Month/Year (View Schedule)
+            $('#viewScheduleBtn').on('click', function (e) {
+                e.preventDefault();
+                loadReservationTable();
+            });
+
+            // ✅ Load reservation table dynamically
+            function loadReservationTable() {
+                const month = parseInt($('#monthSelect').val());
+                const year = parseInt($('#yearSelect').val());
+
+                $('#loadingSpinner').removeClass('d-none');
+
+                $.ajax({
+                url: '@Url.Action("ExpatLunchAdvanceReservation", "Reservation")',
+                    type: 'GET',
+                    data: { month, year },
+                    success: function (result) {
+                        $('#reservationTableContainer').html(result);
+                        bindBatchFormValidation(); // Rebind after reload
+                    },
+                    error: function () {
+                        Swal.fire('Error', 'Failed to load reservation table.', 'error');
+                    },
+                    complete: function () {
+                        $('#loadingSpinner').addClass('d-none');
+                    }
+                });
+            }
+
+            // ✅ Reservation Submission + SweetAlert
+            function bindBatchFormValidation() {
+                $('#batchReservationForm').on('submit', function (e) {
+                    e.preventDefault();
+
+                    const checkedItems = $('input[name="SelectedOrders"]:checked');
+                    if (checkedItems.length === 0) {
+                        Swal.fire({
+                            icon: 'warning',
+                            title: 'No Orders Selected',
+                            text: 'Please select at least one order before submitting.',
+                            confirmButtonColor: '#ffc107'
+                        });
+                        return;
+                    }
+
+                    const formData = $(this).serialize();
+                    const submitBtn = $('#submitBtn');
+
+                    submitBtn.prop('disabled', true).html('<i class="bi bi-hourglass-split me-2"></i>Submitting...');
+
+                    $.ajax({
+                    url: '@Url.Action("ExpatLunchAdvanceReservation", "Reservation")',
+                        type: 'POST',
+                        data: formData,
+                        success: function (result) {
+                            $('#reservationTableContainer').html(result);
+                            bindBatchFormValidation(); // rebind after reload
+
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Success!',
+                                text: 'Lunch reservations submitted successfully!',
+                                confirmButtonColor: '#198754'
+                            });
+                        },
+                        error: function (xhr) {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops!',
+                                text: 'There was a problem submitting your lunch reservations.',
+                                confirmButtonColor: '#d33'
+                            });
+                        },
+                        complete: function () {
+                            submitBtn.prop('disabled', false).html('<i class="bi bi-send-check-fill me-2"></i>Submit Orders');
+                        }
+                    });
+                });
+            }
+
+            // ✅ Initial bind
+            bindBatchFormValidation();
+        });
+    </script>
+ *@
+}

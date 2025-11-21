@@ -1,0 +1,109 @@
+﻿@model List<JapaneseMealReservation.ViewModels.OrderSummaryViewModel>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #7f604b;
+            color: white;
+        }
+
+        h2 {
+            margin-top: 30px;
+        }
+
+        .page-break {
+            page-break-after: always;
+        }
+    </style>
+</head>
+<body>
+
+    @* Local Orders *@
+    @{
+        var locals = Model.Where(o => o.CustomerType.ToLower() == "local" &&
+        o.Status?.ToLower() == "pending").ToList();
+    }
+
+    <div class="d-flex justify-content-between align-items-center">
+        <h2>Noodles - Local Orders </h2>
+        <h4>@DateTime.Now.ToString("MMMM dd, yyyy")</h4>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Reference #</th>
+                <th>Employee ID</th>
+                <th>Name</th>
+                <th>Section</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in locals)
+            {
+                <tr>
+                    <td>@order.ReferenceNumber</td>
+                    <td>@order.EmployeeId</td>
+                    <td>@order.FirstName @order.LastName</td>
+                    <td>@order.Section</td>
+                    <td>@order.Quantity</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    @* Page Break *@
+    <div class="page-break"></div>
+
+    @* Expat Orders *@
+    @{
+        var expats = Model.Where(o => o.CustomerType.ToLower() == "expat" &&
+        o.Status?.ToLower() == "pending").ToList();
+    }
+
+    <div class="d-flex justify-content-between align-items-center">
+        <h2>Noodles - Expat Orders </h2>
+        <h4>@DateTime.Now.ToString("MMMM dd, yyyy")</h4>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Reference #</th>
+                <th>Employee ID</th>
+                <th>Name</th>
+                <th>Section</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in expats)
+            {
+                <tr>
+                    <td>@order.ReferenceNumber</td>
+                    <td>@order.EmployeeId</td>
+                    <td>@order.FirstName @order.LastName</td>
+                    <td>@order.Section</td>
+                    <td>@order.Quantity</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

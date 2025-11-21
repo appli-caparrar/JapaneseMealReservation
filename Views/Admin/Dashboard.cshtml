@@ -8,9 +8,9 @@
 
 
 @model JapaneseMealReservation.ViewModels.DashboardPageModel
+@using System.Globalization
 
-
-<div class="container shadow dashboardContainer" style="background-color: #FFFEF5; min-height: 100vh; margin-top: 35px; padding-bottom: 60px; margin-top: 130px;">
+<div class="container shadow dashboardContainer" style="background-color: #FFFEF5; margin-top: 130px; padding-bottom: 50px;">
  @*    <div class="d-flex justify-content-between align-items-center mb-4 bg-dark text-warning p-4"
         <h1>Admin Dashboard</h1>
          <form method="post" asp-controller="Home" asp-action="Logout">
@@ -29,7 +29,6 @@
 
     <!-- Stats Cards -->
     <div class="row g-3 mb-4 px-4">
-
         <div class="d-flex justify-content-between mt-5">
             <h1 class="" style="font-size: 32px;">Summary of Orders Today</h1>
             <div>
@@ -40,91 +39,164 @@
                     Upload Menu
                 </button>
             </div>
-          
         </div>
 
-        <div class="col-md-2">
-            <div class="p-4 bg-white dashboard-card">
-                <h5>Breakfast</h5>
-                <small>Total Orders Today</small>
-                <h2 class="text-primary">@Model.TotalBreakfastToday</h2>
-                <div class="d-flex justify-content-end">
-                    <a class="btn btn-dark" asp-controller="Order" asp-action="BreakfastOrderList"><i class="fa-solid fa-eye"></i> &nbsp; View List</a>
+        <div class="col-md-12">
+            <div class="card shadow-sm">
+                <div class="card-header bg-dark text-white">
+                    <h5 class="mb-0">Today's Order Summary</h5>
+                </div>
+                <div class="card-body p-0">
+                    <table class="table table-stripe mb-0 align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Meal Type</th>
+                                <th class="text-center">Total Orders Today</th>
+                                @* <th class="text-end">Action</th> *@
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Breakfast</strong></td>
+                                <td class="text-center text-primary">@Model.TotalBreakfastToday</td>
+                               
+                               @*  <td class="text-end">
+                                    <a class="btn btn-sm btn-dark" asp-controller="Order" asp-action="BreakfastOrderList">
+                                        <i class="fa-solid fa-eye"></i> View List
+                                    </a>
+                                </td> *@
+                            </tr>
+                            <tr>
+                                <td><strong>Bento</strong></td>
+                                <td class="text-center text-primary">@Model.TotalBentoToday</td>
+                                @* <td class="text-end">
+                                    <a class="btn btn-sm btn-dark" asp-controller="Order" asp-action="BentoOrderList">
+                                        <i class="fa-solid fa-eye"></i> View List
+                                    </a>
+                                </td> *@
+                            </tr>
+                            <tr>
+                                <td><strong>Maki</strong></td>
+                                <td class="text-center text-primary">@Model.TotalMakiToday</td>
+                               @*  <td class="text-end">
+                                    <a class="btn btn-sm btn-dark" asp-controller="Order" asp-action="MakiOrderList">
+                                        <i class="fa-solid fa-eye"></i> View List
+                                    </a>
+                                </td> *@
+                            </tr>
+                            <tr>
+                                <td><strong>Curry</strong></td>
+                                <td class="text-center text-primary">@Model.TotalCurryToday</td>
+                               @*  <td class="text-end">
+                                    <a class="btn btn-sm btn-dark" asp-controller="Order" asp-action="CurryOrderList">
+                                        <i class="fa-solid fa-eye"></i> View List
+                                    </a>
+                                </td> *@
+                            </tr>
+                            <tr>
+                                <td><strong>Noodles</strong></td>
+                                <td class="text-center text-primary">@Model.TotalNoodlesToday</td>
+                               @*  <td class="text-end">
+                                    <a class="btn btn-sm btn-dark" asp-controller="Order" asp-action="NoodlesOrderList">
+                                        <i class="fa-solid fa-eye"></i> View List
+                                    </a>
+                                </td> *@
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <div class="row g-3 p-2">
+                  
+                    <div class="col-md-4">
+                        <div class="card text-white bg-primary h-100" style="background-color: #7f604b !important;">
+                            <div class="card-body d-flex align-items-center">
+                                <div class="flex-grow-1">
+                                    <h5 class="mb-0">Today's Order Summary</h5>
+                                </div>
+                                <div>
+                                    <a class="btn btn-light btn-sm" asp-controller="Order" asp-action="DailyOrderSummary">
+                                        <i class="fa-solid fa-eye"></i> View List
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                   
+                    <div class="col-md-4">
+                        <div class="card text-white bg-primary h-100" style="background-color: #7f604b !important;">
+                            <div class="card-body d-flex align-items-center">
+                                <div class="flex-grow-1">
+                                    <h5 class="mb-0">Expat Order Deductions</h5>
+                                </div>
+                                <div>
+                                     <a class="btn btn-light btn-sm" asp-controller="Admin" asp-action="ExpatMonthlyDeduction">
+                                            <i class="fa-solid fa-eye"></i> View List
+                                        </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card text-white bg-primary h-100" style="background-color: #7f604b !important;">
+                            <div class="card-body d-flex align-items-center">
+                                <div class="flex-grow-1">
+                                    <h5 class="mb-0">Manage Reserved Orders</h5>
+                                </div>
+                                <div>
+                                    <a class="btn btn-warning btn-sm" asp-controller="Admin" asp-action="ManageReservedOrders">
+                                        <i class="fa-solid fa-solid fa-gear"></i> Modify
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
-
-        <div class="col-md-2">
-            <div class="p-4 bg-white dashboard-card">
-                <h5>Bento</h5>
-                <small>Total Orders Today</small>
-                <h2 class="text-primary">@Model.TotalBentoToday</h2>
-                <div class="d-flex justify-content-end">
-                    <a class="btn btn-dark" asp-controller="Order" asp-action="BentoOrderList"><i class="fa-solid fa-eye"></i> &nbsp; View List</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-2">
-            <div class="p-4 bg-white dashboard-card">
-                <h5>Maki</h5>
-                <small>Total Orders Today</small>
-                <h2 class="text-primary">@Model.TotalMakiToday</h2>
-                <div class="d-flex justify-content-end">
-                    <a class="btn btn-dark" asp-controller="Order" asp-action="MakiOrderList"><i class="fa-solid fa-eye"></i> &nbsp; View List</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-2">
-            <div class="p-4 bg-white dashboard-card">
-                <h5>Curry</h5>
-                <small>Total Orders Today</small>
-                <h2 class="text-primary">@Model.TotalCurryToday</h2>
-                <div class="d-flex justify-content-end">
-                    <a class="btn btn-dark" asp-controller="Order" asp-action="CurryOrderList"><i class="fa-solid fa-eye"></i> &nbsp; View List</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-2">
-            <div class="p-4 bg-white dashboard-card">
-                <h5>Noodles</h5>
-                <small>Total Orders Today</small>
-                <h2 class="text-primary">@Model.TotalNoodlesToday</h2>
-                <div class="d-flex justify-content-end">
-                    <a class="btn btn-dark" asp-controller="Order" asp-action="NoodlesOrderList"><i class="fa-solid fa-eye"></i> &nbsp; View List</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-2">
-            <div class="p-4 bg-primary text-white dashboard-card">
-                <small>Total Duductions</small>
-                <h5>Expat Orders</h5>
-                <h2 class="text-light">Summary</h2>
-                <div class="d-flex justify-content-end">
-                    <a class="btn btn-light" asp-controller="Admin" asp-action="ExpatMonthlyDeduction"><i class="fa-solid fa-eye"></i> &nbsp; View List</a>
-                </div>
-            </div>
-        </div>
-
     </div>
+</div>
 
-    @* Table *@
+<div class="container shadow dashboardContainer" style="background-color: #FFFEF5; padding-bottom: 60px;">
+@* Table *@
     <div class="row g-3 mb-4 px-4" >
-        <div>
-            <h1 class="mt-5" style="font-size: 32px;">List of Menu</h1>
+        <div class="d-flex justify-content-between align-items-center mt-5 mb-3">
+            <h1 class="" style="font-size: 32px;">List of Uploaded Menu</h1>
+
+            <!-- Date Filter -->
+            <form asp-controller="Admin" asp-action="FilterMenu" method="get" class="d-flex align-items-center gap-2">
+                <span class="mx-1">From</span>
+                <input type="date" name="startDate" id="startDate"
+                       value="@(Model.StartDate?.ToString("yyyy-MM-dd") ?? "")"
+                       class="form-control form-control-sm"
+                       style="border:none; border-bottom:1px solid #ccc; border-radius:0; background:transparent; padding-left:0; padding-right:0; box-shadow:none;" />
+
+                <span class="mx-1">to</span>
+                <input type="date" name="endDate" id="endDate"
+                       value="@(Model.EndDate?.ToString("yyyy-MM-dd") ?? "")"
+                       class="form-control form-control-sm"
+                       style="border:none; border-bottom:1px solid #ccc; border-radius:0; background:transparent; padding-left:0; padding-right:0; box-shadow:none;" />
+
+                <button type="submit" class="btn btn-sm btn-primary" style="height:32px;">Filter</button>
+            </form>
         </div>
-       
 
-        @if (Model != null)
+
+        @{
+            var filteredMenus = Model?.Menus?.OrderBy(m => m.AvailabilityDate).ToList();
+        }
+
+        @if (Model?.Menus != null && Model.Menus.Any())
         {
-
             <table class="table table-bordered text-center">
                 <thead>
                     <tr>
                         <th class="hide-col">Id</th>
+                        <th>Availability Date</th>
                         <th>Image</th>
                         <th>Name</th>
                         <th>Description</th>
@@ -134,11 +206,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var item in Model.Menus)
+                    @foreach (var item in Model.Menus.OrderBy(m => m.AvailabilityDate))
                     {
                         <tr>
                             <td class="hide-col">@item.Id</td>
-                                    <td class="text-center align-middle" >
+                            <td>
+                                @(item.AvailabilityDate.HasValue
+                                    ? item.AvailabilityDate.Value.ToString("MM/dd/yyyy")
+                                    : "No Date")
+                            </td>
+                            <td class="text-center align-middle">
                                 @if (!string.IsNullOrWhiteSpace(item.ImagePath))
                                 {
                                     <img src="..@item.ImagePath" alt="@item.Name" width="100" />
@@ -150,24 +227,25 @@
                                 }
                             </td>
 
-                            <td class="text-center align-middle" >@item?.Name</td>
+                            <td class="text-center align-middle">@item?.Name</td>
                             <td class="align-middle">@item?.Description</td>
                             <td class="align-middle">@item?.MenuType</td>
-                            <td class="text-center align-middle" >@item?.Price.ToString()</td>
+                            <td class="text-center align-middle">@item?.Price.ToString("C", new CultureInfo("en-PH"))</td>
                             <td class="d-flex justify-content-between align-items-center text-center align-middle" style="min-height: 50px;">
-                                <a
-                                    class="btn btn-warning" 
-                                    data-bs-toggle="modal" 
-                                    data-bs-target="#itemModal"
-                                    data-id="@item.Id"
-                                    data-image="..@item.ImagePath"
-                                    data-name="@item.Name"
-                                    data-price="@item.Price"
-                                   data-description="@item.Description"><i class="fa-solid fa-pen-to-square"></i> &nbsp; Update</a>
+                                <a class="btn btn-warning"
+                                   data-bs-toggle="modal"
+                                   data-bs-target="#itemModal"
+                                   data-id="@item.Id"
+                                   data-image="..@item.ImagePath"
+                                   data-name="@item.Name"
+                                   data-price="@item.Price"
+                                   data-description="@item.Description">
+                                    <i class="fa-solid fa-pen-to-square"></i> &nbsp; Update
+                                </a>
 
-                                <form asp-controller="Menu" asp-action="DeleteMenu" method="post" onsubmit="return confirm('Are you sure you want to delete this menu?');">
+                               <form id="deleteForm-@item.Id" asp-controller="Menu" asp-action="DeleteMenu" method="post">
                                     <input type="hidden" name="id" value="@item.Id" />
-                                    <button type="submit" class="btn btn-danger mx-2">
+                                    <button type="button" class="btn btn-danger mx-2" onclick="confirmDelete('@item.Id')">
                                         <i class="fa-solid fa-trash"></i> &nbsp; Delete
                                     </button>
                                 </form>
@@ -179,8 +257,10 @@
         }
         else
         {
-            <p>No menu items found.</p>
+            <p>No menu items found for the selected date range.</p>
         }
+
+
     </div>
 </div>
 
@@ -251,3 +331,26 @@
     </div>
 </div>
 
+
+
+
+@section Scripts {
+<script>
+    function confirmDelete(itemId) {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "This action will permanently delete the menu.",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'Cancel'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.getElementById('deleteForm-' + itemId).submit();
+            }
+        });
+    }
+</script>
+}

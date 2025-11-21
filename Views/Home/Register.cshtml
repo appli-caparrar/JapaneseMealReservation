@@ -93,4 +93,30 @@
             });
         </script>
     }
+
+    <script>
+        $(document).ready(function() {
+            // Show error if EmployeeId exists
+            var errorMessage = '@TempData["RegisterError"]';
+            if (errorMessage) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: errorMessage,
+                    confirmButtonColor: '#d33'
+                });
+            }
+
+            // Show success message
+            var successMessage = '@TempData["RegisterSuccess"]';
+            if (successMessage) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success',
+                    text: successMessage,
+                    confirmButtonColor: '#3085d6'
+                });
+            }
+        });
+    </script>
 }

@@ -68,6 +68,9 @@ namespace JapaneseMealReservation.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("MenuName")
+                        .HasColumnType("text");
+
                     b.Property<string>("MenuType")
                         .IsRequired()
                         .HasColumnType("text");
@@ -287,6 +290,9 @@ namespace JapaneseMealReservation.Migrations
                         .HasColumnType("character varying(255)")
                         .HasColumnName("password");
 
+                    b.Property<string>("Position")
+                        .HasColumnType("text");
+
                     b.Property<string>("Section")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -322,6 +328,10 @@ namespace JapaneseMealReservation.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("MealTime")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("MenuName")
                         .IsRequired()
                         .HasColumnType("text");
 

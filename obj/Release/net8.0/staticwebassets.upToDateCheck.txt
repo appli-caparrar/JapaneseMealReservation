@@ -3,10 +3,13 @@ wwwroot\css\style.css
 wwwroot\favicon.ico
 wwwroot\images\bento.jpg
 wwwroot\images\curry.png
+wwwroot\images\icon.ico
+wwwroot\images\icon.png
 wwwroot\images\jap-flag.jpg
 wwwroot\images\JMRS-logo.png
 wwwroot\images\maki.jpg
 wwwroot\images\meal-bg.jpg
+wwwroot\images\No photo image.gif
 wwwroot\images\noodles.png
 wwwroot\images\usa-flag.jpg
 wwwroot\js\AdvanceOrdering.js
@@ -79,7 +82,18 @@ wwwroot\lib\jquery-validation\LICENSE.md
 wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js
 wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js
 wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
+wwwroot\Rotativa\bin\libwkhtmltox.a
+wwwroot\Rotativa\bin\wkhtmltoimage.exe
+wwwroot\Rotativa\bin\wkhtmltopdf.exe
+wwwroot\Rotativa\bin\wkhtmltox.dll
+wwwroot\Rotativa\include\wkhtmltox\dllbegin.inc
+wwwroot\Rotativa\include\wkhtmltox\dllend.inc
+wwwroot\Rotativa\include\wkhtmltox\image.h
+wwwroot\Rotativa\include\wkhtmltox\pdf.h
+wwwroot\Rotativa\wkhtmltoimage.exe
+wwwroot\Rotativa\wkhtmltopdf.exe
 wwwroot\run-iportal\launch-I-portal-app.bat
+wwwroot\screenshots\6070d80f-27aa-402f-8af3-ae6526d4eb39_ChatGPT Image Nov 13, 2025, 07_42_53 AM.png
 wwwroot\uploads\bangsilog_12_288cadda-fd26-4feb-bf01-0b5072998303.jpg
 wwwroot\uploads\bento_4_61b0d113-0556-4260-b8a7-44b02aff8e0b.png
 wwwroot\uploads\bento_5_8ceb75c7-2d63-48a9-b6bb-099628486965.jpg
@@ -94,29 +108,64 @@ wwwroot\uploads\BUTA NO SHOGAYAKI_3_dfa2a03d-20b1-449f-a0a5-9b215d83a327.png
 wwwroot\uploads\BUTA NO SHOGAYAKI_34_4d078890-e0ed-48bf-99a4-b055ab199125.jpg
 wwwroot\uploads\BUTA NO SHOGAYAKI_7_67bb1d35-e4d7-4c0a-b741-14489810d797.png
 wwwroot\uploads\BUTA NO SHOGAYAKI_8_08dc8c0c-6c60-41eb-810d-4a1b4fd0e7e5.png
+wwwroot\uploads\CALIFORNIA FRY MAKI ROLL_67_eda26474-f57d-4c52-b483-1ffa9ba312bf.jpg
+wwwroot\uploads\CALIFORNIA FRY MAKI ROLL_79_520c27ed-6a73-47ad-833f-7e42dc1e0a27.jpg
 wwwroot\uploads\CHEESY EBI ROLL_49_719c734d-6eb9-4553-8b8f-908505a03cb9.jpg
+wwwroot\uploads\CHICKEN SAUTE_75_a60a07e1-0470-4713-9bcc-75ec83102e21.jpg
 wwwroot\uploads\curry_7_27f00a6a-1e76-4f25-92a0-82a8ff9109cf.png
 wwwroot\uploads\curry_7_33e6010d-c5e0-43f7-b375-ee6f549c7011.png
 wwwroot\uploads\EBI FURAI CURRY_38_ad6819d6-4f85-47ab-a960-76f68481912b.jpg
+wwwroot\uploads\EBI FURAI CURRY_68_e925fea1-4494-4b96-ae15-ab9eabd15600.jpg
+wwwroot\uploads\EBI FURAI CURRY_80_d88cdcfb-936c-4567-a39a-87c4cc9c6ac7.jpg
+wwwroot\uploads\EBI TENTOJI_63_190c9814-c73f-43da-9c9a-2d2cab373832.jpg
+wwwroot\uploads\EBI TENTOJI_74_d456c7db-c260-4f67-9597-e79de0bd944b.jpg
+wwwroot\uploads\EBITEN MAKI ROLL_74_baac96a2-3453-4684-bafa-aaaf1e526cb7.jpg
+wwwroot\uploads\EBITEN MAKI ROLL_77_1343876e-464b-420d-9d86-777fa129461f.jpg
 wwwroot\uploads\FUTO MAKI ROLL_37_c6c58bf8-f576-4c78-8f56-f66b017809c4.jpg
+wwwroot\uploads\HIYASHI CHUKA SOBA_66_c2d04467-ec7b-4a66-9724-fbda8c9ceacd.jpg
+wwwroot\uploads\HIYASHI CHUKA SOBA_78_e522f4c4-7794-4c88-a470-f82b19e695d3.jpg
+wwwroot\uploads\HOIKORO_72_f1210024-f104-48a9-a857-284527d0d84a.jpg
+wwwroot\uploads\hottomotto-hoikoro-subuta-bento2_1_ba6c84e7-ae1b-4ea1-bb3f-ffce1be78a84.jpg
+wwwroot\uploads\hottomotto-hoikoro-subuta-bento2_16_b9547e5b-1b86-45bb-ba71-53dc7df46758.jpg
 wwwroot\uploads\IKA SHOGAYAKI_33_899f51fe-b71d-4dfb-a195-572f82fca4e4.jpg
 wwwroot\uploads\KANI CREAM KOROKKE (CRABMEAT)_45_d5d664a3-f9f2-4217-852e-22a52e6ce3c7.jpg
 wwwroot\uploads\KATSU CURRY_51_d9109a57-ee9c-4908-b545-25ec048e211d.jpg
 wwwroot\uploads\maki_4_126a2b5d-1f3c-4c65-b2c3-580d7264eddc.jpg
 wwwroot\uploads\maki_8_6b929622-9c11-4988-9a1a-386c5aced39c.jpg
 wwwroot\uploads\maki_9_f1c6af26-c3e1-4143-a992-371c51c7d86d.jpg
+wwwroot\uploads\NIKOMI HAMBURG_76_33b25474-c86f-4f80-bdd6-f79c1d14cf43.jpg
 wwwroot\uploads\noodles_5_70cb1c29-d771-4da9-9c28-8a6187197b4a.png
 wwwroot\uploads\noodles_6_2ce400c2-9a50-4b0c-9490-ec9e89bd435a.png
 wwwroot\uploads\noodles_6_acafe4c2-2fc9-4a2d-b1d4-7ac88f457950.png
 wwwroot\uploads\OROSHI PONZU CHICKEN_48_70880dd7-7d7a-452c-9265-a08c6da7bcb5.jpg
+wwwroot\uploads\Picture1_47_79b3122a-0e85-4b4e-af9e-5e129c318e63.png
+wwwroot\uploads\Picture10_56_e49039e5-8009-4b89-b649-04d90785c6e8.png
+wwwroot\uploads\Picture2_48_2a640057-97c0-4b1b-9839-b73010763dfd.png
+wwwroot\uploads\Picture3_49_a7c328a1-73d7-4c02-aa1e-525960dab0ed.png
+wwwroot\uploads\Picture3_58_57e3b204-4ef4-4686-ad80-0e9203052f1d.png
+wwwroot\uploads\Picture4_50_18b6a889-cc3c-43b2-90b8-f1668c3462bc.png
+wwwroot\uploads\Picture5_51_96dca5f7-c5a9-4212-89a6-1077b7fd0e6f.png
+wwwroot\uploads\Picture6_52_2c352eed-397f-4fb3-b893-3269975df841.png
+wwwroot\uploads\Picture7_53_bc038c6f-fcc1-4b63-8fcc-81c278b8485e.png
+wwwroot\uploads\Picture8_54_f2feb903-6cde-4797-a86b-f432c51b4e75.png
+wwwroot\uploads\Picture9_55_f570132d-74da-4fdb-939a-a0778d8731db.png
 wwwroot\uploads\PORK YAKINIKU_46_ab0d8698-bace-4fe0-81a9-3122897a60df.jpg
 wwwroot\uploads\ROLLED TORI KATSU_32_f19d5909-32aa-4a48-a991-44a632549ed6.jpg
 wwwroot\uploads\SANSHOKU SOBORO_30_3be4d865-7d20-47b8-81f3-cd8fc0b605db.jpg
+wwwroot\uploads\Screenshot 2025-07-14 115400_1_c31c4908-c750-4723-80a8-2d7e15736394.png
+wwwroot\uploads\Screenshot 2025-10-20 085142_57_9272407e-508c-4a0b-b470-f6dc2bf111d8.jpg
+wwwroot\uploads\Screenshot 2025-10-20 085225_59_b35798df-e3bb-41e5-a01b-1a31c8377f20.jpg
+wwwroot\uploads\Screenshot 2025-10-20 085402_60_02ec0430-f3e1-40ef-a792-34f21d29fa09.jpg
+wwwroot\uploads\Screenshot 2025-10-20 085440_61_7c474f41-18be-483c-900c-f5b82d737411.jpg
 wwwroot\uploads\SHOYU RAMEN_52_b132b311-669a-4293-bc9e-49b75c3be39c.jpg
+wwwroot\uploads\SHOYU RAMEN_69_7f8e1e1a-7b7f-46b6-9583-2d3a76efbde7.jpg
+wwwroot\uploads\SHOYU RAMEN_81_6d146a3c-f753-41a1-abfb-ab873e53fb6d.jpg
 wwwroot\uploads\silog_10_4522ce6f-9965-47ed-a331-cb44ed7e950d.jpg
 wwwroot\uploads\SPICY NEGI RAMEN_39_b4116df5-0f97-4927-9fa0-18bf6e8163b5.jpg
 wwwroot\uploads\SUBUTA_47_e4e6baf0-2dba-46cc-8785-be83bfbf162e.jpg
 wwwroot\uploads\TONPEIYAKI_31_1a713dd7-41a9-40f6-8555-41484df26bac.jpg
+wwwroot\uploads\TORI TERIYAKI WITH TARTAR SAUCE_62_26a70e64-da7a-41ef-8a64-85cdb8d1a939.jpg
+wwwroot\uploads\TORI TERIYAKI_73_5036816f-f2a9-4b86-a438-6ba6315496bc.jpg
 wwwroot\uploads\TUNA MAKI ROLL_20_65304b79-b4a6-4f80-b2c3-f6252f458e1c.jpg
 wwwroot\uploads\TUNA MAKI ROLL_35_cd35236d-1e78-4734-a8a3-ea8d47e9a320.jpg
 wwwroot\uploads\YAKI SOBA_36_8d970d88-027c-4ed9-8392-ee49f22f562b.jpg

@@ -8,6 +8,9 @@ using JapaneseMealReservation.Services;
 using Order = JapaneseMealReservation.Models.Order;
 using JapaneseMealReservation.ViewModels;
 using TimeZoneConverter;
+using System;
+using DocumentFormat.OpenXml.InkML;
+using DocumentFormat.OpenXml.Spreadsheet;
 
 
 namespace JapaneseMealReservation.Controllers
@@ -240,7 +243,7 @@ namespace JapaneseMealReservation.Controllers
                                         <p style='font-size: 16px; color: #555;'>Your meal order has been <strong>successfully placed</strong>. Here are the details:</p>
                                         <table width='100%' cellpadding='0' cellspacing='0' style='margin-top: 20px;'>
                                             <tr><td><strong>Reference #:</strong></td><td style='padding: 8px 0;'>{model.ReferenceNumber}</td></tr>
-                                            <tr style='background-color: #f5f5f5;'><td style='padding: 8px 0;'><strong>Menu:</strong></td><td style='padding: 8px 0;'>{model.MenuType ?? "N/A"}</td></tr>
+                                            <tr style='background-color: #f5f5f5;'><td style='padding: 8px 0;'><strong>Menu:</strong></td><td style='padding: 8px 0;'>{model.MenuType ?? "N/A"}</td></tr
                                             <tr><td style='padding: 8px 0;'><strong>Quantity:</strong></td><td style='padding: 8px 0;'>{model.Quantity}</td></tr>
                                             <tr style='background-color: #f5f5f5;'><td style='padding: 8px 0;'><strong>Date:</strong></td><td style='padding: 8px 0;'>{model.ReservationDate:yyyy-MM-dd}</td></tr>
                                             <tr><td style='padding: 8px 0;'><strong>Meal Time:</strong></td><td style='padding: 8px 0;'>{model.MealTime}</td></tr>
@@ -343,122 +346,164 @@ namespace JapaneseMealReservation.Controllers
         //}
 
 
+        [HttpGet]
+        public async Task<IActionResult> ExpatLunchAdvanceReservation(int month = 0, int year = 0, string? employeeId = null)
+        {
+            var phTimeZone = TZConvert.GetTimeZoneInfo("Asia/Manila");
+            var nowPH = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, phTimeZone);
 
-    [HttpGet]
-    public async Task<IActionResult> ExpatAdvanceReservation(int month, int year)
+            month = month < 1 || month > 12 ? nowPH.Month : month;
+            year = year < 1 ? nowPH.Year : year;
+
+            var daysInMonth = DateTime.DaysInMonth(year, month);
+
+            var model = new ExpatReservationViewModel
+            {
+                SelectedMonth = month,
+                SelectedYear = year,
+                CurrentMonthDates = Enumerable.Range(1, daysInMonth)
+                    .Select(d => new DateTime(year, month, d))
+                    .ToList(),
+                CurrentUserId = User.FindFirst("EmployeeId")?.Value,
+                SelectedEmployeeId = employeeId
+            };
+
+            // Load all Expats and Managers
+            var allUsers = await dbContext.Users
+                .Where(u => u.EmployeeType == "Expat" || (u.Position ?? "").Contains("Manager"))
+                .OrderBy(u => u.FirstName)
+                .ToListAsync();
+
+            model.AllExpatsAndManagers = allUsers;
+
+            // Apply filter if employeeId selected
+            model.Users = string.IsNullOrEmpty(employeeId)
+                ? allUsers
+                : allUsers.Where(u => u.EmployeeId == employeeId).ToList();
+
+            // Weekday menus
+            model.WeekdayMenus = new Dictionary<int, List<string>>
     {
-        // Set defaults if invalid values
-        if (month < 1 || month > 12)
-            month = DateTime.Now.Month;
+        { 1, new() { "Bento", "Maki" } },
+        { 2, new() { "Bento", "Noodles" } },
+        { 3, new() { "Bento", "Maki" } },
+        { 4, new() { "Bento", "Curry" } },
+        { 5, new() { "Bento", "Noodles" } },
+        { 6, new() { "Bento" } }
+    };
 
-        if (year < 1)
-            year = DateTime.Now.Year;
+            // Load existing lunch orders for month
+            var startOfMonth = new DateTime(year, month, 1);
+            var endOfMonth = startOfMonth.AddMonths(1);
 
-        // Convert to Philippine timezone
-        TimeZoneInfo phTimeZone = TZConvert.GetTimeZoneInfo("Asia/Manila");
-        DateTime nowPH = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, phTimeZone);
+            var orders = await dbContext.AdvanceOrders
+                .Where(o => o.ReservationDate >= startOfMonth && o.ReservationDate < endOfMonth)
+                .Where(o => o.MenuType != "Breakfast")
+                .ToListAsync();
 
-        var daysInMonth = DateTime.DaysInMonth(year, month);
-        var model = new ExpatReservationViewModel();
+            // Map reservations for UI
+            model.SelectedOrders = orders
+                .Select(o => $"{o.EmployeeId}|{TimeZoneInfo.ConvertTimeFromUtc(o.ReservationDate, phTimeZone):yyyy-MM-dd}|{o.MenuType}")
+                .ToList();
 
-        model.CurrentMonthDates = Enumerable.Range(1, daysInMonth)
-            .Select(day => new DateTime(year, month, day))
-            .ToList();
+            model.ReservedDates = orders
+                .Select(o => $"{o.EmployeeId}|{TimeZoneInfo.ConvertTimeFromUtc(o.ReservationDate, phTimeZone):yyyy-MM-dd}")
+                .Distinct()
+                .ToList();
 
-        // Get users of type Expat
-        model.Users = await dbContext.Users
-            .Where(u => u.EmployeeType == "Expat")
-            .OrderBy(u => u.FirstName)
-            .ToListAsync();
+            model.ReservedOrders = orders
+                .ToDictionary(
+                    o => $"{o.EmployeeId}|{TimeZoneInfo.ConvertTimeFromUtc(o.ReservationDate, phTimeZone):yyyy-MM-dd}|{o.ReferenceNumber}",
+                    o => o.MenuType
+                );
 
-        // Define menu per weekday
-        model.WeekdayMenus = new Dictionary<int, List<string>>
+            model.ReservedOrdersStatus = orders
+                .GroupBy(o => $"{o.EmployeeId}|{TimeZoneInfo.ConvertTimeFromUtc(o.ReservationDate, phTimeZone):yyyy-MM-dd}")
+                .ToDictionary(
+                    g => g.Key,
+                    g => string.Join(", ", g.Select(x => x.Status).Distinct())
+                );
+
+            if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+                return PartialView("_ExpatLunchReservationTable", model);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ExpatLunchAdvanceReservation(ExpatReservationViewModel model)
         {
-            { 1, new() { "Bento", "Maki" } },
-            { 2, new() { "Bento", "Noodles" } },
-            { 3, new() { "Bento", "Maki" } },
-            { 4, new() { "Bento", "Curry" } },
-            { 5, new() { "Bento", "Noodles" } },
-            { 6, new() { "Bento" } }
-        };
+            var currentUserId = User.FindFirst("EmployeeId")?.Value;
+            var phTimeZone = TZConvert.GetTimeZoneInfo("Asia/Manila");
+            var nowPH = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, phTimeZone);
+            var todayPH = nowPH.Date;
 
-        // Set current user ID from claims
-        model.CurrentUserId = User.FindFirst("EmployeeId")?.Value;
+            model.MealTime ??= "12:00"; // default noon
 
-        // Query reservation data
-        var advanceOrders = dbContext.AdvanceOrders
-            .Where(a => a.ReservationDate.Month == month && a.ReservationDate.Year == year)
-            .Where(a => a.CustomerType == "Expat");
+            // Load all Expats & Managers
+            var allUsers = await dbContext.Users
+                .Where(u => u.EmployeeType == "Expat" || (u.Position ?? "").Contains("Manager"))
+                .ToListAsync();
 
-        var ordersList = await advanceOrders
-            .Select(a => new
+            model.AllExpatsAndManagers = allUsers;
+
+            // Filter by selected employee if needed
+            model.Users = string.IsNullOrEmpty(model.SelectedEmployeeId)
+                ? allUsers
+                : allUsers.Where(u => u.EmployeeId == model.SelectedEmployeeId).ToList();
+
+            model.CurrentUserId = currentUserId;
+
+            if (model.SelectedOrders == null || !model.SelectedOrders.Any())
             {
-                a.EmployeeId,
-                a.ReservationDate,
-                a.MenuType,
-                a.ReferenceNumber
-            }).ToListAsync();
+                ViewBag.ShowErrorAlert = true;
+                return PartialView("_ExpatLunchReservationTable", model);
+            }
 
-        // Convert reservation dates to PH format
-        model.SelectedOrders = ordersList
-            .Select(a => $"{a.EmployeeId}|{TimeZoneInfo.ConvertTimeFromUtc(a.ReservationDate, phTimeZone):yyyy-MM-dd}|{a.MenuType}")
-            .ToList();
+            var startOfMonth = new DateTime(nowPH.Year, nowPH.Month, 1);
+            var endOfMonth = startOfMonth.AddMonths(1);
 
-        model.ReservedDates = ordersList
-            .Select(a => $"{a.EmployeeId}|{TimeZoneInfo.ConvertTimeFromUtc(a.ReservationDate, phTimeZone):yyyy-MM-dd}")
-            .Distinct()
-            .ToList();
+            var existingOrders = await dbContext.AdvanceOrders
+                .Where(o => o.ReservationDate >= startOfMonth && o.ReservationDate < endOfMonth)
+                .Where(o => o.MealTime == model.MealTime)
+                .ToListAsync();
 
-        model.ReservedOrders = ordersList
-            .Where(a => a.EmployeeId != null && a.MenuType != null)
-            .ToDictionary(
-                a => $"{a.EmployeeId}|{TimeZoneInfo.ConvertTimeFromUtc(a.ReservationDate, phTimeZone):yyyy-MM-dd}|{a.ReferenceNumber}",
-                a => a.MenuType!
-            );
+            var processedSet = new HashSet<string>();
 
-        // Use built-in extension to detect AJAX requests
-        if (Request.Headers["X-Requested-With"] == "XMLHttpRequest" || Request.Headers["X-Requested-With"] == "XMLHttpRequest")
-            return PartialView("_ExpatReservationTable", model);
-
-        return View(model);
-    }
-
-
-
-    [HttpPost]
-        public async Task<IActionResult> ExpatAdvanceReservation(ExpatReservationViewModel model)
-        {
-            if (model.SelectedOrders != null && !string.IsNullOrEmpty(model.MealTime))
+            foreach (var item in model.SelectedOrders.Distinct())
             {
-                var timePH = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.UtcNow, "Singapore Standard Time"); // UTC+8
+                var parts = item.Split('|');
+                if (parts.Length != 3) continue;
 
-                foreach (var item in model.SelectedOrders)
+                var employeeId = parts[0];
+                if (!DateTime.TryParse(parts[1], out var date)) continue;
+                var menu = parts[2];
+                date = TimeZoneInfo.ConvertTimeToUtc(date.Date, phTimeZone);
+
+                var uniqueKey = $"{employeeId}|{date:yyyy-MM-dd}|{menu}";
+                if (!processedSet.Add(uniqueKey)) continue;
+
+                var user = allUsers.FirstOrDefault(u => u.EmployeeId == employeeId);
+                if (user == null || user.EmployeeId != currentUserId) continue;
+                if (date < todayPH) continue;
+
+                var existingOrder = existingOrders.FirstOrDefault(o =>
+                    o.EmployeeId == user.EmployeeId &&
+                    o.ReservationDate == date &&
+                    o.MealTime == model.MealTime);
+
+                if (existingOrder != null)
                 {
-                    var parts = item.Split('|');
-                    if (parts.Length != 3) continue;
-
-                    var employeeId = parts[0];
-                    var date = DateTime.Parse(parts[1]);
-                    var menu = parts[2];
-
-                    var user = await dbContext.Users.FirstOrDefaultAsync(u => u.EmployeeId == employeeId);
-                    if (user == null) continue;
-
-                    var referenceNumber = $"ORD-{timePH:yyyyMMdd}-{Guid.NewGuid().ToString().Substring(0, 6).ToUpper()}";
-
-                    var existingOrder = await dbContext.AdvanceOrders.FirstOrDefaultAsync(o =>
-                        o.EmployeeId == user.EmployeeId &&
-                        o.ReservationDate.Date == date.Date &&
-                        o.MealTime == model.MealTime &&
-                        o.MenuType == menu // important to avoid skipping different menus
-                    );
-
-                    if (existingOrder != null)
+                    if (!string.Equals(existingOrder.MenuType, menu, StringComparison.OrdinalIgnoreCase))
                     {
-                        continue;
+                        existingOrder.MenuType = menu;
+                        existingOrder.Status = "Pending";
+                        dbContext.AdvanceOrders.Update(existingOrder);
                     }
-
-                    var order = new AdvanceOrder
+                }
+                else
+                {
+                    dbContext.AdvanceOrders.Add(new AdvanceOrder
                     {
                         EmployeeId = user.EmployeeId,
                         FirstName = user.FirstName,
@@ -468,69 +513,347 @@ namespace JapaneseMealReservation.Controllers
                         ReservationDate = date,
                         MealTime = model.MealTime,
                         MenuType = menu,
-                        ReferenceNumber = referenceNumber,
+                        ReferenceNumber = $"ORD-{nowPH:yyyyMMdd}-{Guid.NewGuid():N}".Substring(0, 20).ToUpper(),
                         CustomerType = user.EmployeeType,
                         Status = "Pending"
-                    };
-
-                    dbContext.AdvanceOrders.Add(order);
+                    });
                 }
-
-                await dbContext.SaveChangesAsync();
-                ViewBag.ShowSuccessAlert = true;
             }
-            else
+
+            await dbContext.SaveChangesAsync();
+            ViewBag.ShowSuccessAlert = true;
+
+            // Reload model for partial view
+            return await ExpatLunchAdvanceReservation(nowPH.Month, nowPH.Year, model.SelectedEmployeeId) as PartialViewResult;
+        }
+
+
+
+
+        [HttpGet]
+        public async Task<IActionResult> ExpatBreakfastAdvanceReservation(int month, int year, string? employeeId)
+        {
+            // Default month/year handling
+            if (month < 1 || month > 12) month = DateTime.Now.Month;
+            if (year < 1) year = DateTime.Now.Year;
+
+            var phTimeZone = TZConvert.GetTimeZoneInfo("Asia/Manila");
+            var nowPH = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, phTimeZone);
+            var daysInMonth = DateTime.DaysInMonth(year, month);
+
+            // Initial model
+            var model = new ExpatReservationViewModel
             {
-                ViewBag.ShowErrorAlert = true;
-            }
+                CurrentMonthDates = Enumerable.Range(1, daysInMonth)
+                    .Select(day => new DateTime(year, month, day))
+                    .ToList(),
+                CurrentUserId = User.FindFirst("EmployeeId")?.Value,
+                SelectedEmployeeId = employeeId
+            };
 
-            // Rebuild model after saving ✅
-
-            var today = DateTime.Today;
-            var daysInMonth = DateTime.DaysInMonth(today.Year, today.Month);
-
-            model.CurrentMonthDates = Enumerable.Range(1, daysInMonth)
-                .Select(day => new DateTime(today.Year, today.Month, day)).ToList();
-
-            model.Users = await dbContext.Users
-                .Where(u => u.EmployeeType == "Expat")
+            // Load all expats & managers for dropdown
+            var allUsers = await dbContext.Users
+                .Where(u => u.EmployeeType == "Expat" || (u.Position ?? "").Contains("Manager"))
                 .OrderBy(u => u.FirstName)
                 .ToListAsync();
 
-            model.WeekdayMenus = new Dictionary<int, List<string>>
-            {
-                { 1, new() { "Bento", "Maki" } },
-                { 2, new() { "Bento", "Noodles" } },
-                { 3, new() { "Bento", "Maki" } },
-                { 4, new() { "Bento", "Curry" } },
-                { 5, new() { "Bento", "Noodles" } },
-                { 6, new() { "Bento" } }
-            };
-
-            // ✅ RELOAD ALL EXISTING ORDERS for the month and MealTime
-            var reservationStart = new DateTime(today.Year, today.Month, 1);
-            var reservationEnd = reservationStart.AddMonths(1);
-
-            var allOrders = await dbContext.AdvanceOrders
-                .Where(o => o.ReservationDate >= reservationStart && o.ReservationDate < reservationEnd)
-                .Where(a => a.CustomerType == "Expat")
-                .ToListAsync();
-
-            model.SelectedOrders = allOrders
-                .Select(o => $"{o.EmployeeId}|{o.ReservationDate:yyyy-MM-dd}|{o.MenuType}")
+            model.AllExpatsAndManagers = allUsers
+                .Select(u => new User
+                {
+                    EmployeeId = u.EmployeeId,
+                    FirstName = u.FirstName,
+                    LastName = u.LastName,
+                    Position = u.Position
+                })
                 .ToList();
 
-            model.ReservedDates = await dbContext.AdvanceOrders
-              .Where(a => a.ReservationDate.Month == today.Month && a.ReservationDate.Year == today.Year)
-              .Where(a => a.CustomerType == "Expat")
-              .Select(a => $"{a.EmployeeId}|{a.ReservationDate.ToLocalTime().Date:yyyy-MM-dd}")
-              .Distinct()
-              .ToListAsync();
+            // Apply dropdown filtering for table
+            model.Users = string.IsNullOrEmpty(employeeId)
+                ? allUsers  // Show all
+                : allUsers.Where(u => u.EmployeeId == employeeId).ToList(); // Show only selected
 
-            model.CurrentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            // Date range
+            var startOfMonth = new DateTime(year, month, 1);
+            var endOfMonth = startOfMonth.AddMonths(1);
+
+            // Load orders for breakfast
+            var ordersList = await (
+                from o in dbContext.AdvanceOrders
+                join u in dbContext.Users on o.EmployeeId equals u.EmployeeId
+                where o.ReservationDate >= startOfMonth && o.ReservationDate < endOfMonth
+                where u.EmployeeType == "Expat" || (u.Position ?? "").Contains("Manager")
+                where o.MenuType == "Breakfast"
+                select new
+                {
+                    o.EmployeeId,
+                    o.ReservationDate,
+                    o.MenuType,
+                    o.ReferenceNumber,
+                    o.Status
+                }
+            ).ToListAsync();
+
+            // Prepare model
+            model.SelectedOrders = ordersList
+                .Select(a => $"{a.EmployeeId}|{a.ReservationDate:yyyy-MM-dd}|{a.MenuType}")
+                .ToList();
+
+            model.ReservedDates = ordersList
+                .Select(a => $"{a.EmployeeId}|{TimeZoneInfo.ConvertTime(a.ReservationDate, phTimeZone):yyyy-MM-dd}")
+                .Distinct()
+                .ToList();
+
+            model.ReservedOrders = ordersList
+                .Where(a => a.EmployeeId != null && a.MenuType != null)
+                .ToDictionary(
+                    a => $"{a.EmployeeId}|{TimeZoneInfo.ConvertTime(a.ReservationDate, phTimeZone):yyyy-MM-dd}|{a.ReferenceNumber}",
+                    a => a.MenuType!
+                );
+
+            model.ReservedOrdersStatus = ordersList
+                .GroupBy(a => $"{a.EmployeeId}|{TimeZoneInfo.ConvertTime(a.ReservationDate, phTimeZone):yyyy-MM-dd}")
+                .ToDictionary(
+                    g => g.Key,
+                    g => string.Join(", ", g.Select(x => x.Status).Distinct())
+                );
+
+            // Return partial view for AJAX or full view
+            if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+                return PartialView("_ExpatBreakfastReservationTable", model);
 
             return View(model);
         }
+
+
+        [HttpPost]
+        public async Task<IActionResult> ExpatBreakfastAdvanceReservation(ExpatReservationViewModel model)
+        {
+
+            var currentUserId = User.FindFirst("EmployeeId")?.Value;
+            var phTimeZone = TZConvert.GetTimeZoneInfo("Asia/Manila");
+            var nowPH = TimeZoneInfo.ConvertTime(DateTime.UtcNow, phTimeZone);
+            var todayPH = nowPH.Date;
+
+
+            // If dropdown filter was used, preserve it
+            string selectedEmployeeId = model.SelectedEmployeeId ?? "";
+
+            // Load all expat & manager users
+            var allUsers = await dbContext.Users
+                .Where(u => u.EmployeeType == "Expat" || (u.Position ?? "").Contains("Manager"))
+                .ToListAsync();
+
+            // Apply filtering if needed
+            if (!string.IsNullOrEmpty(selectedEmployeeId))
+            {
+                // Filter only the selected employee
+                model.Users = allUsers
+                    .Where(u => u.EmployeeId == selectedEmployeeId)
+                    .OrderBy(u => u.FirstName)
+                    .ToList();
+            }
+            else
+            {
+                // No filter, show all expats + managers
+                model.Users = allUsers.OrderBy(u => u.FirstName).ToList();
+            }
+
+
+            model.AllExpatsAndManagers = allUsers; // for dropdown
+            model.CurrentUserId = currentUserId;
+
+            // Basic validation
+            if (model.SelectedOrders == null || !model.SelectedOrders.Any())
+            {
+                ViewBag.ShowErrorAlert = true;
+                return PartialView("_ExpatBreakfastReservationTable", model);
+            }
+
+            var mealTimeInput = string.IsNullOrWhiteSpace(model.MealTime) ? "07:00" : model.MealTime.Trim();
+
+         
+            // Load all breakfast orders for current month (including Cancelled)
+            var startOfMonth = new DateTime(nowPH.Year, nowPH.Month, 1);
+            var endOfMonth = startOfMonth.AddMonths(1);
+
+            var allOrders = await dbContext.AdvanceOrders
+                .Where(o => o.ReservationDate >= startOfMonth && o.ReservationDate < endOfMonth)
+                .Where(o => o.MealTime == mealTimeInput)
+                .ToListAsync();
+
+            foreach (var item in model.SelectedOrders)
+            {
+                var parts = item.Split('|');
+                if (parts.Length != 3) continue;
+
+                var employeeId = parts[0];
+                if (!DateTime.TryParse(parts[1], out var selectedDate)) continue;
+                var menu = parts[2];
+
+                // Manila local date
+                var phDate = TimeZoneInfo.ConvertTime(selectedDate.Date, phTimeZone);
+
+                var user = allUsers.FirstOrDefault(u => u.EmployeeId == employeeId);
+                if (user == null || user.EmployeeId != currentUserId) continue; // Only current user
+
+                if (phDate < todayPH) continue; // Prevent past dates
+
+                // Check if there’s already an order for this user + date + time
+                var existingOrder = allOrders.FirstOrDefault(o =>
+                    o.EmployeeId == user.EmployeeId &&
+                    TimeZoneInfo.ConvertTime(o.ReservationDate, phTimeZone).Date == phDate.Date &&
+                    o.MealTime == mealTimeInput);
+
+                if (existingOrder != null)
+                {
+                    // If previously cancelled, reactivate and update menu
+                    existingOrder.MenuType = menu;
+                    existingOrder.Status = "Pending";
+                    dbContext.AdvanceOrders.Update(existingOrder);
+                }
+                else
+                {
+                    // Add new order
+                    dbContext.AdvanceOrders.Add(new AdvanceOrder
+                    {
+                        EmployeeId = user.EmployeeId,
+                        FirstName = user.FirstName,
+                        LastName = user.LastName,
+                        Section = user.Section,
+                        Quantity = 1,
+                        ReservationDate = TimeZoneInfo.ConvertTimeToUtc(phDate, phTimeZone),
+                        MealTime = mealTimeInput,
+                        MenuType = menu,
+                        ReferenceNumber = $"ORD-{nowPH:yyyyMMdd}-{Guid.NewGuid().ToString()[..6].ToUpper()}",
+                        CustomerType = user.EmployeeType,
+                        Status = "Pending"
+                    });
+                }
+            }
+
+            await dbContext.SaveChangesAsync();
+            ViewBag.ShowSuccessAlert = true;
+
+            // Reload data for view
+            var daysInMonth = DateTime.DaysInMonth(nowPH.Year, nowPH.Month);
+            model.CurrentMonthDates = Enumerable.Range(1, daysInMonth)
+                .Select(day => new DateTime(nowPH.Year, nowPH.Month, day))
+                .ToList();
+
+            model.Users = allUsers.OrderBy(u => u.FirstName).ToList();
+
+            // Reload all orders again
+            allOrders = await dbContext.AdvanceOrders
+                .Where(o => o.ReservationDate >= startOfMonth && o.ReservationDate < endOfMonth)
+                .Where(o => o.MealTime == mealTimeInput)
+                .ToListAsync();
+
+            var activeOrders = allOrders.Where(o => !string.Equals(o.Status, "Cancelled", StringComparison.OrdinalIgnoreCase)).ToList();
+
+            model.SelectedOrders = activeOrders
+                .Select(o =>
+                {
+                    var phDate = TimeZoneInfo.ConvertTime(o.ReservationDate, phTimeZone).Date;
+                    return $"{o.EmployeeId}|{phDate:yyyy-MM-dd}|{o.MenuType}";
+                })
+                .ToList();
+
+            model.ReservedDates = activeOrders
+                .Select(o =>
+                {
+                    var phDate = TimeZoneInfo.ConvertTime(o.ReservationDate, phTimeZone).Date;
+                    return $"{o.EmployeeId}|{phDate:yyyy-MM-dd}";
+                })
+                .Distinct()
+                .ToList();
+
+           model.ReservedOrders = activeOrders
+                .Where(o => o.EmployeeId != null && o.MenuType != null)
+                .ToDictionary(
+                    o =>
+                    {
+                        var phDate = TimeZoneInfo.ConvertTime(o.ReservationDate, phTimeZone).Date;
+                        return $"{o.EmployeeId}|{phDate:yyyy-MM-dd}|{o.ReferenceNumber}";
+                    },
+                    o =>  o.MenuType!
+                );
+
+            model.ReservedOrdersStatus = allOrders
+                .GroupBy(o =>
+                {
+                    var phDate = TimeZoneInfo.ConvertTime(o.ReservationDate, phTimeZone).Date;
+                    return $"{o.EmployeeId}|{phDate:yyyy-MM-dd}";
+                })
+                .ToDictionary(
+                    g => g.Key,
+                    g => string.Join(", ", g.Select(x => x.Status).Distinct())
+                );
+
+            model.CurrentUserId = currentUserId;
+
+            return PartialView("_ExpatBreakfastReservationTable", model);
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> CancelOrder([FromBody] CancelOrderRequest request)
+        {
+            var ReferenceNumber = request.ReferenceNumber?.Trim();
+            if (string.IsNullOrEmpty(ReferenceNumber))
+                return Json(new { success = false, message = "Invalid Reference Number." });
+
+            var advOrder = await dbContext.AdvanceOrders
+                .FirstOrDefaultAsync(x => x.ReferenceNumber.ToLower() == ReferenceNumber.ToLower());
+            var order = await dbContext.Orders
+                .FirstOrDefaultAsync(x => x.ReferenceNumber.ToLower() == ReferenceNumber.ToLower());
+
+            if (advOrder == null && order == null)
+                return Json(new { success = false, message = "Order not found." });
+
+            if (advOrder != null) advOrder.Status = "Cancelled";
+            if (order != null) order.Status = "Cancelled";
+
+            await dbContext.SaveChangesAsync();
+            return Json(new { success = true, referenceNumber = ReferenceNumber });
+        }
+
+        private List<DateTime> LoadMonthDates()
+        {
+            var now = DateTime.Now;
+            int daysInMonth = DateTime.DaysInMonth(now.Year, now.Month);
+
+            var dates = new List<DateTime>();
+            for (int day = 1; day <= daysInMonth; day++)
+            {
+                dates.Add(new DateTime(now.Year, now.Month, day));
+            }
+
+            return dates;
+        }
+
+
+        private List<string> LoadReservedDates()
+        {
+            return dbContext.AdvanceOrders
+                .Select(o => $"{o.EmployeeId}|{o.ReservationDate:yyyy-MM-dd}")
+                .ToList();
+        }
+
+
+        //public async Task<IActionResult> FilterExpatsById(string employeeId, int month, int year)
+        //{
+        //    // Rebuild full model
+        //    var mainModel = await ExpatBreakfastAdvanceReservation(month, year) as ViewResult;
+        //    var model = mainModel.Model as ExpatReservationViewModel;
+
+        //    // Apply filter
+        //    if (!string.IsNullOrEmpty(employeeId))
+        //        model.Users = model.Users.Where(u => u.EmployeeId == employeeId).ToList();
+
+        //    return PartialView("_ExpatBreakfastReservationTable", model);
+        //}
+
+
 
 
 

@@ -30,6 +30,7 @@ namespace JapaneseMealReservation.Models
 
         [Required]
         public string? MenuType { get; set; }
+        public string? MenuName { get; set; }
 
         public string? ReferenceNumber { get; set; }
 

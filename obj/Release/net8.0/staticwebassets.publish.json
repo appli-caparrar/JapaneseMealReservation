@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "J8Ig9M/mqKR/LI0DSBH+cxJjCGgBfAQIkYAz011l+fM=",
+  "Hash": "qU2Tj+6eXnJYJroUmx3BASBlsN6suIm+5ddnrIppt6s=",
   "Source": "JapaneseMealReservation",
   "BasePath": "_content/JapaneseMealReservation",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "m6hucha8yq",
-      "Integrity": "gj2v81C8L/b5vUh29E47CIjs8ZWoc53SmBYKjiEo4z0=",
+      "Fingerprint": "fucso1yu0k",
+      "Integrity": "+XPe8g+5+JeVDlYKjRDISELRULJUaXUVcKByYSkluQI=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -164,6 +164,48 @@
       "OriginalItemSpec": "wwwroot\\images\\curry.png"
     },
     {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\images\\icon.ico",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "images/icon#[.{fingerprint}]?.ico",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "w44466sppr",
+      "Integrity": "8It71tseWMEQ8N3IbvbpjhmLXUOLsiLWXsvZJcIMsoI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\icon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\images\\icon.png",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "images/icon#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "248ib7mlpt",
+      "Integrity": "bv8qZ6TocjPamja7K1AZmcIoqkewjn+nHtjEokkOYOU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\icon.png"
+    },
+    {
       "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\images\\jap-flag.jpg",
       "SourceId": "JapaneseMealReservation",
       "SourceType": "Discovered",
@@ -246,6 +288,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\meal-bg.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\images\\No photo image.gif",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "images/No photo image#[.{fingerprint}]?.gif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "b43movoitv",
+      "Integrity": "S61z42LuBsl7N5dMl4em+VdqOA+lwvBZiQ0SCpqr75s=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\No photo image.gif"
     },
     {
       "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\images\\noodles.png",
@@ -409,8 +472,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "jc0xirpkvn",
-      "Integrity": "/VGLsjFz5PfMevj+8NEebfXtF5BL/xH+LThhRuXPTi0=",
+      "Fingerprint": "nsh8emhq4t",
+      "Integrity": "F4Jxcy/Ys9cRrpjWl/zfghw+NsJGN2lm635sLBTp9wQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\orderCalendar.js"
@@ -430,8 +493,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "2q7mhbu5oc",
-      "Integrity": "ZlK0yxjyeqSh7FrY7O8cWmTRNmhhiTBEZAJo5sWMfY0=",
+      "Fingerprint": "yeinypx8im",
+      "Integrity": "+jIff3B818YZLPJUZWxFADlxfeb4aA8okxFOL3VL3rc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\orderValidation.js"
@@ -493,8 +556,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "oxdh12pzu0",
-      "Integrity": "NGZrEObKNOGqt5VtYVcjOZgUK4iw/3X+yCBdQSNXnyA=",
+      "Fingerprint": "cr06i2kt3a",
+      "Integrity": "WGN8AjHGLRk2ly51JzRLjhE+bfICGMpi7FzRHaP9c2M=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\reservation.js"
@@ -1760,6 +1823,216 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\Rotativa\\bin\\libwkhtmltox.a",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "Rotativa/bin/libwkhtmltox#[.{fingerprint}]?.a",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "f2g608d7gt",
+      "Integrity": "10bVv63LVpw6O3/ddTnexdzYX4pr2cR9/Lr0dZYYzKQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Rotativa\\bin\\libwkhtmltox.a"
+    },
+    {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\Rotativa\\bin\\wkhtmltoimage.exe",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "Rotativa/bin/wkhtmltoimage#[.{fingerprint}]?.exe",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ae8clhsdf7",
+      "Integrity": "fjFOgfm/1MfYHXn3GvpT6VgJa+SUi/fSkPcBBcOKy84=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Rotativa\\bin\\wkhtmltoimage.exe"
+    },
+    {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\Rotativa\\bin\\wkhtmltopdf.exe",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "Rotativa/bin/wkhtmltopdf#[.{fingerprint}]?.exe",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "cuquy3615b",
+      "Integrity": "ZNF2gjIL/9RbIgjtE7E21ZE56CVzdF8UVWzyXpXL2Ag=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Rotativa\\bin\\wkhtmltopdf.exe"
+    },
+    {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\Rotativa\\bin\\wkhtmltox.dll",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "Rotativa/bin/wkhtmltox#[.{fingerprint}]?.dll",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "kz17487uij",
+      "Integrity": "0JnDQt6YXXk6Kp6pDQBSCOkPuJB/EkUzKmodlSgtnJ0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Rotativa\\bin\\wkhtmltox.dll"
+    },
+    {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\Rotativa\\include\\wkhtmltox\\dllbegin.inc",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "Rotativa/include/wkhtmltox/dllbegin#[.{fingerprint}]?.inc",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "hqki9u824z",
+      "Integrity": "h+X3EiYKgtiPmTgL1aDWn+XivijUcEWfjBvEuDKXAxE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Rotativa\\include\\wkhtmltox\\dllbegin.inc"
+    },
+    {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\Rotativa\\include\\wkhtmltox\\dllend.inc",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "Rotativa/include/wkhtmltox/dllend#[.{fingerprint}]?.inc",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "dvqg3ylu8n",
+      "Integrity": "95hB4aOxbLC+WZHdbpPtSY7DW0DhxOOYU7+z5IuEGaw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Rotativa\\include\\wkhtmltox\\dllend.inc"
+    },
+    {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\Rotativa\\include\\wkhtmltox\\image.h",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "Rotativa/include/wkhtmltox/image#[.{fingerprint}]?.h",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "u83015imuu",
+      "Integrity": "boXN6/1zckZJ/vyhz3fdeUOR4Wx7NySs47bVTHhjxFc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Rotativa\\include\\wkhtmltox\\image.h"
+    },
+    {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\Rotativa\\include\\wkhtmltox\\pdf.h",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "Rotativa/include/wkhtmltox/pdf#[.{fingerprint}]?.h",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "jrifszfwxy",
+      "Integrity": "Qfvfj5KMj7vlyjS8Ft7oBb2EY6C/cszYrXN174okAuo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Rotativa\\include\\wkhtmltox\\pdf.h"
+    },
+    {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\Rotativa\\wkhtmltoimage.exe",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "Rotativa/wkhtmltoimage#[.{fingerprint}]?.exe",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ae8clhsdf7",
+      "Integrity": "fjFOgfm/1MfYHXn3GvpT6VgJa+SUi/fSkPcBBcOKy84=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Rotativa\\wkhtmltoimage.exe"
+    },
+    {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\Rotativa\\wkhtmltopdf.exe",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "Rotativa/wkhtmltopdf#[.{fingerprint}]?.exe",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "cuquy3615b",
+      "Integrity": "ZNF2gjIL/9RbIgjtE7E21ZE56CVzdF8UVWzyXpXL2Ag=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Rotativa\\wkhtmltopdf.exe"
+    },
+    {
       "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\run-iportal\\launch-I-portal-app.bat",
       "SourceId": "JapaneseMealReservation",
       "SourceType": "Discovered",
@@ -1779,6 +2052,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\run-iportal\\launch-I-portal-app.bat"
+    },
+    {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\screenshots\\6070d80f-27aa-402f-8af3-ae6526d4eb39_ChatGPT Image Nov 13, 2025, 07_42_53 AM.png",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "screenshots/6070d80f-27aa-402f-8af3-ae6526d4eb39_ChatGPT Image Nov 13, 2025, 07_42_53 AM#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "o9ifgrjz6o",
+      "Integrity": "xKnUNmyUWBOuoIi1GYjpbt8RAX4n1bwbulrU5zIbl9o=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\screenshots\\6070d80f-27aa-402f-8af3-ae6526d4eb39_ChatGPT Image Nov 13, 2025, 07_42_53 AM.png"
     },
     {
       "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\bangsilog_12_288cadda-fd26-4feb-bf01-0b5072998303.jpg",
@@ -2075,6 +2369,48 @@
       "OriginalItemSpec": "wwwroot\\uploads\\BUTA NO SHOGAYAKI_8_08dc8c0c-6c60-41eb-810d-4a1b4fd0e7e5.png"
     },
     {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\CALIFORNIA FRY MAKI ROLL_67_eda26474-f57d-4c52-b483-1ffa9ba312bf.jpg",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "uploads/CALIFORNIA FRY MAKI ROLL_67_eda26474-f57d-4c52-b483-1ffa9ba312bf#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "k1tvqkh5va",
+      "Integrity": "OOFbFv0cmN+hhPbGU7/FKpoalQFV9Lt2rDoPbEqJQzo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\CALIFORNIA FRY MAKI ROLL_67_eda26474-f57d-4c52-b483-1ffa9ba312bf.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\CALIFORNIA FRY MAKI ROLL_79_520c27ed-6a73-47ad-833f-7e42dc1e0a27.jpg",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "uploads/CALIFORNIA FRY MAKI ROLL_79_520c27ed-6a73-47ad-833f-7e42dc1e0a27#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tjy1w86c0m",
+      "Integrity": "1/qXzWHaTlvCIawi+BWp3wTagjtAjFaA5QhUUcGRy2Y=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\CALIFORNIA FRY MAKI ROLL_79_520c27ed-6a73-47ad-833f-7e42dc1e0a27.jpg"
+    },
+    {
       "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\CHEESY EBI ROLL_49_719c734d-6eb9-4553-8b8f-908505a03cb9.jpg",
       "SourceId": "JapaneseMealReservation",
       "SourceType": "Discovered",
@@ -2094,6 +2430,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\CHEESY EBI ROLL_49_719c734d-6eb9-4553-8b8f-908505a03cb9.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\CHICKEN SAUTE_75_a60a07e1-0470-4713-9bcc-75ec83102e21.jpg",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "uploads/CHICKEN SAUTE_75_a60a07e1-0470-4713-9bcc-75ec83102e21#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "7hezfy1b1p",
+      "Integrity": "CzskG87u+HVeWty25wB1KpdMxgAVfbr+gJK4/0T/S+8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\CHICKEN SAUTE_75_a60a07e1-0470-4713-9bcc-75ec83102e21.jpg"
     },
     {
       "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\curry_7_27f00a6a-1e76-4f25-92a0-82a8ff9109cf.png",
@@ -2159,6 +2516,132 @@
       "OriginalItemSpec": "wwwroot\\uploads\\EBI FURAI CURRY_38_ad6819d6-4f85-47ab-a960-76f68481912b.jpg"
     },
     {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\EBI FURAI CURRY_68_e925fea1-4494-4b96-ae15-ab9eabd15600.jpg",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "uploads/EBI FURAI CURRY_68_e925fea1-4494-4b96-ae15-ab9eabd15600#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "r085aa3i3w",
+      "Integrity": "JeYAlhwVTsT+2tmP/LHmdyhsmr3XbBTjCzKfvC7N0Xc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\EBI FURAI CURRY_68_e925fea1-4494-4b96-ae15-ab9eabd15600.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\EBI FURAI CURRY_80_d88cdcfb-936c-4567-a39a-87c4cc9c6ac7.jpg",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "uploads/EBI FURAI CURRY_80_d88cdcfb-936c-4567-a39a-87c4cc9c6ac7#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "uz2v8khg7d",
+      "Integrity": "FvfIxxYXSgH+eQDyKtXBCK/HuOZ4JmFZL5hMguWg5IU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\EBI FURAI CURRY_80_d88cdcfb-936c-4567-a39a-87c4cc9c6ac7.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\EBI TENTOJI_63_190c9814-c73f-43da-9c9a-2d2cab373832.jpg",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "uploads/EBI TENTOJI_63_190c9814-c73f-43da-9c9a-2d2cab373832#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "80ia4uu63x",
+      "Integrity": "WGpCJAVPo27JD5sgssvHNt9T3pAHde6pAUsoaanprMA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\EBI TENTOJI_63_190c9814-c73f-43da-9c9a-2d2cab373832.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\EBI TENTOJI_74_d456c7db-c260-4f67-9597-e79de0bd944b.jpg",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "uploads/EBI TENTOJI_74_d456c7db-c260-4f67-9597-e79de0bd944b#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "8g2srkgzvt",
+      "Integrity": "mHncUWZCi0+Y+M8Xh5dI1v+6YLK0HWqYPkMOttA78KQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\EBI TENTOJI_74_d456c7db-c260-4f67-9597-e79de0bd944b.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\EBITEN MAKI ROLL_74_baac96a2-3453-4684-bafa-aaaf1e526cb7.jpg",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "uploads/EBITEN MAKI ROLL_74_baac96a2-3453-4684-bafa-aaaf1e526cb7#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "x7ois2psbb",
+      "Integrity": "Hb+OgvETZswcEHS8KoGtzpHr9gGXFNCnTsSZ6ZyRo4c=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\EBITEN MAKI ROLL_74_baac96a2-3453-4684-bafa-aaaf1e526cb7.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\EBITEN MAKI ROLL_77_1343876e-464b-420d-9d86-777fa129461f.jpg",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "uploads/EBITEN MAKI ROLL_77_1343876e-464b-420d-9d86-777fa129461f#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "x7ois2psbb",
+      "Integrity": "Hb+OgvETZswcEHS8KoGtzpHr9gGXFNCnTsSZ6ZyRo4c=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\EBITEN MAKI ROLL_77_1343876e-464b-420d-9d86-777fa129461f.jpg"
+    },
+    {
       "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\FUTO MAKI ROLL_37_c6c58bf8-f576-4c78-8f56-f66b017809c4.jpg",
       "SourceId": "JapaneseMealReservation",
       "SourceType": "Discovered",
@@ -2178,6 +2661,111 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\FUTO MAKI ROLL_37_c6c58bf8-f576-4c78-8f56-f66b017809c4.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\HIYASHI CHUKA SOBA_66_c2d04467-ec7b-4a66-9724-fbda8c9ceacd.jpg",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "uploads/HIYASHI CHUKA SOBA_66_c2d04467-ec7b-4a66-9724-fbda8c9ceacd#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "hdzpcgt2ki",
+      "Integrity": "VZsd29Z5H0dP5dTDzQQ0KQA7D7r13SPbwPbdKolJiBY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\HIYASHI CHUKA SOBA_66_c2d04467-ec7b-4a66-9724-fbda8c9ceacd.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\HIYASHI CHUKA SOBA_78_e522f4c4-7794-4c88-a470-f82b19e695d3.jpg",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "uploads/HIYASHI CHUKA SOBA_78_e522f4c4-7794-4c88-a470-f82b19e695d3#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "wn4q5l3ejy",
+      "Integrity": "HONBwZY3o5whfB4YYOkKSPxcUteeiVzyQiYZM23DF6c=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\HIYASHI CHUKA SOBA_78_e522f4c4-7794-4c88-a470-f82b19e695d3.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\HOIKORO_72_f1210024-f104-48a9-a857-284527d0d84a.jpg",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "uploads/HOIKORO_72_f1210024-f104-48a9-a857-284527d0d84a#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "97nx8v8aze",
+      "Integrity": "tdfgWaJqOxhK3xUz27rShH56jwurPDHKo/OiOBl9vL8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\HOIKORO_72_f1210024-f104-48a9-a857-284527d0d84a.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\hottomotto-hoikoro-subuta-bento2_1_ba6c84e7-ae1b-4ea1-bb3f-ffce1be78a84.jpg",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "uploads/hottomotto-hoikoro-subuta-bento2_1_ba6c84e7-ae1b-4ea1-bb3f-ffce1be78a84#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "0qkobtomcj",
+      "Integrity": "GAKFSqXDOJusFLrk08C5Dza3vyqREb/0sCiZQMfM67A=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\hottomotto-hoikoro-subuta-bento2_1_ba6c84e7-ae1b-4ea1-bb3f-ffce1be78a84.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\hottomotto-hoikoro-subuta-bento2_16_b9547e5b-1b86-45bb-ba71-53dc7df46758.jpg",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "uploads/hottomotto-hoikoro-subuta-bento2_16_b9547e5b-1b86-45bb-ba71-53dc7df46758#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "0qkobtomcj",
+      "Integrity": "GAKFSqXDOJusFLrk08C5Dza3vyqREb/0sCiZQMfM67A=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\hottomotto-hoikoro-subuta-bento2_16_b9547e5b-1b86-45bb-ba71-53dc7df46758.jpg"
     },
     {
       "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\IKA SHOGAYAKI_33_899f51fe-b71d-4dfb-a195-572f82fca4e4.jpg",
@@ -2306,6 +2894,27 @@
       "OriginalItemSpec": "wwwroot\\uploads\\maki_9_f1c6af26-c3e1-4143-a992-371c51c7d86d.jpg"
     },
     {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\NIKOMI HAMBURG_76_33b25474-c86f-4f80-bdd6-f79c1d14cf43.jpg",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "uploads/NIKOMI HAMBURG_76_33b25474-c86f-4f80-bdd6-f79c1d14cf43#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "jlc6wekgvm",
+      "Integrity": "uSL66eKlrx+rxxf9rhQPDUsgh85ZKPkeKxjG1LRVvS4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\NIKOMI HAMBURG_76_33b25474-c86f-4f80-bdd6-f79c1d14cf43.jpg"
+    },
+    {
       "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\noodles_5_70cb1c29-d771-4da9-9c28-8a6187197b4a.png",
       "SourceId": "JapaneseMealReservation",
       "SourceType": "Discovered",
@@ -2390,6 +2999,237 @@
       "OriginalItemSpec": "wwwroot\\uploads\\OROSHI PONZU CHICKEN_48_70880dd7-7d7a-452c-9265-a08c6da7bcb5.jpg"
     },
     {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Picture1_47_79b3122a-0e85-4b4e-af9e-5e129c318e63.png",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "uploads/Picture1_47_79b3122a-0e85-4b4e-af9e-5e129c318e63#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "z6tow2xhso",
+      "Integrity": "NZ51HaJAJLX5bqjdRUPX4iQdMSH4pk4iqASFVQVZSpU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\Picture1_47_79b3122a-0e85-4b4e-af9e-5e129c318e63.png"
+    },
+    {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Picture10_56_e49039e5-8009-4b89-b649-04d90785c6e8.png",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "uploads/Picture10_56_e49039e5-8009-4b89-b649-04d90785c6e8#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "rwq6m25ujs",
+      "Integrity": "RUTYvSio1zSjfsidpsgcZjAfzIdaDDcxvyIEczhkjh0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\Picture10_56_e49039e5-8009-4b89-b649-04d90785c6e8.png"
+    },
+    {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Picture2_48_2a640057-97c0-4b1b-9839-b73010763dfd.png",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "uploads/Picture2_48_2a640057-97c0-4b1b-9839-b73010763dfd#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "oysq1119rj",
+      "Integrity": "4FWSr2q7dgibV/5O6UsE56v7wE2Bz4coLrxgSp4aWRE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\Picture2_48_2a640057-97c0-4b1b-9839-b73010763dfd.png"
+    },
+    {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Picture3_49_a7c328a1-73d7-4c02-aa1e-525960dab0ed.png",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "uploads/Picture3_49_a7c328a1-73d7-4c02-aa1e-525960dab0ed#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "i8uvmq8gsx",
+      "Integrity": "Lld0TmfoY8HEPmUPYrwxwIyZpoLSnOcjGQqvgG+1vzI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\Picture3_49_a7c328a1-73d7-4c02-aa1e-525960dab0ed.png"
+    },
+    {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Picture3_58_57e3b204-4ef4-4686-ad80-0e9203052f1d.png",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "uploads/Picture3_58_57e3b204-4ef4-4686-ad80-0e9203052f1d#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "i8uvmq8gsx",
+      "Integrity": "Lld0TmfoY8HEPmUPYrwxwIyZpoLSnOcjGQqvgG+1vzI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\Picture3_58_57e3b204-4ef4-4686-ad80-0e9203052f1d.png"
+    },
+    {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Picture4_50_18b6a889-cc3c-43b2-90b8-f1668c3462bc.png",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "uploads/Picture4_50_18b6a889-cc3c-43b2-90b8-f1668c3462bc#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "1wni7wv0yj",
+      "Integrity": "cSAGTCRZhNR5xB2dQ4xzdkKzJv+sn09EfarPHXJJPeg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\Picture4_50_18b6a889-cc3c-43b2-90b8-f1668c3462bc.png"
+    },
+    {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Picture5_51_96dca5f7-c5a9-4212-89a6-1077b7fd0e6f.png",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "uploads/Picture5_51_96dca5f7-c5a9-4212-89a6-1077b7fd0e6f#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ly2x3blc67",
+      "Integrity": "wzNNtrjapQuIoSxsF+m4QUn4HzSbQJafvqAGQoT4a8k=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\Picture5_51_96dca5f7-c5a9-4212-89a6-1077b7fd0e6f.png"
+    },
+    {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Picture6_52_2c352eed-397f-4fb3-b893-3269975df841.png",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "uploads/Picture6_52_2c352eed-397f-4fb3-b893-3269975df841#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "hhl9iil39m",
+      "Integrity": "+0C0AnUsNBq44M/estOjppBYTNrvIFXdr9SjofWcpJo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\Picture6_52_2c352eed-397f-4fb3-b893-3269975df841.png"
+    },
+    {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Picture7_53_bc038c6f-fcc1-4b63-8fcc-81c278b8485e.png",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "uploads/Picture7_53_bc038c6f-fcc1-4b63-8fcc-81c278b8485e#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ku48k86h1d",
+      "Integrity": "jB6thAOyqZdqPijTiDz8mloH3J0lljQMa6W5ev8ehpo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\Picture7_53_bc038c6f-fcc1-4b63-8fcc-81c278b8485e.png"
+    },
+    {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Picture8_54_f2feb903-6cde-4797-a86b-f432c51b4e75.png",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "uploads/Picture8_54_f2feb903-6cde-4797-a86b-f432c51b4e75#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "m94l739rus",
+      "Integrity": "JlRHtCtPIeXvoIURn5v/y3CTXVs/KVzPInrG3917bZY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\Picture8_54_f2feb903-6cde-4797-a86b-f432c51b4e75.png"
+    },
+    {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Picture9_55_f570132d-74da-4fdb-939a-a0778d8731db.png",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "uploads/Picture9_55_f570132d-74da-4fdb-939a-a0778d8731db#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "r2gy7bj0h1",
+      "Integrity": "HdcbPSK7IOz+AiNN9Ge0ywM81wJzl8qb+26A+irG1os=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\Picture9_55_f570132d-74da-4fdb-939a-a0778d8731db.png"
+    },
+    {
       "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\PORK YAKINIKU_46_ab0d8698-bace-4fe0-81a9-3122897a60df.jpg",
       "SourceId": "JapaneseMealReservation",
       "SourceType": "Discovered",
@@ -2453,6 +3293,111 @@
       "OriginalItemSpec": "wwwroot\\uploads\\SANSHOKU SOBORO_30_3be4d865-7d20-47b8-81f3-cd8fc0b605db.jpg"
     },
     {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Screenshot 2025-07-14 115400_1_c31c4908-c750-4723-80a8-2d7e15736394.png",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "uploads/Screenshot 2025-07-14 115400_1_c31c4908-c750-4723-80a8-2d7e15736394#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "n2rvv3tnpg",
+      "Integrity": "z5VG2KUbUVAtpxciLWdeBnPR0tyPhxrOfeg+qN6oC0c=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\Screenshot 2025-07-14 115400_1_c31c4908-c750-4723-80a8-2d7e15736394.png"
+    },
+    {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Screenshot 2025-10-20 085142_57_9272407e-508c-4a0b-b470-f6dc2bf111d8.jpg",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "uploads/Screenshot 2025-10-20 085142_57_9272407e-508c-4a0b-b470-f6dc2bf111d8#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "f8vo1xnt5d",
+      "Integrity": "4dZEFGZGQUG3IJ5EHgI2z+o9WAqK4CgGNveuzamPz7U=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\Screenshot 2025-10-20 085142_57_9272407e-508c-4a0b-b470-f6dc2bf111d8.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Screenshot 2025-10-20 085225_59_b35798df-e3bb-41e5-a01b-1a31c8377f20.jpg",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "uploads/Screenshot 2025-10-20 085225_59_b35798df-e3bb-41e5-a01b-1a31c8377f20#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "fcvgnuoid8",
+      "Integrity": "r7Gfdf3yIqIrMfDLJd+Aqwtnm6EXFk8eQBccoRQJDq4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\Screenshot 2025-10-20 085225_59_b35798df-e3bb-41e5-a01b-1a31c8377f20.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Screenshot 2025-10-20 085402_60_02ec0430-f3e1-40ef-a792-34f21d29fa09.jpg",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "uploads/Screenshot 2025-10-20 085402_60_02ec0430-f3e1-40ef-a792-34f21d29fa09#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gknniredz6",
+      "Integrity": "EJU02jJh0uEWv/d5XQiYOcoD2xti5hsh8NG9TH2EM4I=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\Screenshot 2025-10-20 085402_60_02ec0430-f3e1-40ef-a792-34f21d29fa09.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Screenshot 2025-10-20 085440_61_7c474f41-18be-483c-900c-f5b82d737411.jpg",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "uploads/Screenshot 2025-10-20 085440_61_7c474f41-18be-483c-900c-f5b82d737411#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ve8jygx9ni",
+      "Integrity": "V6Nf+LL/GDwfYgiYA92xk8UAK6DmvD/L+dHdYpTNBq8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\Screenshot 2025-10-20 085440_61_7c474f41-18be-483c-900c-f5b82d737411.jpg"
+    },
+    {
       "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\SHOYU RAMEN_52_b132b311-669a-4293-bc9e-49b75c3be39c.jpg",
       "SourceId": "JapaneseMealReservation",
       "SourceType": "Discovered",
@@ -2472,6 +3417,48 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\SHOYU RAMEN_52_b132b311-669a-4293-bc9e-49b75c3be39c.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\SHOYU RAMEN_69_7f8e1e1a-7b7f-46b6-9583-2d3a76efbde7.jpg",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "uploads/SHOYU RAMEN_69_7f8e1e1a-7b7f-46b6-9583-2d3a76efbde7#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "5ca728dtdp",
+      "Integrity": "611A4PO9fUuYpi27/83IwSrb9ArYmw2bBGW1ddfoL6w=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\SHOYU RAMEN_69_7f8e1e1a-7b7f-46b6-9583-2d3a76efbde7.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\SHOYU RAMEN_81_6d146a3c-f753-41a1-abfb-ab873e53fb6d.jpg",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "uploads/SHOYU RAMEN_81_6d146a3c-f753-41a1-abfb-ab873e53fb6d#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "32971baern",
+      "Integrity": "ZQn39skbyKXXPVLbmHbKB7obHWm2t6S65VWvka1oc6c=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\SHOYU RAMEN_81_6d146a3c-f753-41a1-abfb-ab873e53fb6d.jpg"
     },
     {
       "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\silog_10_4522ce6f-9965-47ed-a331-cb44ed7e950d.jpg",
@@ -2558,6 +3545,48 @@
       "OriginalItemSpec": "wwwroot\\uploads\\TONPEIYAKI_31_1a713dd7-41a9-40f6-8555-41484df26bac.jpg"
     },
     {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\TORI TERIYAKI WITH TARTAR SAUCE_62_26a70e64-da7a-41ef-8a64-85cdb8d1a939.jpg",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "uploads/TORI TERIYAKI WITH TARTAR SAUCE_62_26a70e64-da7a-41ef-8a64-85cdb8d1a939#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "qvsibyfplv",
+      "Integrity": "tkUIh2cnGkwSMWVmH7DwFQdV5JfHqTj50qQyDooJFNM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\TORI TERIYAKI WITH TARTAR SAUCE_62_26a70e64-da7a-41ef-8a64-85cdb8d1a939.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\TORI TERIYAKI_73_5036816f-f2a9-4b86-a438-6ba6315496bc.jpg",
+      "SourceId": "JapaneseMealReservation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\",
+      "BasePath": "_content/JapaneseMealReservation",
+      "RelativePath": "uploads/TORI TERIYAKI_73_5036816f-f2a9-4b86-a438-6ba6315496bc#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "c2yhqm2h0e",
+      "Integrity": "TGfmj7WM8lzeD9Opckfq8/rsBUxKGfe07DNPYh8drpE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\TORI TERIYAKI_73_5036816f-f2a9-4b86-a438-6ba6315496bc.jpg"
+    },
+    {
       "Identity": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\TUNA MAKI ROLL_20_65304b79-b4a6-4f80-b2c3-f6252f458e1c.jpg",
       "SourceId": "JapaneseMealReservation",
       "SourceType": "Discovered",
@@ -2641,11 +3670,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"gj2v81C8L/b5vUh29E47CIjs8ZWoc53SmBYKjiEo4z0=\""
+          "Value": "\"+XPe8g+5+JeVDlYKjRDISELRULJUaXUVcKByYSkluQI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 03 Jul 2025 08:01:38 GMT"
+          "Value": "Mon, 03 Nov 2025 02:24:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2655,12 +3684,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-gj2v81C8L/b5vUh29E47CIjs8ZWoc53SmBYKjiEo4z0="
+          "Value": "sha256-+XPe8g+5+JeVDlYKjRDISELRULJUaXUVcKByYSkluQI="
         }
       ]
     },
     {
-      "Route": "css/site.m6hucha8yq.css",
+      "Route": "css/site.fucso1yu0k.css",
       "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2678,11 +3707,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"gj2v81C8L/b5vUh29E47CIjs8ZWoc53SmBYKjiEo4z0=\""
+          "Value": "\"+XPe8g+5+JeVDlYKjRDISELRULJUaXUVcKByYSkluQI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 03 Jul 2025 08:01:38 GMT"
+          "Value": "Mon, 03 Nov 2025 02:24:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2692,7 +3721,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "m6hucha8yq"
+          "Value": "fucso1yu0k"
         },
         {
           "Name": "label",
@@ -2700,7 +3729,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-gj2v81C8L/b5vUh29E47CIjs8ZWoc53SmBYKjiEo4z0="
+          "Value": "sha256-+XPe8g+5+JeVDlYKjRDISELRULJUaXUVcKByYSkluQI="
         }
       ]
     },
@@ -3033,6 +4062,170 @@
       ]
     },
     {
+      "Route": "images/icon.248ib7mlpt.png",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\images\\icon.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "37553"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"bv8qZ6TocjPamja7K1AZmcIoqkewjn+nHtjEokkOYOU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 13 Nov 2025 06:50:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "248ib7mlpt"
+        },
+        {
+          "Name": "label",
+          "Value": "images/icon.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-bv8qZ6TocjPamja7K1AZmcIoqkewjn+nHtjEokkOYOU="
+        }
+      ]
+    },
+    {
+      "Route": "images/icon.ico",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\images\\icon.ico",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "194103"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/x-icon"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8It71tseWMEQ8N3IbvbpjhmLXUOLsiLWXsvZJcIMsoI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 13 Nov 2025 06:51:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-8It71tseWMEQ8N3IbvbpjhmLXUOLsiLWXsvZJcIMsoI="
+        }
+      ]
+    },
+    {
+      "Route": "images/icon.png",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\images\\icon.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "37553"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"bv8qZ6TocjPamja7K1AZmcIoqkewjn+nHtjEokkOYOU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 13 Nov 2025 06:50:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-bv8qZ6TocjPamja7K1AZmcIoqkewjn+nHtjEokkOYOU="
+        }
+      ]
+    },
+    {
+      "Route": "images/icon.w44466sppr.ico",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\images\\icon.ico",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "194103"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/x-icon"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8It71tseWMEQ8N3IbvbpjhmLXUOLsiLWXsvZJcIMsoI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 13 Nov 2025 06:51:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "w44466sppr"
+        },
+        {
+          "Name": "label",
+          "Value": "images/icon.ico"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-8It71tseWMEQ8N3IbvbpjhmLXUOLsiLWXsvZJcIMsoI="
+        }
+      ]
+    },
+    {
       "Route": "images/jap-flag.jpg",
       "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\images\\jap-flag.jpg",
       "Selectors": [],
@@ -3361,6 +4554,88 @@
       ]
     },
     {
+      "Route": "images/No photo image.b43movoitv.gif",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\images\\No photo image.gif",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "46062"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/gif"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"S61z42LuBsl7N5dMl4em+VdqOA+lwvBZiQ0SCpqr75s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 12 Nov 2025 09:39:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "b43movoitv"
+        },
+        {
+          "Name": "label",
+          "Value": "images/No photo image.gif"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-S61z42LuBsl7N5dMl4em+VdqOA+lwvBZiQ0SCpqr75s="
+        }
+      ]
+    },
+    {
+      "Route": "images/No photo image.gif",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\images\\No photo image.gif",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "46062"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/gif"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"S61z42LuBsl7N5dMl4em+VdqOA+lwvBZiQ0SCpqr75s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 12 Nov 2025 09:39:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-S61z42LuBsl7N5dMl4em+VdqOA+lwvBZiQ0SCpqr75s="
+        }
+      ]
+    },
+    {
       "Route": "images/noodles.jkj5w2ijm3.png",
       "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\images\\noodles.png",
       "Selectors": [],
@@ -3547,7 +4822,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 02 Jun 2025 00:05:21 GMT"
+          "Value": "Tue, 18 Nov 2025 01:15:37 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3584,7 +4859,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 02 Jun 2025 00:05:21 GMT"
+          "Value": "Tue, 18 Nov 2025 01:15:37 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3629,7 +4904,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 02 Jun 2025 00:05:21 GMT"
+          "Value": "Tue, 18 Nov 2025 01:15:37 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3674,7 +4949,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 02 Jun 2025 00:05:21 GMT"
+          "Value": "Tue, 18 Nov 2025 01:15:37 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4099,51 +5374,6 @@
       ]
     },
     {
-      "Route": "js/orderCalendar.jc0xirpkvn.js",
-      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\js\\orderCalendar.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "945"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"/VGLsjFz5PfMevj+8NEebfXtF5BL/xH+LThhRuXPTi0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 20 Jun 2025 10:47:40 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "jc0xirpkvn"
-        },
-        {
-          "Name": "label",
-          "Value": "js/orderCalendar.js"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-/VGLsjFz5PfMevj+8NEebfXtF5BL/xH+LThhRuXPTi0="
-        }
-      ]
-    },
-    {
       "Route": "js/orderCalendar.js",
       "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\js\\orderCalendar.js",
       "Selectors": [],
@@ -4154,7 +5384,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "945"
+          "Value": "1085"
         },
         {
           "Name": "Content-Type",
@@ -4162,11 +5392,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"/VGLsjFz5PfMevj+8NEebfXtF5BL/xH+LThhRuXPTi0=\""
+          "Value": "\"F4Jxcy/Ys9cRrpjWl/zfghw+NsJGN2lm635sLBTp9wQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 20 Jun 2025 10:47:40 GMT"
+          "Value": "Wed, 05 Nov 2025 06:18:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4176,13 +5406,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-/VGLsjFz5PfMevj+8NEebfXtF5BL/xH+LThhRuXPTi0="
+          "Value": "sha256-F4Jxcy/Ys9cRrpjWl/zfghw+NsJGN2lm635sLBTp9wQ="
         }
       ]
     },
     {
-      "Route": "js/orderValidation.2q7mhbu5oc.js",
-      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\js\\orderValidation.js",
+      "Route": "js/orderCalendar.nsh8emhq4t.js",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\js\\orderCalendar.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4191,7 +5421,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1982"
+          "Value": "1085"
         },
         {
           "Name": "Content-Type",
@@ -4199,11 +5429,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ZlK0yxjyeqSh7FrY7O8cWmTRNmhhiTBEZAJo5sWMfY0=\""
+          "Value": "\"F4Jxcy/Ys9cRrpjWl/zfghw+NsJGN2lm635sLBTp9wQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 30 Jun 2025 00:20:33 GMT"
+          "Value": "Wed, 05 Nov 2025 06:18:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4213,15 +5443,15 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "2q7mhbu5oc"
+          "Value": "nsh8emhq4t"
         },
         {
           "Name": "label",
-          "Value": "js/orderValidation.js"
+          "Value": "js/orderCalendar.js"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-ZlK0yxjyeqSh7FrY7O8cWmTRNmhhiTBEZAJo5sWMfY0="
+          "Value": "sha256-F4Jxcy/Ys9cRrpjWl/zfghw+NsJGN2lm635sLBTp9wQ="
         }
       ]
     },
@@ -4236,7 +5466,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1982"
+          "Value": "1846"
         },
         {
           "Name": "Content-Type",
@@ -4244,11 +5474,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ZlK0yxjyeqSh7FrY7O8cWmTRNmhhiTBEZAJo5sWMfY0=\""
+          "Value": "\"+jIff3B818YZLPJUZWxFADlxfeb4aA8okxFOL3VL3rc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 30 Jun 2025 00:20:33 GMT"
+          "Value": "Fri, 05 Sep 2025 02:36:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4258,7 +5488,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-ZlK0yxjyeqSh7FrY7O8cWmTRNmhhiTBEZAJo5sWMfY0="
+          "Value": "sha256-+jIff3B818YZLPJUZWxFADlxfeb4aA8okxFOL3VL3rc="
+        }
+      ]
+    },
+    {
+      "Route": "js/orderValidation.yeinypx8im.js",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\js\\orderValidation.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1846"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+jIff3B818YZLPJUZWxFADlxfeb4aA8okxFOL3VL3rc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 05 Sep 2025 02:36:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "yeinypx8im"
+        },
+        {
+          "Name": "label",
+          "Value": "js/orderValidation.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-+jIff3B818YZLPJUZWxFADlxfeb4aA8okxFOL3VL3rc="
         }
       ]
     },
@@ -4427,6 +5702,51 @@
       ]
     },
     {
+      "Route": "js/reservation.cr06i2kt3a.js",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\js\\reservation.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4442"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WGN8AjHGLRk2ly51JzRLjhE+bfICGMpi7FzRHaP9c2M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 12 Sep 2025 07:24:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "cr06i2kt3a"
+        },
+        {
+          "Name": "label",
+          "Value": "js/reservation.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-WGN8AjHGLRk2ly51JzRLjhE+bfICGMpi7FzRHaP9c2M="
+        }
+      ]
+    },
+    {
       "Route": "js/reservation.js",
       "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\js\\reservation.js",
       "Selectors": [],
@@ -4437,7 +5757,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4435"
+          "Value": "4442"
         },
         {
           "Name": "Content-Type",
@@ -4445,11 +5765,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"NGZrEObKNOGqt5VtYVcjOZgUK4iw/3X+yCBdQSNXnyA=\""
+          "Value": "\"WGN8AjHGLRk2ly51JzRLjhE+bfICGMpi7FzRHaP9c2M=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 13 Jul 2025 23:52:39 GMT"
+          "Value": "Fri, 12 Sep 2025 07:24:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4459,52 +5779,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-NGZrEObKNOGqt5VtYVcjOZgUK4iw/3X+yCBdQSNXnyA="
-        }
-      ]
-    },
-    {
-      "Route": "js/reservation.oxdh12pzu0.js",
-      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\js\\reservation.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "4435"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"NGZrEObKNOGqt5VtYVcjOZgUK4iw/3X+yCBdQSNXnyA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 13 Jul 2025 23:52:39 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "oxdh12pzu0"
-        },
-        {
-          "Name": "label",
-          "Value": "js/reservation.js"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-NGZrEObKNOGqt5VtYVcjOZgUK4iw/3X+yCBdQSNXnyA="
+          "Value": "sha256-WGN8AjHGLRk2ly51JzRLjhE+bfICGMpi7FzRHaP9c2M="
         }
       ]
     },
@@ -9429,6 +10704,826 @@
       ]
     },
     {
+      "Route": "Rotativa/bin/libwkhtmltox.a",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\Rotativa\\bin\\libwkhtmltox.a",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "134958"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"10bVv63LVpw6O3/ddTnexdzYX4pr2cR9/Lr0dZYYzKQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 11 Jun 2020 00:24:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-10bVv63LVpw6O3/ddTnexdzYX4pr2cR9/Lr0dZYYzKQ="
+        }
+      ]
+    },
+    {
+      "Route": "Rotativa/bin/libwkhtmltox.f2g608d7gt.a",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\Rotativa\\bin\\libwkhtmltox.a",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "134958"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"10bVv63LVpw6O3/ddTnexdzYX4pr2cR9/Lr0dZYYzKQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 11 Jun 2020 00:24:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "f2g608d7gt"
+        },
+        {
+          "Name": "label",
+          "Value": "Rotativa/bin/libwkhtmltox.a"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-10bVv63LVpw6O3/ddTnexdzYX4pr2cR9/Lr0dZYYzKQ="
+        }
+      ]
+    },
+    {
+      "Route": "Rotativa/bin/wkhtmltoimage.ae8clhsdf7.exe",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\Rotativa\\bin\\wkhtmltoimage.exe",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "41478656"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.microsoft.portable-executable"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fjFOgfm/1MfYHXn3GvpT6VgJa+SUi/fSkPcBBcOKy84=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 11 Jun 2020 00:24:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ae8clhsdf7"
+        },
+        {
+          "Name": "label",
+          "Value": "Rotativa/bin/wkhtmltoimage.exe"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-fjFOgfm/1MfYHXn3GvpT6VgJa+SUi/fSkPcBBcOKy84="
+        }
+      ]
+    },
+    {
+      "Route": "Rotativa/bin/wkhtmltoimage.exe",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\Rotativa\\bin\\wkhtmltoimage.exe",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "41478656"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.microsoft.portable-executable"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fjFOgfm/1MfYHXn3GvpT6VgJa+SUi/fSkPcBBcOKy84=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 11 Jun 2020 00:24:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-fjFOgfm/1MfYHXn3GvpT6VgJa+SUi/fSkPcBBcOKy84="
+        }
+      ]
+    },
+    {
+      "Route": "Rotativa/bin/wkhtmltopdf.cuquy3615b.exe",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\Rotativa\\bin\\wkhtmltopdf.exe",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "41563648"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.microsoft.portable-executable"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZNF2gjIL/9RbIgjtE7E21ZE56CVzdF8UVWzyXpXL2Ag=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 11 Jun 2020 00:24:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "cuquy3615b"
+        },
+        {
+          "Name": "label",
+          "Value": "Rotativa/bin/wkhtmltopdf.exe"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZNF2gjIL/9RbIgjtE7E21ZE56CVzdF8UVWzyXpXL2Ag="
+        }
+      ]
+    },
+    {
+      "Route": "Rotativa/bin/wkhtmltopdf.exe",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\Rotativa\\bin\\wkhtmltopdf.exe",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "41563648"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.microsoft.portable-executable"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZNF2gjIL/9RbIgjtE7E21ZE56CVzdF8UVWzyXpXL2Ag=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 11 Jun 2020 00:24:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZNF2gjIL/9RbIgjtE7E21ZE56CVzdF8UVWzyXpXL2Ag="
+        }
+      ]
+    },
+    {
+      "Route": "Rotativa/bin/wkhtmltox.dll",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\Rotativa\\bin\\wkhtmltox.dll",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "41382912"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0JnDQt6YXXk6Kp6pDQBSCOkPuJB/EkUzKmodlSgtnJ0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 11 Jun 2020 00:24:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0JnDQt6YXXk6Kp6pDQBSCOkPuJB/EkUzKmodlSgtnJ0="
+        }
+      ]
+    },
+    {
+      "Route": "Rotativa/bin/wkhtmltox.kz17487uij.dll",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\Rotativa\\bin\\wkhtmltox.dll",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "41382912"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0JnDQt6YXXk6Kp6pDQBSCOkPuJB/EkUzKmodlSgtnJ0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 11 Jun 2020 00:24:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kz17487uij"
+        },
+        {
+          "Name": "label",
+          "Value": "Rotativa/bin/wkhtmltox.dll"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0JnDQt6YXXk6Kp6pDQBSCOkPuJB/EkUzKmodlSgtnJ0="
+        }
+      ]
+    },
+    {
+      "Route": "Rotativa/include/wkhtmltox/dllbegin.hqki9u824z.inc",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\Rotativa\\include\\wkhtmltox\\dllbegin.inc",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1642"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"h+X3EiYKgtiPmTgL1aDWn+XivijUcEWfjBvEuDKXAxE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 11 Jun 2020 00:24:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "hqki9u824z"
+        },
+        {
+          "Name": "label",
+          "Value": "Rotativa/include/wkhtmltox/dllbegin.inc"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-h+X3EiYKgtiPmTgL1aDWn+XivijUcEWfjBvEuDKXAxE="
+        }
+      ]
+    },
+    {
+      "Route": "Rotativa/include/wkhtmltox/dllbegin.inc",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\Rotativa\\include\\wkhtmltox\\dllbegin.inc",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1642"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"h+X3EiYKgtiPmTgL1aDWn+XivijUcEWfjBvEuDKXAxE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 11 Jun 2020 00:24:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-h+X3EiYKgtiPmTgL1aDWn+XivijUcEWfjBvEuDKXAxE="
+        }
+      ]
+    },
+    {
+      "Route": "Rotativa/include/wkhtmltox/dllend.dvqg3ylu8n.inc",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\Rotativa\\include\\wkhtmltox\\dllend.inc",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1078"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"95hB4aOxbLC+WZHdbpPtSY7DW0DhxOOYU7+z5IuEGaw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 11 Jun 2020 00:24:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dvqg3ylu8n"
+        },
+        {
+          "Name": "label",
+          "Value": "Rotativa/include/wkhtmltox/dllend.inc"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-95hB4aOxbLC+WZHdbpPtSY7DW0DhxOOYU7+z5IuEGaw="
+        }
+      ]
+    },
+    {
+      "Route": "Rotativa/include/wkhtmltox/dllend.inc",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\Rotativa\\include\\wkhtmltox\\dllend.inc",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1078"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"95hB4aOxbLC+WZHdbpPtSY7DW0DhxOOYU7+z5IuEGaw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 11 Jun 2020 00:24:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-95hB4aOxbLC+WZHdbpPtSY7DW0DhxOOYU7+z5IuEGaw="
+        }
+      ]
+    },
+    {
+      "Route": "Rotativa/include/wkhtmltox/image.h",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\Rotativa\\include\\wkhtmltox\\image.h",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3700"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"boXN6/1zckZJ/vyhz3fdeUOR4Wx7NySs47bVTHhjxFc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 11 Jun 2020 00:24:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-boXN6/1zckZJ/vyhz3fdeUOR4Wx7NySs47bVTHhjxFc="
+        }
+      ]
+    },
+    {
+      "Route": "Rotativa/include/wkhtmltox/image.u83015imuu.h",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\Rotativa\\include\\wkhtmltox\\image.h",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3700"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"boXN6/1zckZJ/vyhz3fdeUOR4Wx7NySs47bVTHhjxFc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 11 Jun 2020 00:24:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "u83015imuu"
+        },
+        {
+          "Name": "label",
+          "Value": "Rotativa/include/wkhtmltox/image.h"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-boXN6/1zckZJ/vyhz3fdeUOR4Wx7NySs47bVTHhjxFc="
+        }
+      ]
+    },
+    {
+      "Route": "Rotativa/include/wkhtmltox/pdf.h",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\Rotativa\\include\\wkhtmltox\\pdf.h",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4273"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Qfvfj5KMj7vlyjS8Ft7oBb2EY6C/cszYrXN174okAuo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 11 Jun 2020 00:24:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Qfvfj5KMj7vlyjS8Ft7oBb2EY6C/cszYrXN174okAuo="
+        }
+      ]
+    },
+    {
+      "Route": "Rotativa/include/wkhtmltox/pdf.jrifszfwxy.h",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\Rotativa\\include\\wkhtmltox\\pdf.h",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4273"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Qfvfj5KMj7vlyjS8Ft7oBb2EY6C/cszYrXN174okAuo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 11 Jun 2020 00:24:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jrifszfwxy"
+        },
+        {
+          "Name": "label",
+          "Value": "Rotativa/include/wkhtmltox/pdf.h"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Qfvfj5KMj7vlyjS8Ft7oBb2EY6C/cszYrXN174okAuo="
+        }
+      ]
+    },
+    {
+      "Route": "Rotativa/wkhtmltoimage.ae8clhsdf7.exe",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\Rotativa\\wkhtmltoimage.exe",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "41478656"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.microsoft.portable-executable"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fjFOgfm/1MfYHXn3GvpT6VgJa+SUi/fSkPcBBcOKy84=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 11 Jun 2020 00:24:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ae8clhsdf7"
+        },
+        {
+          "Name": "label",
+          "Value": "Rotativa/wkhtmltoimage.exe"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-fjFOgfm/1MfYHXn3GvpT6VgJa+SUi/fSkPcBBcOKy84="
+        }
+      ]
+    },
+    {
+      "Route": "Rotativa/wkhtmltoimage.exe",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\Rotativa\\wkhtmltoimage.exe",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "41478656"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.microsoft.portable-executable"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fjFOgfm/1MfYHXn3GvpT6VgJa+SUi/fSkPcBBcOKy84=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 11 Jun 2020 00:24:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-fjFOgfm/1MfYHXn3GvpT6VgJa+SUi/fSkPcBBcOKy84="
+        }
+      ]
+    },
+    {
+      "Route": "Rotativa/wkhtmltopdf.cuquy3615b.exe",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\Rotativa\\wkhtmltopdf.exe",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "41563648"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.microsoft.portable-executable"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZNF2gjIL/9RbIgjtE7E21ZE56CVzdF8UVWzyXpXL2Ag=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 11 Jun 2020 00:24:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "cuquy3615b"
+        },
+        {
+          "Name": "label",
+          "Value": "Rotativa/wkhtmltopdf.exe"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZNF2gjIL/9RbIgjtE7E21ZE56CVzdF8UVWzyXpXL2Ag="
+        }
+      ]
+    },
+    {
+      "Route": "Rotativa/wkhtmltopdf.exe",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\Rotativa\\wkhtmltopdf.exe",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "41563648"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.microsoft.portable-executable"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZNF2gjIL/9RbIgjtE7E21ZE56CVzdF8UVWzyXpXL2Ag=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 11 Jun 2020 00:24:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZNF2gjIL/9RbIgjtE7E21ZE56CVzdF8UVWzyXpXL2Ag="
+        }
+      ]
+    },
+    {
       "Route": "run-iportal/launch-I-portal-app.bat",
       "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\run-iportal\\launch-I-portal-app.bat",
       "Selectors": [],
@@ -9507,6 +11602,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-O+BcKMs2Brzb28Hw6i4x73hYvNajSRds/fIf8NWmpdc="
+        }
+      ]
+    },
+    {
+      "Route": "screenshots/6070d80f-27aa-402f-8af3-ae6526d4eb39_ChatGPT Image Nov 13, 2025, 07_42_53 AM.o9ifgrjz6o.png",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\screenshots\\6070d80f-27aa-402f-8af3-ae6526d4eb39_ChatGPT Image Nov 13, 2025, 07_42_53 AM.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "688417"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xKnUNmyUWBOuoIi1GYjpbt8RAX4n1bwbulrU5zIbl9o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 13 Nov 2025 02:43:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "o9ifgrjz6o"
+        },
+        {
+          "Name": "label",
+          "Value": "screenshots/6070d80f-27aa-402f-8af3-ae6526d4eb39_ChatGPT Image Nov 13, 2025, 07_42_53 AM.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-xKnUNmyUWBOuoIi1GYjpbt8RAX4n1bwbulrU5zIbl9o="
+        }
+      ]
+    },
+    {
+      "Route": "screenshots/6070d80f-27aa-402f-8af3-ae6526d4eb39_ChatGPT Image Nov 13, 2025, 07_42_53 AM.png",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\screenshots\\6070d80f-27aa-402f-8af3-ae6526d4eb39_ChatGPT Image Nov 13, 2025, 07_42_53 AM.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "688417"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xKnUNmyUWBOuoIi1GYjpbt8RAX4n1bwbulrU5zIbl9o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 13 Nov 2025 02:43:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-xKnUNmyUWBOuoIi1GYjpbt8RAX4n1bwbulrU5zIbl9o="
         }
       ]
     },
@@ -10659,6 +12836,170 @@
       ]
     },
     {
+      "Route": "uploads/CALIFORNIA FRY MAKI ROLL_67_eda26474-f57d-4c52-b483-1ffa9ba312bf.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\CALIFORNIA FRY MAKI ROLL_67_eda26474-f57d-4c52-b483-1ffa9ba312bf.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10433"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"OOFbFv0cmN+hhPbGU7/FKpoalQFV9Lt2rDoPbEqJQzo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 12 Nov 2025 08:29:04 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-OOFbFv0cmN+hhPbGU7/FKpoalQFV9Lt2rDoPbEqJQzo="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/CALIFORNIA FRY MAKI ROLL_67_eda26474-f57d-4c52-b483-1ffa9ba312bf.k1tvqkh5va.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\CALIFORNIA FRY MAKI ROLL_67_eda26474-f57d-4c52-b483-1ffa9ba312bf.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10433"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"OOFbFv0cmN+hhPbGU7/FKpoalQFV9Lt2rDoPbEqJQzo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 12 Nov 2025 08:29:04 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "k1tvqkh5va"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/CALIFORNIA FRY MAKI ROLL_67_eda26474-f57d-4c52-b483-1ffa9ba312bf.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-OOFbFv0cmN+hhPbGU7/FKpoalQFV9Lt2rDoPbEqJQzo="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/CALIFORNIA FRY MAKI ROLL_79_520c27ed-6a73-47ad-833f-7e42dc1e0a27.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\CALIFORNIA FRY MAKI ROLL_79_520c27ed-6a73-47ad-833f-7e42dc1e0a27.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "131219"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1/qXzWHaTlvCIawi+BWp3wTagjtAjFaA5QhUUcGRy2Y=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 04 Sep 2025 00:55:35 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-1/qXzWHaTlvCIawi+BWp3wTagjtAjFaA5QhUUcGRy2Y="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/CALIFORNIA FRY MAKI ROLL_79_520c27ed-6a73-47ad-833f-7e42dc1e0a27.tjy1w86c0m.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\CALIFORNIA FRY MAKI ROLL_79_520c27ed-6a73-47ad-833f-7e42dc1e0a27.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "131219"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1/qXzWHaTlvCIawi+BWp3wTagjtAjFaA5QhUUcGRy2Y=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 04 Sep 2025 00:55:35 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tjy1w86c0m"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/CALIFORNIA FRY MAKI ROLL_79_520c27ed-6a73-47ad-833f-7e42dc1e0a27.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-1/qXzWHaTlvCIawi+BWp3wTagjtAjFaA5QhUUcGRy2Y="
+        }
+      ]
+    },
+    {
       "Route": "uploads/CHEESY EBI ROLL_49_719c734d-6eb9-4553-8b8f-908505a03cb9.2yc752azet.jpg",
       "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\CHEESY EBI ROLL_49_719c734d-6eb9-4553-8b8f-908505a03cb9.jpg",
       "Selectors": [],
@@ -10737,6 +13078,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-tvVZYTswNdzsIkRtP4aSUy37KrFQlo4VGw6jGVr2/xw="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/CHICKEN SAUTE_75_a60a07e1-0470-4713-9bcc-75ec83102e21.7hezfy1b1p.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\CHICKEN SAUTE_75_a60a07e1-0470-4713-9bcc-75ec83102e21.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "165573"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"CzskG87u+HVeWty25wB1KpdMxgAVfbr+gJK4/0T/S+8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 04 Sep 2025 00:54:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "7hezfy1b1p"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/CHICKEN SAUTE_75_a60a07e1-0470-4713-9bcc-75ec83102e21.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-CzskG87u+HVeWty25wB1KpdMxgAVfbr+gJK4/0T/S+8="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/CHICKEN SAUTE_75_a60a07e1-0470-4713-9bcc-75ec83102e21.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\CHICKEN SAUTE_75_a60a07e1-0470-4713-9bcc-75ec83102e21.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "165573"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"CzskG87u+HVeWty25wB1KpdMxgAVfbr+gJK4/0T/S+8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 04 Sep 2025 00:54:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-CzskG87u+HVeWty25wB1KpdMxgAVfbr+gJK4/0T/S+8="
         }
       ]
     },
@@ -10987,6 +13410,498 @@
       ]
     },
     {
+      "Route": "uploads/EBI FURAI CURRY_68_e925fea1-4494-4b96-ae15-ab9eabd15600.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\EBI FURAI CURRY_68_e925fea1-4494-4b96-ae15-ab9eabd15600.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9563"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JeYAlhwVTsT+2tmP/LHmdyhsmr3XbBTjCzKfvC7N0Xc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 12 Nov 2025 08:29:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-JeYAlhwVTsT+2tmP/LHmdyhsmr3XbBTjCzKfvC7N0Xc="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/EBI FURAI CURRY_68_e925fea1-4494-4b96-ae15-ab9eabd15600.r085aa3i3w.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\EBI FURAI CURRY_68_e925fea1-4494-4b96-ae15-ab9eabd15600.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9563"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JeYAlhwVTsT+2tmP/LHmdyhsmr3XbBTjCzKfvC7N0Xc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 12 Nov 2025 08:29:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "r085aa3i3w"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/EBI FURAI CURRY_68_e925fea1-4494-4b96-ae15-ab9eabd15600.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-JeYAlhwVTsT+2tmP/LHmdyhsmr3XbBTjCzKfvC7N0Xc="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/EBI FURAI CURRY_80_d88cdcfb-936c-4567-a39a-87c4cc9c6ac7.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\EBI FURAI CURRY_80_d88cdcfb-936c-4567-a39a-87c4cc9c6ac7.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "320407"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"FvfIxxYXSgH+eQDyKtXBCK/HuOZ4JmFZL5hMguWg5IU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 04 Sep 2025 00:55:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-FvfIxxYXSgH+eQDyKtXBCK/HuOZ4JmFZL5hMguWg5IU="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/EBI FURAI CURRY_80_d88cdcfb-936c-4567-a39a-87c4cc9c6ac7.uz2v8khg7d.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\EBI FURAI CURRY_80_d88cdcfb-936c-4567-a39a-87c4cc9c6ac7.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "320407"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"FvfIxxYXSgH+eQDyKtXBCK/HuOZ4JmFZL5hMguWg5IU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 04 Sep 2025 00:55:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "uz2v8khg7d"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/EBI FURAI CURRY_80_d88cdcfb-936c-4567-a39a-87c4cc9c6ac7.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-FvfIxxYXSgH+eQDyKtXBCK/HuOZ4JmFZL5hMguWg5IU="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/EBI TENTOJI_63_190c9814-c73f-43da-9c9a-2d2cab373832.80ia4uu63x.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\EBI TENTOJI_63_190c9814-c73f-43da-9c9a-2d2cab373832.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10828"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WGpCJAVPo27JD5sgssvHNt9T3pAHde6pAUsoaanprMA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 12 Nov 2025 08:28:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "80ia4uu63x"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/EBI TENTOJI_63_190c9814-c73f-43da-9c9a-2d2cab373832.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-WGpCJAVPo27JD5sgssvHNt9T3pAHde6pAUsoaanprMA="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/EBI TENTOJI_63_190c9814-c73f-43da-9c9a-2d2cab373832.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\EBI TENTOJI_63_190c9814-c73f-43da-9c9a-2d2cab373832.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10828"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WGpCJAVPo27JD5sgssvHNt9T3pAHde6pAUsoaanprMA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 12 Nov 2025 08:28:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-WGpCJAVPo27JD5sgssvHNt9T3pAHde6pAUsoaanprMA="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/EBI TENTOJI_74_d456c7db-c260-4f67-9597-e79de0bd944b.8g2srkgzvt.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\EBI TENTOJI_74_d456c7db-c260-4f67-9597-e79de0bd944b.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "185884"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mHncUWZCi0+Y+M8Xh5dI1v+6YLK0HWqYPkMOttA78KQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 04 Sep 2025 00:54:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "8g2srkgzvt"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/EBI TENTOJI_74_d456c7db-c260-4f67-9597-e79de0bd944b.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-mHncUWZCi0+Y+M8Xh5dI1v+6YLK0HWqYPkMOttA78KQ="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/EBI TENTOJI_74_d456c7db-c260-4f67-9597-e79de0bd944b.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\EBI TENTOJI_74_d456c7db-c260-4f67-9597-e79de0bd944b.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "185884"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mHncUWZCi0+Y+M8Xh5dI1v+6YLK0HWqYPkMOttA78KQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 04 Sep 2025 00:54:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-mHncUWZCi0+Y+M8Xh5dI1v+6YLK0HWqYPkMOttA78KQ="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/EBITEN MAKI ROLL_74_baac96a2-3453-4684-bafa-aaaf1e526cb7.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\EBITEN MAKI ROLL_74_baac96a2-3453-4684-bafa-aaaf1e526cb7.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "175840"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Hb+OgvETZswcEHS8KoGtzpHr9gGXFNCnTsSZ6ZyRo4c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 04 Sep 2025 00:54:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Hb+OgvETZswcEHS8KoGtzpHr9gGXFNCnTsSZ6ZyRo4c="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/EBITEN MAKI ROLL_74_baac96a2-3453-4684-bafa-aaaf1e526cb7.x7ois2psbb.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\EBITEN MAKI ROLL_74_baac96a2-3453-4684-bafa-aaaf1e526cb7.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "175840"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Hb+OgvETZswcEHS8KoGtzpHr9gGXFNCnTsSZ6ZyRo4c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 04 Sep 2025 00:54:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "x7ois2psbb"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/EBITEN MAKI ROLL_74_baac96a2-3453-4684-bafa-aaaf1e526cb7.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Hb+OgvETZswcEHS8KoGtzpHr9gGXFNCnTsSZ6ZyRo4c="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/EBITEN MAKI ROLL_77_1343876e-464b-420d-9d86-777fa129461f.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\EBITEN MAKI ROLL_77_1343876e-464b-420d-9d86-777fa129461f.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "175840"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Hb+OgvETZswcEHS8KoGtzpHr9gGXFNCnTsSZ6ZyRo4c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 04 Sep 2025 00:55:05 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Hb+OgvETZswcEHS8KoGtzpHr9gGXFNCnTsSZ6ZyRo4c="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/EBITEN MAKI ROLL_77_1343876e-464b-420d-9d86-777fa129461f.x7ois2psbb.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\EBITEN MAKI ROLL_77_1343876e-464b-420d-9d86-777fa129461f.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "175840"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Hb+OgvETZswcEHS8KoGtzpHr9gGXFNCnTsSZ6ZyRo4c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 04 Sep 2025 00:55:05 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "x7ois2psbb"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/EBITEN MAKI ROLL_77_1343876e-464b-420d-9d86-777fa129461f.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Hb+OgvETZswcEHS8KoGtzpHr9gGXFNCnTsSZ6ZyRo4c="
+        }
+      ]
+    },
+    {
       "Route": "uploads/FUTO MAKI ROLL_37_c6c58bf8-f576-4c78-8f56-f66b017809c4.jpg",
       "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\FUTO MAKI ROLL_37_c6c58bf8-f576-4c78-8f56-f66b017809c4.jpg",
       "Selectors": [],
@@ -11065,6 +13980,416 @@
         {
           "Name": "integrity",
           "Value": "sha256-4FxOPGfhae5JgZDaKbJwkz7aNaR5vuwJybG1VUS3Pmk="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/HIYASHI CHUKA SOBA_66_c2d04467-ec7b-4a66-9724-fbda8c9ceacd.hdzpcgt2ki.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\HIYASHI CHUKA SOBA_66_c2d04467-ec7b-4a66-9724-fbda8c9ceacd.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8433"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VZsd29Z5H0dP5dTDzQQ0KQA7D7r13SPbwPbdKolJiBY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 12 Nov 2025 08:28:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "hdzpcgt2ki"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/HIYASHI CHUKA SOBA_66_c2d04467-ec7b-4a66-9724-fbda8c9ceacd.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-VZsd29Z5H0dP5dTDzQQ0KQA7D7r13SPbwPbdKolJiBY="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/HIYASHI CHUKA SOBA_66_c2d04467-ec7b-4a66-9724-fbda8c9ceacd.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\HIYASHI CHUKA SOBA_66_c2d04467-ec7b-4a66-9724-fbda8c9ceacd.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8433"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VZsd29Z5H0dP5dTDzQQ0KQA7D7r13SPbwPbdKolJiBY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 12 Nov 2025 08:28:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-VZsd29Z5H0dP5dTDzQQ0KQA7D7r13SPbwPbdKolJiBY="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/HIYASHI CHUKA SOBA_78_e522f4c4-7794-4c88-a470-f82b19e695d3.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\HIYASHI CHUKA SOBA_78_e522f4c4-7794-4c88-a470-f82b19e695d3.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "123691"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HONBwZY3o5whfB4YYOkKSPxcUteeiVzyQiYZM23DF6c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 04 Sep 2025 00:55:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-HONBwZY3o5whfB4YYOkKSPxcUteeiVzyQiYZM23DF6c="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/HIYASHI CHUKA SOBA_78_e522f4c4-7794-4c88-a470-f82b19e695d3.wn4q5l3ejy.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\HIYASHI CHUKA SOBA_78_e522f4c4-7794-4c88-a470-f82b19e695d3.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "123691"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HONBwZY3o5whfB4YYOkKSPxcUteeiVzyQiYZM23DF6c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 04 Sep 2025 00:55:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "wn4q5l3ejy"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/HIYASHI CHUKA SOBA_78_e522f4c4-7794-4c88-a470-f82b19e695d3.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-HONBwZY3o5whfB4YYOkKSPxcUteeiVzyQiYZM23DF6c="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/HOIKORO_72_f1210024-f104-48a9-a857-284527d0d84a.97nx8v8aze.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\HOIKORO_72_f1210024-f104-48a9-a857-284527d0d84a.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "239965"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tdfgWaJqOxhK3xUz27rShH56jwurPDHKo/OiOBl9vL8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 04 Sep 2025 00:53:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "97nx8v8aze"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/HOIKORO_72_f1210024-f104-48a9-a857-284527d0d84a.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tdfgWaJqOxhK3xUz27rShH56jwurPDHKo/OiOBl9vL8="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/HOIKORO_72_f1210024-f104-48a9-a857-284527d0d84a.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\HOIKORO_72_f1210024-f104-48a9-a857-284527d0d84a.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "239965"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tdfgWaJqOxhK3xUz27rShH56jwurPDHKo/OiOBl9vL8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 04 Sep 2025 00:53:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tdfgWaJqOxhK3xUz27rShH56jwurPDHKo/OiOBl9vL8="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/hottomotto-hoikoro-subuta-bento2_1_ba6c84e7-ae1b-4ea1-bb3f-ffce1be78a84.0qkobtomcj.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\hottomotto-hoikoro-subuta-bento2_1_ba6c84e7-ae1b-4ea1-bb3f-ffce1be78a84.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "119593"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"GAKFSqXDOJusFLrk08C5Dza3vyqREb/0sCiZQMfM67A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 15 Sep 2025 02:48:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0qkobtomcj"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/hottomotto-hoikoro-subuta-bento2_1_ba6c84e7-ae1b-4ea1-bb3f-ffce1be78a84.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-GAKFSqXDOJusFLrk08C5Dza3vyqREb/0sCiZQMfM67A="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/hottomotto-hoikoro-subuta-bento2_1_ba6c84e7-ae1b-4ea1-bb3f-ffce1be78a84.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\hottomotto-hoikoro-subuta-bento2_1_ba6c84e7-ae1b-4ea1-bb3f-ffce1be78a84.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "119593"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"GAKFSqXDOJusFLrk08C5Dza3vyqREb/0sCiZQMfM67A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 15 Sep 2025 02:48:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-GAKFSqXDOJusFLrk08C5Dza3vyqREb/0sCiZQMfM67A="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/hottomotto-hoikoro-subuta-bento2_16_b9547e5b-1b86-45bb-ba71-53dc7df46758.0qkobtomcj.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\hottomotto-hoikoro-subuta-bento2_16_b9547e5b-1b86-45bb-ba71-53dc7df46758.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "119593"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"GAKFSqXDOJusFLrk08C5Dza3vyqREb/0sCiZQMfM67A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 15 Sep 2025 02:48:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0qkobtomcj"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/hottomotto-hoikoro-subuta-bento2_16_b9547e5b-1b86-45bb-ba71-53dc7df46758.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-GAKFSqXDOJusFLrk08C5Dza3vyqREb/0sCiZQMfM67A="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/hottomotto-hoikoro-subuta-bento2_16_b9547e5b-1b86-45bb-ba71-53dc7df46758.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\hottomotto-hoikoro-subuta-bento2_16_b9547e5b-1b86-45bb-ba71-53dc7df46758.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "119593"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"GAKFSqXDOJusFLrk08C5Dza3vyqREb/0sCiZQMfM67A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 15 Sep 2025 02:48:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-GAKFSqXDOJusFLrk08C5Dza3vyqREb/0sCiZQMfM67A="
         }
       ]
     },
@@ -11561,6 +14886,88 @@
       ]
     },
     {
+      "Route": "uploads/NIKOMI HAMBURG_76_33b25474-c86f-4f80-bdd6-f79c1d14cf43.jlc6wekgvm.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\NIKOMI HAMBURG_76_33b25474-c86f-4f80-bdd6-f79c1d14cf43.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "129624"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uSL66eKlrx+rxxf9rhQPDUsgh85ZKPkeKxjG1LRVvS4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 04 Sep 2025 00:54:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jlc6wekgvm"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/NIKOMI HAMBURG_76_33b25474-c86f-4f80-bdd6-f79c1d14cf43.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-uSL66eKlrx+rxxf9rhQPDUsgh85ZKPkeKxjG1LRVvS4="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/NIKOMI HAMBURG_76_33b25474-c86f-4f80-bdd6-f79c1d14cf43.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\NIKOMI HAMBURG_76_33b25474-c86f-4f80-bdd6-f79c1d14cf43.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "129624"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uSL66eKlrx+rxxf9rhQPDUsgh85ZKPkeKxjG1LRVvS4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 04 Sep 2025 00:54:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-uSL66eKlrx+rxxf9rhQPDUsgh85ZKPkeKxjG1LRVvS4="
+        }
+      ]
+    },
+    {
       "Route": "uploads/noodles_5_70cb1c29-d771-4da9-9c28-8a6187197b4a.jkj5w2ijm3.png",
       "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\noodles_5_70cb1c29-d771-4da9-9c28-8a6187197b4a.png",
       "Selectors": [],
@@ -11889,6 +15296,908 @@
       ]
     },
     {
+      "Route": "uploads/Picture1_47_79b3122a-0e85-4b4e-af9e-5e129c318e63.png",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Picture1_47_79b3122a-0e85-4b4e-af9e-5e129c318e63.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "196412"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NZ51HaJAJLX5bqjdRUPX4iQdMSH4pk4iqASFVQVZSpU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 20 Oct 2025 00:47:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-NZ51HaJAJLX5bqjdRUPX4iQdMSH4pk4iqASFVQVZSpU="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Picture1_47_79b3122a-0e85-4b4e-af9e-5e129c318e63.z6tow2xhso.png",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Picture1_47_79b3122a-0e85-4b4e-af9e-5e129c318e63.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "196412"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NZ51HaJAJLX5bqjdRUPX4iQdMSH4pk4iqASFVQVZSpU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 20 Oct 2025 00:47:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "z6tow2xhso"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/Picture1_47_79b3122a-0e85-4b4e-af9e-5e129c318e63.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-NZ51HaJAJLX5bqjdRUPX4iQdMSH4pk4iqASFVQVZSpU="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Picture10_56_e49039e5-8009-4b89-b649-04d90785c6e8.png",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Picture10_56_e49039e5-8009-4b89-b649-04d90785c6e8.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "163047"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RUTYvSio1zSjfsidpsgcZjAfzIdaDDcxvyIEczhkjh0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 20 Oct 2025 00:50:05 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-RUTYvSio1zSjfsidpsgcZjAfzIdaDDcxvyIEczhkjh0="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Picture10_56_e49039e5-8009-4b89-b649-04d90785c6e8.rwq6m25ujs.png",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Picture10_56_e49039e5-8009-4b89-b649-04d90785c6e8.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "163047"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RUTYvSio1zSjfsidpsgcZjAfzIdaDDcxvyIEczhkjh0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 20 Oct 2025 00:50:05 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "rwq6m25ujs"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/Picture10_56_e49039e5-8009-4b89-b649-04d90785c6e8.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-RUTYvSio1zSjfsidpsgcZjAfzIdaDDcxvyIEczhkjh0="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Picture2_48_2a640057-97c0-4b1b-9839-b73010763dfd.oysq1119rj.png",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Picture2_48_2a640057-97c0-4b1b-9839-b73010763dfd.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "194367"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4FWSr2q7dgibV/5O6UsE56v7wE2Bz4coLrxgSp4aWRE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 20 Oct 2025 00:48:02 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "oysq1119rj"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/Picture2_48_2a640057-97c0-4b1b-9839-b73010763dfd.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4FWSr2q7dgibV/5O6UsE56v7wE2Bz4coLrxgSp4aWRE="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Picture2_48_2a640057-97c0-4b1b-9839-b73010763dfd.png",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Picture2_48_2a640057-97c0-4b1b-9839-b73010763dfd.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "194367"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4FWSr2q7dgibV/5O6UsE56v7wE2Bz4coLrxgSp4aWRE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 20 Oct 2025 00:48:02 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-4FWSr2q7dgibV/5O6UsE56v7wE2Bz4coLrxgSp4aWRE="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Picture3_49_a7c328a1-73d7-4c02-aa1e-525960dab0ed.i8uvmq8gsx.png",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Picture3_49_a7c328a1-73d7-4c02-aa1e-525960dab0ed.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "184927"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Lld0TmfoY8HEPmUPYrwxwIyZpoLSnOcjGQqvgG+1vzI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 20 Oct 2025 00:48:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "i8uvmq8gsx"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/Picture3_49_a7c328a1-73d7-4c02-aa1e-525960dab0ed.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Lld0TmfoY8HEPmUPYrwxwIyZpoLSnOcjGQqvgG+1vzI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Picture3_49_a7c328a1-73d7-4c02-aa1e-525960dab0ed.png",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Picture3_49_a7c328a1-73d7-4c02-aa1e-525960dab0ed.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "184927"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Lld0TmfoY8HEPmUPYrwxwIyZpoLSnOcjGQqvgG+1vzI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 20 Oct 2025 00:48:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Lld0TmfoY8HEPmUPYrwxwIyZpoLSnOcjGQqvgG+1vzI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Picture3_58_57e3b204-4ef4-4686-ad80-0e9203052f1d.i8uvmq8gsx.png",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Picture3_58_57e3b204-4ef4-4686-ad80-0e9203052f1d.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "184927"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Lld0TmfoY8HEPmUPYrwxwIyZpoLSnOcjGQqvgG+1vzI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 20 Oct 2025 00:48:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "i8uvmq8gsx"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/Picture3_58_57e3b204-4ef4-4686-ad80-0e9203052f1d.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Lld0TmfoY8HEPmUPYrwxwIyZpoLSnOcjGQqvgG+1vzI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Picture3_58_57e3b204-4ef4-4686-ad80-0e9203052f1d.png",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Picture3_58_57e3b204-4ef4-4686-ad80-0e9203052f1d.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "184927"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Lld0TmfoY8HEPmUPYrwxwIyZpoLSnOcjGQqvgG+1vzI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 20 Oct 2025 00:48:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Lld0TmfoY8HEPmUPYrwxwIyZpoLSnOcjGQqvgG+1vzI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Picture4_50_18b6a889-cc3c-43b2-90b8-f1668c3462bc.1wni7wv0yj.png",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Picture4_50_18b6a889-cc3c-43b2-90b8-f1668c3462bc.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "202174"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"cSAGTCRZhNR5xB2dQ4xzdkKzJv+sn09EfarPHXJJPeg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 20 Oct 2025 00:49:11 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1wni7wv0yj"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/Picture4_50_18b6a889-cc3c-43b2-90b8-f1668c3462bc.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-cSAGTCRZhNR5xB2dQ4xzdkKzJv+sn09EfarPHXJJPeg="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Picture4_50_18b6a889-cc3c-43b2-90b8-f1668c3462bc.png",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Picture4_50_18b6a889-cc3c-43b2-90b8-f1668c3462bc.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "202174"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"cSAGTCRZhNR5xB2dQ4xzdkKzJv+sn09EfarPHXJJPeg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 20 Oct 2025 00:49:11 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-cSAGTCRZhNR5xB2dQ4xzdkKzJv+sn09EfarPHXJJPeg="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Picture5_51_96dca5f7-c5a9-4212-89a6-1077b7fd0e6f.ly2x3blc67.png",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Picture5_51_96dca5f7-c5a9-4212-89a6-1077b7fd0e6f.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "191982"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wzNNtrjapQuIoSxsF+m4QUn4HzSbQJafvqAGQoT4a8k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 20 Oct 2025 00:50:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ly2x3blc67"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/Picture5_51_96dca5f7-c5a9-4212-89a6-1077b7fd0e6f.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-wzNNtrjapQuIoSxsF+m4QUn4HzSbQJafvqAGQoT4a8k="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Picture5_51_96dca5f7-c5a9-4212-89a6-1077b7fd0e6f.png",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Picture5_51_96dca5f7-c5a9-4212-89a6-1077b7fd0e6f.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "191982"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wzNNtrjapQuIoSxsF+m4QUn4HzSbQJafvqAGQoT4a8k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 20 Oct 2025 00:50:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-wzNNtrjapQuIoSxsF+m4QUn4HzSbQJafvqAGQoT4a8k="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Picture6_52_2c352eed-397f-4fb3-b893-3269975df841.hhl9iil39m.png",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Picture6_52_2c352eed-397f-4fb3-b893-3269975df841.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "148903"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+0C0AnUsNBq44M/estOjppBYTNrvIFXdr9SjofWcpJo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 20 Oct 2025 00:47:35 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "hhl9iil39m"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/Picture6_52_2c352eed-397f-4fb3-b893-3269975df841.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-+0C0AnUsNBq44M/estOjppBYTNrvIFXdr9SjofWcpJo="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Picture6_52_2c352eed-397f-4fb3-b893-3269975df841.png",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Picture6_52_2c352eed-397f-4fb3-b893-3269975df841.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "148903"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+0C0AnUsNBq44M/estOjppBYTNrvIFXdr9SjofWcpJo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 20 Oct 2025 00:47:35 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-+0C0AnUsNBq44M/estOjppBYTNrvIFXdr9SjofWcpJo="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Picture7_53_bc038c6f-fcc1-4b63-8fcc-81c278b8485e.ku48k86h1d.png",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Picture7_53_bc038c6f-fcc1-4b63-8fcc-81c278b8485e.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "207459"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"jB6thAOyqZdqPijTiDz8mloH3J0lljQMa6W5ev8ehpo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 20 Oct 2025 00:48:11 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ku48k86h1d"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/Picture7_53_bc038c6f-fcc1-4b63-8fcc-81c278b8485e.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-jB6thAOyqZdqPijTiDz8mloH3J0lljQMa6W5ev8ehpo="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Picture7_53_bc038c6f-fcc1-4b63-8fcc-81c278b8485e.png",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Picture7_53_bc038c6f-fcc1-4b63-8fcc-81c278b8485e.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "207459"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"jB6thAOyqZdqPijTiDz8mloH3J0lljQMa6W5ev8ehpo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 20 Oct 2025 00:48:11 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-jB6thAOyqZdqPijTiDz8mloH3J0lljQMa6W5ev8ehpo="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Picture8_54_f2feb903-6cde-4797-a86b-f432c51b4e75.m94l739rus.png",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Picture8_54_f2feb903-6cde-4797-a86b-f432c51b4e75.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "204839"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JlRHtCtPIeXvoIURn5v/y3CTXVs/KVzPInrG3917bZY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 20 Oct 2025 00:48:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "m94l739rus"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/Picture8_54_f2feb903-6cde-4797-a86b-f432c51b4e75.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-JlRHtCtPIeXvoIURn5v/y3CTXVs/KVzPInrG3917bZY="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Picture8_54_f2feb903-6cde-4797-a86b-f432c51b4e75.png",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Picture8_54_f2feb903-6cde-4797-a86b-f432c51b4e75.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "204839"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JlRHtCtPIeXvoIURn5v/y3CTXVs/KVzPInrG3917bZY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 20 Oct 2025 00:48:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-JlRHtCtPIeXvoIURn5v/y3CTXVs/KVzPInrG3917bZY="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Picture9_55_f570132d-74da-4fdb-939a-a0778d8731db.png",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Picture9_55_f570132d-74da-4fdb-939a-a0778d8731db.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "200157"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HdcbPSK7IOz+AiNN9Ge0ywM81wJzl8qb+26A+irG1os=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 20 Oct 2025 00:49:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-HdcbPSK7IOz+AiNN9Ge0ywM81wJzl8qb+26A+irG1os="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Picture9_55_f570132d-74da-4fdb-939a-a0778d8731db.r2gy7bj0h1.png",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Picture9_55_f570132d-74da-4fdb-939a-a0778d8731db.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "200157"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HdcbPSK7IOz+AiNN9Ge0ywM81wJzl8qb+26A+irG1os=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 20 Oct 2025 00:49:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "r2gy7bj0h1"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/Picture9_55_f570132d-74da-4fdb-939a-a0778d8731db.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-HdcbPSK7IOz+AiNN9Ge0ywM81wJzl8qb+26A+irG1os="
+        }
+      ]
+    },
+    {
       "Route": "uploads/PORK YAKINIKU_46_ab0d8698-bace-4fe0-81a9-3122897a60df.dofngh765e.jpg",
       "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\PORK YAKINIKU_46_ab0d8698-bace-4fe0-81a9-3122897a60df.jpg",
       "Selectors": [],
@@ -12135,6 +16444,416 @@
       ]
     },
     {
+      "Route": "uploads/Screenshot 2025-07-14 115400_1_c31c4908-c750-4723-80a8-2d7e15736394.n2rvv3tnpg.png",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Screenshot 2025-07-14 115400_1_c31c4908-c750-4723-80a8-2d7e15736394.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "97997"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"z5VG2KUbUVAtpxciLWdeBnPR0tyPhxrOfeg+qN6oC0c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 05 Sep 2025 06:35:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "n2rvv3tnpg"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/Screenshot 2025-07-14 115400_1_c31c4908-c750-4723-80a8-2d7e15736394.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-z5VG2KUbUVAtpxciLWdeBnPR0tyPhxrOfeg+qN6oC0c="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Screenshot 2025-07-14 115400_1_c31c4908-c750-4723-80a8-2d7e15736394.png",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Screenshot 2025-07-14 115400_1_c31c4908-c750-4723-80a8-2d7e15736394.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "97997"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"z5VG2KUbUVAtpxciLWdeBnPR0tyPhxrOfeg+qN6oC0c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 05 Sep 2025 06:35:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-z5VG2KUbUVAtpxciLWdeBnPR0tyPhxrOfeg+qN6oC0c="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Screenshot 2025-10-20 085142_57_9272407e-508c-4a0b-b470-f6dc2bf111d8.f8vo1xnt5d.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Screenshot 2025-10-20 085142_57_9272407e-508c-4a0b-b470-f6dc2bf111d8.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "63361"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4dZEFGZGQUG3IJ5EHgI2z+o9WAqK4CgGNveuzamPz7U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 20 Oct 2025 00:52:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "f8vo1xnt5d"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/Screenshot 2025-10-20 085142_57_9272407e-508c-4a0b-b470-f6dc2bf111d8.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4dZEFGZGQUG3IJ5EHgI2z+o9WAqK4CgGNveuzamPz7U="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Screenshot 2025-10-20 085142_57_9272407e-508c-4a0b-b470-f6dc2bf111d8.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Screenshot 2025-10-20 085142_57_9272407e-508c-4a0b-b470-f6dc2bf111d8.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "63361"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4dZEFGZGQUG3IJ5EHgI2z+o9WAqK4CgGNveuzamPz7U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 20 Oct 2025 00:52:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-4dZEFGZGQUG3IJ5EHgI2z+o9WAqK4CgGNveuzamPz7U="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Screenshot 2025-10-20 085225_59_b35798df-e3bb-41e5-a01b-1a31c8377f20.fcvgnuoid8.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Screenshot 2025-10-20 085225_59_b35798df-e3bb-41e5-a01b-1a31c8377f20.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "70709"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"r7Gfdf3yIqIrMfDLJd+Aqwtnm6EXFk8eQBccoRQJDq4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 20 Oct 2025 00:52:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "fcvgnuoid8"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/Screenshot 2025-10-20 085225_59_b35798df-e3bb-41e5-a01b-1a31c8377f20.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-r7Gfdf3yIqIrMfDLJd+Aqwtnm6EXFk8eQBccoRQJDq4="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Screenshot 2025-10-20 085225_59_b35798df-e3bb-41e5-a01b-1a31c8377f20.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Screenshot 2025-10-20 085225_59_b35798df-e3bb-41e5-a01b-1a31c8377f20.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "70709"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"r7Gfdf3yIqIrMfDLJd+Aqwtnm6EXFk8eQBccoRQJDq4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 20 Oct 2025 00:52:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-r7Gfdf3yIqIrMfDLJd+Aqwtnm6EXFk8eQBccoRQJDq4="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Screenshot 2025-10-20 085402_60_02ec0430-f3e1-40ef-a792-34f21d29fa09.gknniredz6.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Screenshot 2025-10-20 085402_60_02ec0430-f3e1-40ef-a792-34f21d29fa09.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "37984"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"EJU02jJh0uEWv/d5XQiYOcoD2xti5hsh8NG9TH2EM4I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 20 Oct 2025 00:54:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gknniredz6"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/Screenshot 2025-10-20 085402_60_02ec0430-f3e1-40ef-a792-34f21d29fa09.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-EJU02jJh0uEWv/d5XQiYOcoD2xti5hsh8NG9TH2EM4I="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Screenshot 2025-10-20 085402_60_02ec0430-f3e1-40ef-a792-34f21d29fa09.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Screenshot 2025-10-20 085402_60_02ec0430-f3e1-40ef-a792-34f21d29fa09.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "37984"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"EJU02jJh0uEWv/d5XQiYOcoD2xti5hsh8NG9TH2EM4I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 20 Oct 2025 00:54:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-EJU02jJh0uEWv/d5XQiYOcoD2xti5hsh8NG9TH2EM4I="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Screenshot 2025-10-20 085440_61_7c474f41-18be-483c-900c-f5b82d737411.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Screenshot 2025-10-20 085440_61_7c474f41-18be-483c-900c-f5b82d737411.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "104661"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"V6Nf+LL/GDwfYgiYA92xk8UAK6DmvD/L+dHdYpTNBq8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 20 Oct 2025 00:54:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-V6Nf+LL/GDwfYgiYA92xk8UAK6DmvD/L+dHdYpTNBq8="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Screenshot 2025-10-20 085440_61_7c474f41-18be-483c-900c-f5b82d737411.ve8jygx9ni.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\Screenshot 2025-10-20 085440_61_7c474f41-18be-483c-900c-f5b82d737411.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "104661"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"V6Nf+LL/GDwfYgiYA92xk8UAK6DmvD/L+dHdYpTNBq8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 20 Oct 2025 00:54:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ve8jygx9ni"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/Screenshot 2025-10-20 085440_61_7c474f41-18be-483c-900c-f5b82d737411.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-V6Nf+LL/GDwfYgiYA92xk8UAK6DmvD/L+dHdYpTNBq8="
+        }
+      ]
+    },
+    {
       "Route": "uploads/SHOYU RAMEN_52_b132b311-669a-4293-bc9e-49b75c3be39c.32971baern.jpg",
       "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\SHOYU RAMEN_52_b132b311-669a-4293-bc9e-49b75c3be39c.jpg",
       "Selectors": [],
@@ -12203,6 +16922,170 @@
         {
           "Name": "Last-Modified",
           "Value": "Tue, 22 Jul 2025 05:28:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZQn39skbyKXXPVLbmHbKB7obHWm2t6S65VWvka1oc6c="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/SHOYU RAMEN_69_7f8e1e1a-7b7f-46b6-9583-2d3a76efbde7.5ca728dtdp.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\SHOYU RAMEN_69_7f8e1e1a-7b7f-46b6-9583-2d3a76efbde7.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10096"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"611A4PO9fUuYpi27/83IwSrb9ArYmw2bBGW1ddfoL6w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 12 Nov 2025 08:29:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5ca728dtdp"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/SHOYU RAMEN_69_7f8e1e1a-7b7f-46b6-9583-2d3a76efbde7.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-611A4PO9fUuYpi27/83IwSrb9ArYmw2bBGW1ddfoL6w="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/SHOYU RAMEN_69_7f8e1e1a-7b7f-46b6-9583-2d3a76efbde7.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\SHOYU RAMEN_69_7f8e1e1a-7b7f-46b6-9583-2d3a76efbde7.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10096"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"611A4PO9fUuYpi27/83IwSrb9ArYmw2bBGW1ddfoL6w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 12 Nov 2025 08:29:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-611A4PO9fUuYpi27/83IwSrb9ArYmw2bBGW1ddfoL6w="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/SHOYU RAMEN_81_6d146a3c-f753-41a1-abfb-ab873e53fb6d.32971baern.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\SHOYU RAMEN_81_6d146a3c-f753-41a1-abfb-ab873e53fb6d.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "219730"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZQn39skbyKXXPVLbmHbKB7obHWm2t6S65VWvka1oc6c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 04 Sep 2025 00:55:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "32971baern"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/SHOYU RAMEN_81_6d146a3c-f753-41a1-abfb-ab873e53fb6d.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZQn39skbyKXXPVLbmHbKB7obHWm2t6S65VWvka1oc6c="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/SHOYU RAMEN_81_6d146a3c-f753-41a1-abfb-ab873e53fb6d.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\SHOYU RAMEN_81_6d146a3c-f753-41a1-abfb-ab873e53fb6d.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "219730"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZQn39skbyKXXPVLbmHbKB7obHWm2t6S65VWvka1oc6c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 04 Sep 2025 00:55:53 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -12541,6 +17424,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-UE2P5KE7JORTShrGcngljxrvk8IC+sx5WjB4jy4Awtg="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/TORI TERIYAKI WITH TARTAR SAUCE_62_26a70e64-da7a-41ef-8a64-85cdb8d1a939.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\TORI TERIYAKI WITH TARTAR SAUCE_62_26a70e64-da7a-41ef-8a64-85cdb8d1a939.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12453"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tkUIh2cnGkwSMWVmH7DwFQdV5JfHqTj50qQyDooJFNM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 12 Nov 2025 08:28:21 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tkUIh2cnGkwSMWVmH7DwFQdV5JfHqTj50qQyDooJFNM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/TORI TERIYAKI WITH TARTAR SAUCE_62_26a70e64-da7a-41ef-8a64-85cdb8d1a939.qvsibyfplv.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\TORI TERIYAKI WITH TARTAR SAUCE_62_26a70e64-da7a-41ef-8a64-85cdb8d1a939.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12453"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tkUIh2cnGkwSMWVmH7DwFQdV5JfHqTj50qQyDooJFNM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 12 Nov 2025 08:28:21 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "qvsibyfplv"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/TORI TERIYAKI WITH TARTAR SAUCE_62_26a70e64-da7a-41ef-8a64-85cdb8d1a939.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tkUIh2cnGkwSMWVmH7DwFQdV5JfHqTj50qQyDooJFNM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/TORI TERIYAKI_73_5036816f-f2a9-4b86-a438-6ba6315496bc.c2yhqm2h0e.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\TORI TERIYAKI_73_5036816f-f2a9-4b86-a438-6ba6315496bc.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "205627"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TGfmj7WM8lzeD9Opckfq8/rsBUxKGfe07DNPYh8drpE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 04 Sep 2025 00:54:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "c2yhqm2h0e"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/TORI TERIYAKI_73_5036816f-f2a9-4b86-a438-6ba6315496bc.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-TGfmj7WM8lzeD9Opckfq8/rsBUxKGfe07DNPYh8drpE="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/TORI TERIYAKI_73_5036816f-f2a9-4b86-a438-6ba6315496bc.jpg",
+      "AssetFile": "C:\\Users\\caparrar\\Documents\\JapaneseMealReservation\\wwwroot\\uploads\\TORI TERIYAKI_73_5036816f-f2a9-4b86-a438-6ba6315496bc.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "205627"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TGfmj7WM8lzeD9Opckfq8/rsBUxKGfe07DNPYh8drpE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 04 Sep 2025 00:54:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-TGfmj7WM8lzeD9Opckfq8/rsBUxKGfe07DNPYh8drpE="
         }
       ]
     },

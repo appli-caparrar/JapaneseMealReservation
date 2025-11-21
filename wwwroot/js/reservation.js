@@ -1,7 +1,7 @@
 ﻿
 
 document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('reservationForm');
+    const form = document.getElementById('advanceReservationForm');
     if (!form) {
         console.error("Form with ID 'reservationForm' not found.");
         return;

@@ -4,6 +4,10 @@ namespace JapaneseMealReservation.ViewModels
 {
     public class DashboardPageModel
     {
+        //For Filtering of Menu
+        public DateTime? StartDate { get; set; }
+        public DateTime? EndDate { get; set; }
+
         //Models
         public List<Menu>? Menus { get; set; }
         public Order? Order { get; set; }
@@ -14,5 +18,7 @@ namespace JapaneseMealReservation.ViewModels
         public int TotalCurryToday { get; set; }
         public int TotalNoodlesToday { get; set; }
         public int TotalBreakfastToday { get; set; }
+        public int TotalOrderToday { get; set; }
+       
     }
 }

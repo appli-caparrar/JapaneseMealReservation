@@ -214,5 +214,4 @@ C:\Users\caparrar\Documents\JapaneseMealReservation\obj\Debug\net8.0\JapaneseMea
 C:\Users\caparrar\Documents\JapaneseMealReservation\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
 C:\Users\caparrar\Documents\JapaneseMealReservation\bin\Debug\net8.0\MailKit.dll
 C:\Users\caparrar\Documents\JapaneseMealReservation\bin\Debug\net8.0\MimeKit.dll
-C:\Users\caparrar\Documents\JapaneseMealReservation\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\caparrar\Documents\JapaneseMealReservation\bin\Debug\net8.0\TimeZoneConverter.dll

@@ -1,3 +1,5 @@
+using DinkToPdf.Contracts;
+using DinkToPdf;
 using Hangfire;
 using Hangfire.PostgreSql;
 using JapaneseMealReservation.AppData;
@@ -7,11 +9,15 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.EntityFrameworkCore;
 using OfficeOpenXml;
+using DinkToPdf;
+using DinkToPdf.Contracts;
+using Rotativa.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("PostgresConnection")));
@@ -84,6 +90,10 @@ builder.Services.AddSession();
 
 var app = builder.Build();
 
+// Setup Rotativa with the path to wkhtmltopdf
+var env = builder.Environment;
+RotativaConfiguration.Setup(app.Environment.WebRootPath, "Rotativa");
+
 //VERY IMPORTANT: This must come before any authentication or IP logic
 app.UseForwardedHeaders();
 
@@ -122,4 +132,12 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Login}/{id?}");
 
-app.Run();
+try
+{
+    app.Run();
+}
+catch (Exception ex)
+{
+    Console.WriteLine("Unhandled exception: " + ex);
+    throw;
+}

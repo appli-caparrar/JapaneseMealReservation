@@ -153,75 +153,101 @@
                                 <hr />
                             </div>
 
-                        @foreach (var item in Model.Where(m => m.MenuType?.Trim().ToLower() == "breakfast"))
+                        @{
+                            // Get user info from claims
+                            var employeeType = User?.Claims.FirstOrDefault(c => c.Type == "EmployeeType")?.Value ?? "Local";
+                            var position = User?.Claims.FirstOrDefault(c => c.Type == "Position")?.Value ?? "";
+
+                            // Normalize strings
+                            string CleanString(string input) => (input ?? "").Trim().ToLowerInvariant();
+                            var normalizedType = CleanString(employeeType);
+                            var normalizedPosition = CleanString(position);
+
+                            // Allowed positions for Local employees
+                            var allowedPositions = new[] { "assistant manager", "manager", "senior manager" };
+
+                            // Determine access to breakfast
+                            bool canSeeBreakfast = normalizedType == "expat" ||
+                            (normalizedType == "local" && allowedPositions.Contains(normalizedPosition));
+                        }
+
+
+                        @if (!canSeeBreakfast)
                         {
-                            bool isDisabled = false;
-
-                            if (item.AvailabilityDate.HasValue)
+                            <p class="text-danger"> The Breakfast Menu is currently unavailable for Local employees. Only Lunch options are available.</p>
+                        }
+                        else
+                        {
+                            @foreach (var item in Model.Where(m => m.MenuType?.Trim().ToLower() == "breakfast"))
                             {
-                                var availabilityDate = item.AvailabilityDate.Value.Date;
-                                var cutoffDateTime = availabilityDate.AddDays(-1).AddHours(15).AddMinutes(30); // 3:30 PM previous day
+                                bool isDisabled = false;
 
+                                if (item.AvailabilityDate.HasValue)
+                                {
+                                    var availabilityDate = item.AvailabilityDate.Value.Date;
+                                    var cutoffDateTime = availabilityDate.AddDays(-1).AddHours(15).AddMinutes(30); // 3:30 PM previous day
 
-                                isDisabled = nowPH >= cutoffDateTime;
-                            }
+                                    isDisabled = nowPH >= cutoffDateTime;
+                                }
 
-                            <div class="col-sm-6 col-lg-4 all mt-4 mb-4">
-                                <div class="box shadow">
-                                    <div>
-                                        <div class="img-box">
-                                            @if (!string.IsNullOrWhiteSpace(item.ImagePath))
-                                            {
-                                                <img src="..@item.ImagePath" alt="@item.Name" />
-                                            }
-                                            else
-                                            {
-                                                <p class="text-secondary">
-                                                    <i class="fa-solid fa-image"></i>
-                                                    <span>No Image</span>
-                                                </p>
-                                            }
-                                        </div>
-                                        <div class="detail-box">
-                                            <h5 style="font-weight: 500; font-size: 11px;">
-                                                Available on <span>@item.AvailabilityDate?.ToString("MMMM dd, yyyy (dddd)")</span>
-                                            </h5>
-                                            <h5>
-                                                <small style="font-size: 11px;">@item.MenuType</small><br />
-                                                @item.Name
-                                            </h5>
-                                            <p>@item.Description</p>
-                                            <div class="options">
-                                                <h6>
-                                                    <i class="fa-solid fa-peso-sign"></i> @item.Price
-                                                </h6>
-
-                                                @if (isDisabled)
+                                <div class="col-sm-6 col-lg-4 all mt-4 mb-4">
+                                    <div class="box shadow">
+                                        <div>
+                                            <div class="img-box">
+                                                @if (!string.IsNullOrWhiteSpace(item.ImagePath))
                                                 {
-                                                    <a class="btn btn-secondary disabled" style="cursor: not-allowed;" title="Cutoff passed">
-                                                        <i class="fa-solid fa-cart-xmark"></i> &nbsp; Unavailable
-                                                    </a>
+                                                    <img src="..@item.ImagePath" alt="@item.Name" />
                                                 }
                                                 else
                                                 {
-                                                    <a class="order-now-btn"
-                                                       data-bs-toggle="modal"
-                                                       data-bs-target="#OrderModal"
-                                                       data-order-type="@item.MenuType"
-                                                       data-menu-name="@item.Name"
-                                                       data-menu-image="..@item.ImagePath"
-                                                       data-availability-date="@item.AvailabilityDate?.ToString("yyyy-MM-dd")"
-                                                       data-menu-id="@item.Id"
-                                                       style="cursor: pointer;">
-                                                        <i class="fa-solid fa-cart-plus"></i> &nbsp; Order Now
-                                                    </a>
+                                                    <p class="text-secondary">
+                                                        <i class="fa-solid fa-image"></i>
+                                                        <span>No Image</span>
+                                                    </p>
                                                 }
+                                            </div>
+                                            <div class="detail-box">
+                                                <h5 style="font-weight: 500; font-size: 11px;">
+                                                    Available on <span>@item.AvailabilityDate?.ToString("MMMM dd, yyyy (dddd)")</span>
+                                                </h5>
+                                                <h5>
+                                                    <small style="font-size: 11px;">@item.MenuType</small><br />
+                                                    @item.Name
+                                                </h5>
+                                                <p>@item.Description</p>
+                                                <div class="options">
+                                                    <h6>
+                                                        <i class="fa-solid fa-peso-sign"></i> @item.Price
+                                                    </h6>
+
+                                                    @if (isDisabled)
+                                                    {
+                                                        <a class="btn btn-secondary disabled" style="cursor: not-allowed;" title="Cutoff passed">
+                                                            <i class="fa-solid fa-cart-xmark"></i> &nbsp; Unavailable
+                                                        </a>
+                                                    }
+                                                    else
+                                                    {
+                                                        <a class="order-now-btn"
+                                                           data-bs-toggle="modal"
+                                                           data-bs-target="#OrderModal"
+                                                           data-order-type="@item.MenuType"
+                                                           data-menu-name="@item.Name"
+                                                           data-menu-image="..@item.ImagePath"
+                                                           data-availability-date="@item.AvailabilityDate?.ToString("yyyy-MM-dd")"
+                                                           data-menu-id="@item.Id"
+                                                           style="cursor: pointer;">
+                                                            <i class="fa-solid fa-cart-plus"></i> &nbsp; Order Now
+                                                        </a>
+                                                    }
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            }
                         }
+
 
                         </div>
                     </div>
@@ -299,7 +325,7 @@
                 <!-- Quantity -->
                 <div class="mb-2">
                     <label class="form-label">Quantity*</label>
-                    <input type="number" name="Quantity" id="quantity" class="form-control" min="1" onfocus="" required />
+                    <input type="number" name="Quantity" id="quantity" value="1" class="form-control" min="1" onfocus="" required />
                 </div>
 
                 <!-- Display Date (just for user UI, not posted) -->
@@ -322,3 +348,29 @@
 
     </div>
 </div>
+
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuTypeInput = document.getElementById('orderTypeHidden');
+            const timeInput = document.getElementById('time');
+
+            function setDefaultTime() {
+                const menuType = menuTypeInput.value.trim().toLowerCase();
+                if (menuType === 'breakfast') {
+                    timeInput.value = '07:00';
+                } else {
+                    timeInput.value = '12:00';
+                }
+            }
+
+            // Run when the modal is shown (important if menu type is set dynamically)
+            const orderModal = document.getElementById('OrderModal');
+            orderModal.addEventListener('shown.bs.modal', setDefaultTime);
+
+            // Also listen for changes (in case MenuType is populated dynamically)
+            menuTypeInput.addEventListener('change', setDefaultTime);
+        });
+    </script>
+}

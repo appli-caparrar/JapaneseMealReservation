@@ -1,0 +1,446 @@
+﻿@{
+    ViewData["ShowDashboardHeader"] = true;
+    ViewData["Title"] = "Manage Reserved Orders";
+}
+
+@model JapaneseMealReservation.ViewModels.ReservedOrderViewModel
+
+<div class="container shadow dashboardContainer" style="background-color: #FFFEF5; margin-top: 120px; padding-bottom: 60px;">
+    <div class="row g-3 mb-4 px-4">
+        <h1 style="font-size: 32px;">List of Pending Orders for the Current Month</h1>
+
+        <form asp-controller="Admin" asp-action="FilterReservedOrders" method="get" class="d-flex justify-content-between align-items-center mt-5 mb-3">
+            <!-- Date Filter -->
+            <span class="mx-1">Status:</span>
+            <select id="statusFilter" name="status" class="form-select form-select-sm"
+                    style="height: 45px; border:none; border-bottom:1px solid #ccc; border-radius:0; background:transparent; margin-right:30px; padding-right:0; box-shadow:none;">
+                <option value="Pending">Pending</option>
+                <option value="Completed">Completed</option>
+                <option value="Cancelled">Cancelled</option>
+                <option value="">All</option>
+            </select>
+
+            <span class="mx-1">From:</span>
+            <input type="date" name="startDate" id="startDate"
+                   value="@(Model.StartDate?.ToString("yyyy-MM-dd") ?? "")"
+                   class="form-control form-control-sm"
+                   style="border:none; border-bottom:1px solid #ccc; border-radius:0; background:transparent; margin-right:30px; padding-right:0; box-shadow:none;" />
+
+            <span class="mx-1">To:</span>
+            <input type="date" name="endDate" id="endDate"
+                   value="@(Model.EndDate?.ToString("yyyy-MM-dd") ?? "")"
+                   class="form-control form-control-sm"
+                   style="border:none; border-bottom:1px solid #ccc; border-radius:0; background:transparent; padding-right:0; box-shadow:none;" />
+
+            <button type="submit" class="btn btn-sm btn-primary" style="margin-left:10px; height:45px; padding: 0 10px">Filter</button>
+        </form>
+
+
+        @if (Model?.OrderSummaries != null && Model.OrderSummaries.Any())
+        {
+            <table class="table table-bordered text-center align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Reference No.</th>
+                        <th>Reservation Date</th>
+                        <th>Name</th>
+                        <th>Section</th>
+                        <th>Menu Type</th>
+                        <th>Order Name</th>
+                        <th>Qty</th>
+                        <th>Status</th>
+                        <th style="width: 20%;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.OrderSummaries.OrderBy(o => o.ReservationDate))
+                    {
+                         bool isPending = item.Status == "Pending";
+
+                        <tr>
+                            <td>@item.ReferenceNumber</td>
+                            <td>@item.ReservationDate.ToString("MM/dd/yyyy")</td>
+                            <td>@item.FirstName @item.LastName</td>
+                            <td>@item.Section</td>
+                            <td>@item.MenuType</td>
+                                   <td>@(item.OrderName ?? "Not yet uploaded")</td>
+                            <td>@item.Quantity</td>
+                            <td>
+                                @{
+                                    string badgeClass = item.Status switch
+                                    {
+                                        "Completed" => "bg-success",
+                                        "Pending" => "bg-warning text-dark",
+                                        "Cancelled" => "bg-secondary",
+                                        _ => "bg-light text-dark" // fallback for any unexpected status
+                                    };
+                                }
+
+                                <span class="badge @badgeClass rounded-pill px-3">@item.Status</span>
+                            </td>
+
+                            <td class="d-flex justify-content-center align-items-center gap-2">
+
+                                <!-- Edit button -->
+                                <a class="btn btn-warning btn-sm edit-btn @(isPending ? "" : "disabled")"
+                                   data-bs-toggle="modal"
+                                   data-bs-target="#editQuantityModal"
+                                   data-ref="@item.ReferenceNumber"
+                                   data-name="@item.OrderName"
+                                   data-qty="@item.Quantity"
+                                   data-menu="@item.MenuType"
+                                   data-date="@item.ReservationDate.ToString("yyyy-MM-dd")"
+                                   title="Edit Order">
+                                    <i class="fa-solid fa-pen-to-square"></i> Edit
+                                </a>
+
+                                <!-- Cancel button -->
+                                <button type="button"
+                                        class="btn btn-sm btn-outline-danger cancel-order-btn"
+                                        data-ref="@item.ReferenceNumber"
+                                        title="Cancel Order"
+                                        @(isPending ? "" : "disabled")>
+                                    <i class="fa-solid fa-circle-xmark"></i> Cancel
+                                </button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p class="text-center mt-4">No reserved orders found for the selected date range.</p>
+        }
+
+
+    </div>
+</div>
+
+<!-- Margin Bottom-->
+<div style="height: 20px; width: 100%;"></div>
+
+
+ <div class="modal fade" id="editQuantityModal" tabindex="-1" aria-labelledby="editQuantityModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form id="editQuantityForm" method="post" asp-controller="Admin" asp-action="UpdateQuantity">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editQuantityModalLabel">Edit Quantity</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+
+                <div class="modal-body">
+                    <input type="hidden" id="ReferenceNumber" name="ReferenceNumber" />
+
+                    <!-- Reservation Date -->
+                    <div class="mb-3">
+                        <label for="reservationDate" class="form-label fw-semibold">Date</label>
+                        <input type="text"
+                               class="form-control form-control-lg shadow-sm rounded-3"
+                               name="ReservationDate"
+                               id="reservationDate"
+                               readonly />
+                    </div>
+
+                    <!-- Menu Category -->
+                    <div class="mb-3">
+                        <label for="menuType" class="form-label fw-semibold">Menu</label>
+                        <select class="form-select form-select-lg shadow-sm rounded-3"
+                                name="MenuType"
+                                id="menuType"
+                                required>
+                            <option value="">-- Select Menu --</option>
+                        </select>
+                    </div>
+
+                    <!-- Dish Name -->
+                    <div class="mb-3">
+                        <label for="orderName" class="form-label fw-semibold">Name</label>
+                        <input type="text"
+                               class="form-control form-control-lg shadow-sm rounded-3"
+                               name="OrderName"
+                               id="orderName"
+                               readonly />
+                    </div>
+
+                    <!-- Quantity -->
+                    <div class="mb-3">
+                        <label for="orderQuantity" class="form-label fw-semibold">Quantity</label>
+                        <input type="number"
+                               class="form-control form-control-lg shadow-sm rounded-3"
+                               name="Quantity"
+                               id="orderQuantity"
+                               min="1"
+                               required
+                               placeholder="Enter new quantity" />
+                    </div>
+                </div>
+
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        const editDateInput = document.getElementById('reservationDate');
+        const editMenuSelect = document.getElementById('menuType');
+        const orderNameInput = document.getElementById('orderName');
+        const qtyInput = document.getElementById('orderQuantity');
+        const refInput = document.getElementById('ReferenceNumber');
+
+        // helper to set readonly/disabled states
+        function setBreakfastMode() {
+            // Breakfast => only quantity editable
+            editMenuSelect.disabled = true;     // can't change menu
+            qtyInput.readOnly = false;         // can edit qty
+            qtyInput.disabled = false;
+            orderNameInput.readOnly = true;    // dish name stays readonly
+            editDateInput.readOnly = true;     // date readonly
+        }
+
+        function setNonBreakfastMode() {
+            // Other menus => menu and qty editable
+            editMenuSelect.disabled = false;   // can change menu
+            qtyInput.readOnly = false;         // can edit qty
+            qtyInput.disabled = false;
+            orderNameInput.readOnly = true;    // order name still readonly (populated automatically)
+            editDateInput.readOnly = true;     // date readonly
+        }
+
+        // Populate menus helper (keeps your existing logic)
+        const weekdayMenus = {
+            1: ['Bento', 'Maki'],
+            2: ['Bento', 'Noodles'],
+            3: ['Bento', 'Maki'],
+            4: ['Bento', 'Curry'],
+            5: ['Bento', 'Noodles'],
+            6: ['Bento']
+        };
+
+        function populateMenus(dateStr, preselectMenu = null) {
+            if (!dateStr) {
+                // still clear options
+                editMenuSelect.innerHTML = '<option value="">-- Select Menu --</option>';
+                return;
+            }
+            const date = new Date(dateStr);
+            const day = date.getDay();
+
+            editMenuSelect.innerHTML = '<option value="">-- Select Menu --</option>';
+            if (day === 0) {
+                editMenuSelect.innerHTML = '<option value="">-- No menu available (Sunday) --</option>';
+                editMenuSelect.disabled = true;
+                return;
+            }
+
+            if (weekdayMenus[day]) {
+                weekdayMenus[day].forEach(menuItem => {
+                    const option = document.createElement('option');
+                    option.value = menuItem;
+                    option.textContent = menuItem;
+                    if (preselectMenu && preselectMenu === menuItem) option.selected = true;
+                    editMenuSelect.appendChild(option);
+                });
+                editMenuSelect.disabled = false;
+            }
+        }
+
+        // ---------- Modal open handler ----------
+        document.querySelectorAll('[data-bs-target="#editQuantityModal"]').forEach(button => {
+            button.addEventListener('click', () => {
+                // Use the attribute names from your view (data-id, data-name, data-quantity, data-menutype, data-date)
+                const qty = button.getAttribute('data-quantity') ?? button.getAttribute('data-qty');
+                const ref = button.getAttribute('data-id') ?? button.getAttribute('data-ref');
+                const date = button.getAttribute('data-date') || button.closest('tr')?.querySelector('td:nth-child(2)')?.innerText?.trim() || "";
+                const menu = button.getAttribute('data-menutype') || button.getAttribute('data-menu');
+                const name = button.getAttribute('data-name');
+
+                // set values
+                qtyInput.value = qty ?? '';
+                refInput.value = ref ?? '';
+                // display a friendly date (keep raw yyyy-mm-dd if you prefer)
+                editDateInput.value = date;
+                orderNameInput.value = name ?? '';
+
+                // populate menus for that date and preselect the current menu
+                populateMenus(date, menu);
+
+                // apply editable rules
+                if ((menu || "").toLowerCase() === 'breakfast') {
+                    setBreakfastMode();
+                } else {
+                    setNonBreakfastMode();
+                    // also ensure the select preselects the menu
+                    if (menu) {
+                        // ensure option exists (populateMenus already did) then set value
+                        editMenuSelect.value = menu;
+                    }
+                }
+            });
+        });
+
+       // ---------- Menu change handler (fetch menus based on date and menu type) ----------
+        editMenuSelect.addEventListener('change', function () {
+            if (editMenuSelect.disabled) return;
+
+            const menuType = this.value;
+            const reservationDate = editDateInput.value;
+            if (!menuType || !reservationDate) return;
+
+            const url = '@Url.Action("GetMenus", "Admin")';
+
+            fetch(`${url}?reservationDate=${encodeURIComponent(reservationDate)}&menuType=${encodeURIComponent(menuType)}`)
+                .then(res => {
+                    if (!res.ok) throw new Error("Server error: " + res.status);
+                    return res.json();
+                })
+                .then(data => {
+                   if (data && data.length > 0) {
+                        orderNameInput.value = data[0].name || data[0].Name || "";
+                    } else {
+                        // ✅ Always save "N/A" in value for form submission
+                        orderNameInput.value = "No specific menu uploaded yet";
+                        orderNameInput.placeholder = "No menu available";
+                    }
+
+                })
+                .catch(err => {
+                    console.error("Fetch error:", err);
+                    Swal.fire({
+                        icon: "error",
+                        title: "Server Error",
+                        text: "Failed to fetch menu. Please try again."
+                    });
+
+                    // Fallback for errors — save "N/A" instead of null
+                     orderNameInput.value = "No specific menu uploaded yet";
+                });
+        });
+
+
+        // ✅ Ensure disabled fields are included in form submission
+        const editForm = document.querySelector('#editQuantityModal form');
+        if (editForm) {
+            editForm.addEventListener('submit', function () {
+                // Re-enable menu type so value is submitted
+                editMenuSelect.disabled = false;
+                // Order name is readonly (not disabled) so it's already included
+                // But if you ever disable it, also re-enable here:
+                // orderNameInput.disabled = false;
+            });
+        }
+
+    }); // DOMContentLoaded
+
+    
+    // Cancel order logic
+    document.querySelectorAll(".cancel-order-btn").forEach(btn => {
+        btn.addEventListener("click", function () {
+            const referenceNumber = this.getAttribute("data-ref");
+            Swal.fire({
+                title: 'Cancel this order?',
+                text: "This action cannot be undone.",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#6c757d',
+                confirmButtonText: 'Yes, cancel it'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    const token = document.querySelector('input[name="__RequestVerificationToken"]');
+                    fetch('../Admin/CancelOrder', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                            'RequestVerificationToken': token ? token.value : ''
+                        },
+                        body: `ReferenceNumber=${encodeURIComponent(referenceNumber)}`
+                    })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.success) {
+                            // Remove row from table
+                            const row = btn.closest("tr");
+                            row.remove();
+
+                            Swal.fire({
+                                icon: "success",
+                                title: "Order Cancelled",
+                                text: `Reference #${referenceNumber} has been cancelled`,
+                                timer: 2000,
+                                showConfirmButton: false
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: "error",
+                                title: "Error",
+                                text: data.message
+                            });
+                        }
+                    })
+                    .catch(err => {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Error",
+                            text: "Failed to cancel order. Try again."
+                        });
+                        console.error(err);
+                    });
+                }
+            });
+        });
+    });
+
+
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Values passed from controller via TempData
+            const status = '@TempData["UpdateStatus"]';
+            const message = '@TempData["UpdateMessage"]';
+
+            if (status === "success") {
+                Swal.fire({
+                    icon: "success",
+                    title: "Updated!",
+                    text: message,
+                    timer: 2000,
+                    showConfirmButton: false
+                });
+            } else if (status === "error") {
+                Swal.fire({
+                    icon: "error",
+                    title: "Error!",
+                    text: message,
+                    confirmButtonColor: "#d33"
+                });
+            }
+        });
+    </script>
+
+
+    @* Script for filtering status and date *@
+    <script>
+           document.addEventListener('DOMContentLoaded', function() {
+            const selectedStatus = '@Model.SelectedStatus';
+            if (selectedStatus) {
+                const select = document.getElementById('statusFilter');
+                select.value = selectedStatus; // sets the selected option
+            }
+        });
+    </script>
+
+}

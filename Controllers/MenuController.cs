@@ -3,6 +3,7 @@ using JapaneseMealReservation.AppData;
 using JapaneseMealReservation.Models;
 using JapaneseMealReservation.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using OfficeOpenXml;
 
 namespace JapaneseMealReservation.Controllers
@@ -31,44 +32,83 @@ namespace JapaneseMealReservation.Controllers
             if (lastRow == null)
                 return BadRequest("The Excel sheet is empty or contains no usable data.");
 
-            var menus = new List<Menu>();
+            // Fetch all existing menus once to avoid multiple DB calls
+            var allExistingMenus = await dbContext.Menus
+                .Select(m => new
+                {
+                    m.Name,
+                    m.MenuType,
+                    m.Description,
+                    m.AvailabilityDate,
+                    m.ImagePath
+                })
+                .ToListAsync();
+
+            var menusToInsert = new List<Menu>();
 
             for (int row = 2; row <= lastRow.RowNumber(); row++)
             {
-                // Safely try to read the date
-                var dateCell = worksheet.Cell(row, 1);
-                if (!dateCell.TryGetValue<DateTime>(out var rawDate))
-                    continue; // Skip if not a valid date
+                // Read and validate date
+                if (!worksheet.Cell(row, 1).TryGetValue<DateTime>(out var rawDate))
+                    continue;
 
-                var availabilityDate = DateTime.SpecifyKind(rawDate, DateTimeKind.Utc);
+                var availabilityDate = rawDate.Date;
 
-                var name = worksheet.Cell(row, 3).GetString();
-                var description = worksheet.Cell(row, 4).GetString();
-                var priceText = worksheet.Cell(row, 5).GetString(); // Corrected: price is column 5
-                var menuType = worksheet.Cell(row, 6).GetString();
+                // Read and trim other fields
+                var name = worksheet.Cell(row, 3).GetString().Trim();
+                var description = worksheet.Cell(row, 4).GetString().Trim();
+                var priceText = worksheet.Cell(row, 5).GetString().Trim();
+                var menuType = worksheet.Cell(row, 6).GetString().Trim();
 
                 if (string.IsNullOrWhiteSpace(name)) continue;
                 if (!decimal.TryParse(priceText, out var price)) continue;
 
-                menus.Add(new Menu
+                // Skip if exact menu already exists (Name + MenuType + Description + AvailabilityDate)
+                var existsExact = allExistingMenus.Any(m =>
+                    string.Equals(m.Name.Trim(), name, StringComparison.OrdinalIgnoreCase) &&
+                    string.Equals(m.MenuType.Trim(), menuType, StringComparison.OrdinalIgnoreCase) &&
+                    string.Equals(m.Description.Trim(), description, StringComparison.OrdinalIgnoreCase) &&
+                    m.AvailabilityDate == availabilityDate);
+
+                if (existsExact) continue;
+
+                // Reuse ImagePath if previous menu exists with the same Name + MenuType
+                var existingMenu = allExistingMenus
+                    .Where(m =>
+                        string.Equals(m.Name.Trim(), name, StringComparison.OrdinalIgnoreCase) &&
+                        string.Equals(m.MenuType.Trim(), menuType, StringComparison.OrdinalIgnoreCase))
+                    .OrderByDescending(m => m.AvailabilityDate)
+                    .FirstOrDefault();
+
+                var imagePath = existingMenu?.ImagePath; // reuse if exists, otherwise null
+
+                menusToInsert.Add(new Menu
                 {
                     AvailabilityDate = availabilityDate,
                     Name = name,
                     Description = description,
                     Price = price,
                     MenuType = menuType,
+                    ImagePath = imagePath,
                     IsAvailable = true,
                     CreatedAt = DateTime.UtcNow,
                     UpdatedAt = DateTime.UtcNow
                 });
             }
 
-            dbContext.Menus.AddRange(menus);
-            await dbContext.SaveChangesAsync();
+            if (menusToInsert.Any())
+            {
+                dbContext.Menus.AddRange(menusToInsert);
+                await dbContext.SaveChangesAsync();
+            }
 
-            TempData["UploadMessage"] = $"{menus.Count} menu item(s) uploaded successfully.";
+            TempData["UploadMessage"] = $"{menusToInsert.Count} new menu item(s) uploaded successfully.";
             return RedirectToAction("Dashboard", "Admin");
         }
+
+
+
+
 
 
         [HttpPost]

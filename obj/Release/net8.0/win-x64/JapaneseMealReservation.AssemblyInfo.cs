@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JapaneseMealReservation")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4c55dc68b8f3501012a655adc458d71ac9ea8160")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5ec23e5cc8d7f8ed38f542a627f3cad5da5c1600")]
 [assembly: System.Reflection.AssemblyProductAttribute("JapaneseMealReservation")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JapaneseMealReservation")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

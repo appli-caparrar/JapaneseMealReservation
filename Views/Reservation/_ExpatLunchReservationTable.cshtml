@@ -1,0 +1,267 @@
+﻿
+
+@using JapaneseMealReservation.ViewModels
+@using TimeZoneConverter
+@model ExpatReservationViewModel
+
+@{
+    var i = 0;
+    var phTimeZone = TZConvert.GetTimeZoneInfo("Asia/Manila");
+    var nowPH = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, phTimeZone).Date;
+}
+
+<form id="batchReservationForm" asp-action="ExpatLunchAdvanceReservation" method="post">
+
+    <input type="hidden" id="menuType" name="MenuType" value="@ViewBag.Type" />
+
+    <div class="row mb-4 justify-content-between align-items-end">
+
+        <div class="col-sm-3">
+            <label class="form-label fw-semibold">Filter Expat / Manager</label>
+            <select id="expatFilter" name="SelectedEmployeeId" class="form-select">
+                <option value="">-- Show All --</option>
+                @foreach (var u in Model.AllExpatsAndManagers)
+                {
+                    if (Model.SelectedEmployeeId == u.EmployeeId)
+                    {
+                        <option value="@u.EmployeeId" selected>@u.FirstName @u.LastName</option>
+                    }
+                    else
+                    {
+                        <option value="@u.EmployeeId">@u.FirstName @u.LastName</option>
+                    }
+                }
+            </select>
+        </div>
+
+        <div class="col-auto d-flex gap-3 align-items-end">
+            <div>
+                <label for="MealTime" class="form-label fw-semibold">Meal Time (HH:mm)</label>
+                <input type="time" class="form-control" name="MealTime" value="12:00" required />
+            </div>
+
+            <div class="mb-1">
+                <button id="submitBtn" type="submit" class="btn btn-success px-4 py-2 mt-4">
+                    <i class="bi bi-send-check-fill me-2"></i>Submit Orders
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="table-responsive shadow-sm border rounded overflow-auto">
+        <table class="table table-bordered table-hover text-center align-middle">
+            <thead class="table-dark sticky-top">
+                <tr>
+                    <th class="text-start">Expat Name</th>
+                    @foreach (var date in Model.CurrentMonthDates)
+                    {
+                        if (date.DayOfWeek == DayOfWeek.Saturday || date.DayOfWeek == DayOfWeek.Sunday)
+                            continue; // Skip weekends entirely
+
+                        <th class="text-nowrap">@date.ToString("MMM d (ddd)")</th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model.Users)
+                {
+                    <tr>
+                        <td class="text-start fw-semibold">@user.FirstName @user.LastName</td>
+
+                        @foreach (var date in Model.CurrentMonthDates)
+                        {
+                            if (date.DayOfWeek == DayOfWeek.Saturday || date.DayOfWeek == DayOfWeek.Sunday)
+                                continue; // Skip weekend cells
+
+
+                            var dayOfWeek = (int)date.DayOfWeek;
+                            if (dayOfWeek == 0) dayOfWeek = 7;
+
+                            var menus = Model.WeekdayMenus.TryGetValue(dayOfWeek, out var list)
+                            ? list
+                            : new List<string>();
+
+                        
+                            var key = $"{user.EmployeeId}|{date:yyyy-MM-dd}";
+                            var isReserved = Model.ReservedDates.Contains(key);
+                            var isPastDate = date.Date < nowPH;
+
+                            <td class="p-2" data-employee-id="@user.EmployeeId" data-date="@date:yyyy-MM-dd">
+                                @if (isReserved)
+                                {
+                                    var orderStatus = "";
+                                    Model.ReservedOrdersStatus?.TryGetValue(key, out orderStatus);
+                                    var reservedMenu = Model.ReservedOrders
+                                    .FirstOrDefault(o => o.Key.StartsWith($"{key}|")).Value ?? "Order";
+
+                                    if (string.Equals(orderStatus, "Cancelled", StringComparison.OrdinalIgnoreCase))
+                                    {
+                                        // Re-select if cancelled
+                                        if (menus.Any())
+                                        {
+                                            foreach (var menu in menus)
+                                            {
+                                                var checkboxId = $"chk_{i}_{date.Day}_{menu.Replace(" ", "")}";
+                                                var orderKey = $"{user.EmployeeId}|{date:yyyy-MM-dd}|{menu}";
+
+                                                <div class="form-check form-check-sm text-start">
+                                                    <input class="form-check-input"
+                                                           type="checkbox"
+                                                           name="SelectedOrders"
+                                                           value="@orderKey"
+                                                           id="@checkboxId"
+                                                    @(user.EmployeeId != Model.CurrentUserId ? "disabled" : "") />
+                                                    <label class="form-check-label small" for="@checkboxId">@menu</label>
+                                                </div>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <span class="text-muted">—</span>
+                                        }
+                                    }
+                                    else if (string.Equals(orderStatus, "Completed", StringComparison.OrdinalIgnoreCase))
+                                    {
+                                        // ✅ Show Completed label
+                                        <div class="text-light fw-semibold small bg-success rounded px-1">
+                                            @($"{reservedMenu} Completed Order")
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        // Reserved logic
+                                        var reservedOrder = Model.ReservedOrders
+                                        .FirstOrDefault(o => o.Key.StartsWith($"{key}|"));
+                                        var referenceNumber = reservedOrder.Key?.Split('|').Last();
+
+                                        if (user.EmployeeId == Model.CurrentUserId)
+                                        {
+                                            <div class="d-flex flex-column align-items-center gap-2">
+                                                <div class="text-light fw-semibold small bg-warning rounded px-1">
+                                                    @($"{reservedMenu} Reserved")
+                                                </div>
+                                                <button type="button"
+                                                        class="btn btn-sm w-100 btn-outline-danger cancel-reservation-btn"
+                                                        data-reference-number="@referenceNumber">
+                                                    Cancel
+                                                </button>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="text-light fw-semibold small bg-warning rounded px-1">
+                                                @($"{reservedMenu} Reserved")
+                                            </div>
+                                        }
+                                    }
+                                }
+                                else if (menus.Any())
+                                {
+                                    // Show checkboxes for unreserved slots
+                                    foreach (var menu in menus)
+                                    {
+                                        var checkboxId = $"chk_{i}_{date.Day}_{menu.Replace(" ", "")}";
+                                        var orderKey = $"{user.EmployeeId}|{date:yyyy-MM-dd}|{menu}";
+                                        var isDisabled = user.EmployeeId != Model.CurrentUserId || isPastDate;
+
+                                        <div class="form-check form-check-sm text-start">
+                                            <input class="form-check-input"
+                                                   type="checkbox"
+                                                   name="SelectedOrders"
+                                                   value="@orderKey"
+                                                   id="@checkboxId"
+                                            @(isDisabled ? "disabled" : "") />
+                                            <label class="form-check-label small @(isPastDate ? "text-muted" : "")"
+                                                   for="@checkboxId">@menu</label>
+                                        </div>
+                                    }
+                                }
+                                else
+                                {
+                                    <span class="text-muted">—</span>
+                                }
+                            </td>
+
+                        }
+                    </tr>
+                    i++;
+                }
+            </tbody>
+        </table>
+    </div>
+
+   
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            // Use event delegation — attach once to the table container
+            document.addEventListener('click', function (event) {
+                const button = event.target.closest('.cancel-reservation-btn');
+                if (!button) return; // Only handle cancel button clicks
+
+                const referenceNumber = button.dataset.referenceNumber;
+                if (!referenceNumber) return;
+
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "Do you want to cancel this reservation?",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                    confirmButtonText: 'Yes, cancel it!',
+                    cancelButtonText: 'No'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        fetch('@Url.Action("CancelOrder", "Reservation")', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value
+                            },
+                            body: JSON.stringify({ ReferenceNumber: referenceNumber })
+                        })
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data.success) {
+                                const cell = button.closest('td');
+                                if (cell) {
+                                    // Recreate the checkbox dynamically
+                                    const employeeId = cell.dataset.employeeId;
+                                    const date = cell.dataset.date;
+                                    const menu = 'Breakfast'; // or dynamically detect based on context
+                                    const checkboxId = `chk_${employeeId}_${date.replace(/-/g, '')}_${menu}`;
+
+                                    cell.innerHTML = `
+                                        <div class="form-check form-check-sm text-start">
+                                            <input class="form-check-input"
+                                                   type="checkbox"
+                                                   name="SelectedOrders"
+                                                   value="${employeeId}|${date}|${menu}"
+                                                   id="${checkboxId}" />
+                                            <label class="form-check-label small" for="${checkboxId}">${menu}</label>
+                                        </div>
+                                    `;
+                                }
+
+                                Swal.fire({
+                                    title: 'Cancelled!',
+                                    text: 'Reservation has been cancelled.',
+                                    icon: 'success',
+                                    timer: 2000,
+                                    showConfirmButton: false
+                                });
+                            }
+                        })
+                        .catch(err => {
+                            console.error(err);
+                            Swal.fire('Error', 'An error occurred while cancelling the reservation.', 'error');
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</form>

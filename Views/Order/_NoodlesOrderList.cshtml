@@ -1,0 +1,299 @@
+﻿@{
+    ViewData["ShowDashboardHeader"] = true;
+    ViewData["Title"] = "Noodles Orders";
+}
+
+@model List<JapaneseMealReservation.ViewModels.OrderSummaryViewModel>
+
+
+    <div class="container shadow dashboardContainer" style="background-color: #FFFEF5; margin-top: 5px; padding: 0;">
+        <div class="d-flex justify-content-between align-items-center mb-4 bg-dark text-warning p-4">
+            <h1>@ViewData["Title"]</h1>
+           @*  <form method="post" asp-controller="Home" asp-action="Logout">
+                <button type="submit" class="btn btn-danger" style="cursor:pointer;">Logout</button>
+            </form> *@
+        </div>
+
+        @* Table *@
+        <div class="row g-3 mb-4 px-4">
+            <div class="d-flex justify-content-between align-items-center mb-2 mt-4">
+                <h1 class="m-0" style="font-size: 32px;">List of Orders</h1>
+
+                <div>
+                    <a href="@Url.Action("NoodlesOrdersPdf", "Order")" class="btn btn-success">
+                        <i class="fa-solid fa-download"></i> Export PDF
+                    </a>
+
+                    <button class="btn btn-success printBtn" id="btnPrintAll" data-type="Noodles">
+                        <i class="fa-solid fa-print"></i> &nbsp; Print All Orders
+                    </button>
+                </div>
+
+            </div>
+
+
+            @{
+                var expats = Model?
+                .Where(m =>
+                m.CustomerType?.ToLower() == "expat" &&
+                m.Status?.ToLower() == "pending"
+                )
+                .ToList();
+
+                var locals = Model?
+                .Where(m =>
+                m.CustomerType?.ToLower() == "local" &&
+                m.Status?.ToLower() == "pending"
+                )
+                .ToList();
+            }
+
+            <div id="printExpat">
+                @if (expats != null && expats.Any())
+                {
+                    <h4 class="mt-4">Expat Orders</h4>
+                    <table id="tableExpat" class="table table-bordered table-striped">
+                        <thead style="background-color: #7f604b !important; color: white;">
+                            <tr>
+                                <th>Reference #</th>
+                                <th>Employee ID</th>
+                                <th>Name</th>
+                                <th>Section</th>
+                                <th>Quantity</th>
+                                <th>Signature</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var order in expats)
+                            {
+                                <tr>
+                                    <td>@order.ReferenceNumber</td>
+                                    <td>@order.EmployeeId</td>
+                                    <td>@order.FirstName @order.LastName</td>
+                                    <td>@order.Section</td>
+                                    <td>@order.Quantity</td>
+                                    <td></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+                else
+                {
+                    <h4 class="mt-5">Expat Orders</h4>
+                    <table class="table table-bordered table-striped">
+                    <thead style="background-color: #7f604b !important; color: white;">
+                            <tr>
+                                <th>Reference #</th>
+                                <th>Employee ID</th>
+                                <th>Name</th>
+                                <th>Section</th>
+                                <th>Quantity</th>
+                                <th>Signature</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="8" class="text-center">No expat orders found.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                }
+		</div>
+            <div id="printLocal">
+                @if (locals != null && locals.Any())
+                {
+                    <h4 class="mt-5">Local Orders</h4>
+                    <table id="tableLocal" class="table table-bordered table-striped">
+                        <thead style="background-color: #7f604b !important; color: white;">
+                            <tr>
+                                <th>Reference #</th>
+                                <th>Employee ID</th>
+                                <th>Name</th>
+                                <th>Section</th>
+                                <th>Quantity</th>
+                                <th>Signature</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var order in locals)
+                            {
+                                <tr>
+                                    <td>@order.ReferenceNumber</td>
+                                    <td>@order.EmployeeId</td>
+                                    <td>@order.FirstName @order.LastName</td>
+                                    <td>@order.Section</td>
+                                    <td>@order.Quantity</td>
+                                    <td></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+                else
+                {
+                    <h4 class="mt-5">Local Orders</h4>
+                    <table class="table table-bordered table-striped">
+                    <thead style="background-color: #7f604b !important; color: white;">
+                            <tr>
+                                <th>Reference #</th>
+                                <th>Employee ID</th>
+                                <th>Name</th>
+                                <th>Section</th>
+                                <th>Quantity</th>
+                                <th>Signature</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="8" class="text-center">No local orders found.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                }
+            </div>
+        </div>
+    </div>
+
+
+
+@* serve as margin don't remove*@
+<div style="height: 15px; width: 100%;"></div>
+
+@section Scripts {
+    
+    <script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const printButton = document.querySelector(".printBtn");
+
+            printButton?.addEventListener("click", () => {
+                const menuType = printButton.getAttribute("data-type");
+                const today = new Date().toLocaleDateString();
+
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: `Print all ${menuType} orders and mark them as Completed?`,
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Yes, print and complete!',
+                    cancelButtonText: 'Cancel'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // ✅ Only print after confirm
+                        $('#printLocal').printThis({
+                            importCSS: true,
+                            loadCSS: "@Url.Content("~/css/site.css")",
+                            header: `<h2>${menuType}</h2><p>Date: ${today}</p><hr />`,
+                            afterPrint: function () {
+                                $('#printExpat').printThis({
+                                    importCSS: true,
+                                    loadCSS: "/css/site.css",
+                                    header: `<h2>${menuType}</h2><p>Date: ${today}</p><hr />`,
+                                    afterPrint: function () {
+                                        // ✅ Update status after both prints
+                                        const baseUrl = window.appBaseUrl || '/';
+                                        fetch('@Url.Action("CompleteTodayNoodlesOrders", "Order")', {
+                                            method: 'POST',
+                                            headers: {
+                                                'Content-Type': 'application/json',
+                                                'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]')?.value
+                                            },
+                                            body: JSON.stringify({ menuType: menuType })
+                                        })
+                                        .then(res => res.json())
+                                        .then(data => {
+                                            Swal.fire({
+                                                icon: data.success ? 'success' : 'error',
+                                                title: data.success ? 'Completed' : 'Error',
+                                                text: data.message
+                                            }).then(() => {
+                                                if (data.success) {
+                                                    location.reload();
+                                                }
+                                            });
+                                        });
+                                    }
+                                });
+                            }
+                        });
+                    }
+                });
+            });
+        });
+
+        
+    </script>
+}
+
+
+
+
+@* @section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const printButtons = document.querySelectorAll(".printBtn");
+
+            printButtons.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    const type = btn.getAttribute("data-type");
+                    const today = new Date().toLocaleDateString();
+
+                    Swal.fire({
+                        title: 'Are you sure?',
+                        text: `Print all ${type} orders and mark them as Completed?`,
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonText: 'Yes, print and complete!',
+                        cancelButtonText: 'Cancel'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            // ✅ Trigger printThis only if user confirms
+                                $('#btnPrintLocal').click(function () {
+                                    const today = new Date().toLocaleDateString();
+                                    $('#printLocal').printThis({
+                                        importCSS: true,
+                                        loadCSS: "/css/site.css",
+                                        header: `<h2>Local Employees</h2><p>Date: ${today}</p><hr />`
+                                    });
+                                });
+
+                                $('#btnPrintExpat').click(function () {
+                                    const today = new Date().toLocaleDateString();
+                                    $('#printExpat').printThis({
+                                        importCSS: true,
+                                        loadCSS: "/css/site.css",
+                                        header: `<h2>Expat Employees</h2><p>Date: ${today}</p><hr />`
+                                    });
+                                });
+
+                            // ✅ Optionally: call API to update status
+                            fetch('/Order/CompleteTodayNoodlesOrders', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value
+                                },
+                                body: JSON.stringify({ menuType: type })
+                            })
+                            .then(res => res.json())
+                            .then(data => {
+                                Swal.fire({
+                                    icon: data.success ? 'success' : 'error',
+                                    title: data.success ? 'Completed' : 'Error',
+                                    text: data.message
+                                }).then(() => {
+                                    if (data.success) {
+                                        location.reload();
+                                    }
+                                });
+                            });
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+
+} *@

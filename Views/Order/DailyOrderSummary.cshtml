@@ -1,0 +1,153 @@
+﻿@model JapaneseMealReservation.ViewModels.DailyOrderSummaryViewModel
+
+@{
+    ViewData["ShowDashboardHeader"] = true;
+    ViewData["Title"] = "Daily Order Summary";
+}
+
+<div class="container mt-4" >
+    <h2 class="text-center mb-4" style="margin-top: 120px; padding: 0;">Daily Order Summary</h2>
+
+
+   @*  <div class="mb-3 d-flex justify-content-between">
+        <button id="downloadLocalBtn" class="btn btn-success">
+            <i class="fa-solid fa-download"></i> Download Local Orders
+        </button>
+
+        <button id="downloadExpatBtn" class="btn btn-primary">
+            <i class="fa-solid fa-download"></i> Download Expat Orders
+        </button>
+    </div> *@
+
+    @await Html.PartialAsync("_BentoOrderList", Model.BentoOrders)
+    @await Html.PartialAsync("_BreakfastOrderList", Model.BreakfastOrders)
+    @await Html.PartialAsync("_CurryOrderList", Model.CurryOrders)
+    @await Html.PartialAsync("_MakiOrderList", Model.MakiOrders)
+    @await Html.PartialAsync("_NoodlesOrderList", Model.NoodlesOrders)
+</div>
+
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const localBtn = document.getElementById("downloadLocalBtn");
+            const expatBtn = document.getElementById("downloadExpatBtn");
+
+            localBtn?.addEventListener("click", () => {
+                Swal.fire({
+                    title: 'Download today’s Local orders?',
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonText: 'Download',
+                    cancelButtonText: 'Cancel'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = '@Url.Action("DownloadTodayLocalOrders", "Order")';
+                    }
+                });
+            });
+
+            expatBtn?.addEventListener("click", () => {
+                Swal.fire({
+                    title: 'Download today’s Expat orders?',
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonText: 'Download',
+                    cancelButtonText: 'Cancel'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = '@Url.Action("DownloadTodayExpatOrders", "Order")';
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Handle ALL print buttons using event delegation
+            $(document).on("click", ".printBtn", function () {
+                const menuType = $(this).data("type");
+                const today = new Date().toLocaleDateString();
+                const baseUrl = window.appBaseUrl || '/';
+
+                // Determine correct endpoint for each menu type
+                let endpoint = '';
+
+                switch (menuType) {
+                    case 'Maki':
+                        endpoint = `${baseUrl}Order/CompleteTodayMakiOrders`;
+                        break;
+                    case 'Noodles':
+                        endpoint = `${baseUrl}Order/CompleteTodayNoodlesOrders`;
+                        break;
+                    case 'Breakfast':
+                        endpoint = `${baseUrl}Order/CompleteTodayBreakfastOrders`;
+                        break;
+                    case 'Curry':
+                        endpoint = `${baseUrl}Order/CompleteTodayCurryOrders`;
+                        break;
+                    case 'Bento':
+                        endpoint = `${baseUrl}Order/CompleteTodayBentoOrders`;
+                        break;
+                    default:
+                        console.error("Unknown menu type:", menuType);
+                        Swal.fire('Error', `Unknown menu type: ${menuType}`, 'error');
+                        return;
+                }
+
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: `Print all ${menuType} orders and mark them as Completed?`,
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Yes, print and complete!',
+                    cancelButtonText: 'Cancel'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Only print after confirm
+                        $('#printLocal').printThis({
+                            importCSS: true,
+                            loadCSS: "/css/site.css",
+                            header: `<h2>${menuType}</h2><p>Date: ${today}</p><hr />`,
+                            afterPrint: function () {
+                                $('#printExpat').printThis({
+                                    importCSS: true,
+                                    loadCSS: "/css/site.css",
+                                    header: `<h2>${menuType}</h2><p>Date: ${today}</p><hr />`,
+                                    afterPrint: function () {
+                                        // Update status after both prints
+                                        fetch(endpoint, {
+                                            method: 'POST',
+                                            headers: {
+                                                'Content-Type': 'application/json',
+                                                'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]')?.value || ''
+                                            },
+                                            body: JSON.stringify({ menuType: menuType })
+                                        })
+                                        .then(res => res.json())
+                                        .then(data => {
+                                            Swal.fire({
+                                                icon: data.success ? 'success' : 'error',
+                                                title: data.success ? 'Completed' : 'Error',
+                                                text: data.message
+                                            }).then(() => {
+                                                if (data.success) {
+                                                    location.reload();
+                                                }
+                                            });
+                                        })
+                                        .catch(err => {
+                                            console.error('Fetch error:', err);
+                                            Swal.fire('Error', 'Something went wrong: ' + err.message, 'error');
+                                        });
+                                    }
+                                });
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+}

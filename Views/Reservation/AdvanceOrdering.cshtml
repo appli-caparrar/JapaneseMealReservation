@@ -13,8 +13,8 @@
     </div>
 
     <!-- Reservation Form -->
-    <div class="flex-grow-1 d-flex justify-content-center align-items-start" style="overflow-y: auto; margin-top: 57px;">
-        <form id="reservationForm" class="border p-4 rounded shadow mt-2" 
+    <div class="flex-grow-1 d-flex justify-content-center align-items-start" style="overflow-y: auto; margin-top: 57px; height: auto;">
+        <form id="advanceReservationForm" class="border p-4 rounded shadow mt-2" 
               style="width: 100%; max-width: 700px; max-height: 90vh; overflow-y: auto;"
               asp-controller="Reservation" asp-action="SaveAdvanceOrder">
        @*      @Html.AntiForgeryToken() *@
@@ -60,7 +60,7 @@
 
                     <div class="mb-3">
                         <label class="form-label">Time (Required)</label>
-                        <input type="time" class="form-control" id="time" required />
+                        <input type="time" value="12:00" class="form-control" id="time" required />
                     </div>
 
                     <div class="mb-3">
@@ -72,7 +72,7 @@
 
                     <div class="mb-3">
                         <label class="form-label">Quantity (Required)</label>
-                        <input type="number" min="1" class="form-control" id="quantity" required />
+                        <input type="number" min="1" value="1" class="form-control" id="quantity" required />
                     </div>
 
                     <button type="submit" class="btn btn-dark w-100">Reserve</button>
